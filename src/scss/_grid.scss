@@ -1,0 +1,8 @@
+// Grid
+// `div`s act as row elements. In order to cancel this behaviour, nest one `div` inside another.
+div {
+  display: flex;
+  gap: var(--gutter);
+  & > div { display: block; }
+  & > * { flex: 1; }
+}

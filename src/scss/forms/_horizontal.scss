@@ -1,0 +1,8 @@
+// If an input is used inside a `label`, it takes a media object layout
+// The input will expand to fill any space left by the text
+label {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--gutter);
+  input { flex-grow: 2; }
+}
