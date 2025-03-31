@@ -1,0 +1,59 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+
+<module href="src/fragments/head.html">
+  <title>Classless Utopia - Main navigation</title>
+</module>
+
+<body>
+  <module href="src/fragments/main-navigation.html"></module>
+
+  <h1>Main navigation</h1>
+
+  <p>The main navigation can take a couple of different forms.</p>
+
+  <h2>Collapsing</h2>
+
+  <p>To create an infinitely nested collapsing navigation tree, use the following pattern:</p>
+
+  <pre><code>&lt;header&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Top level item&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Second level item&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+
+  <p>Only the top level of navigation will display. Users will see plus buttons (+) to the right of each navigation item which has children. Clicking on the link will navigate to the page as normal. Clicking on the plus button will toggle the child nodes open and closed.</p>
+
+  <p>Accessibility markup is automatically added and updated as the user interacts with the navigation.</p>
+
+  <p>You can continue adding as many children or grandchildren as you require.</p>
+
+  <p><strong>To do:</strong> Highlight current page automatically</p>
+  <p><strong>To do:</strong> Expand navigation to display current page automatically</p>
+  <p><strong>To do:</strong> Automatically switch between desktop and mobile depending upon text wrapping of top row</p>
+  <p><strong>To do:</strong> Add burger menu at small sizes</p>
+
+  <h2>Linear</h2>
+
+  <p>If a single row of navigation is required, the following pattern can be used:</p>
+
+  <pre><code>&lt;nav&gt;
+  &lt;p&gt;
+    &lt;a href="#"&gt;Top level navigation&lt;/a&gt;
+    &lt;a href="#"&gt;Another top level navigation item&lt;/a&gt;
+    &lt;a href="#"&gt;A third example&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/nav&gt;</code></pre>
+
+  <p><strong>To do:</strong> create truncating single-line navigation</p>
+
+  <module href="src/fragments/footer.html"></module>
+</body>
+
+</html>
