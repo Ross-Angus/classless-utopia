@@ -3,3 +3,5 @@
 @use '_vars';
 @use 'navigation/_main';
 @use 'forms/_horizontal';
+// It seems the elegant @ method only works in JS
+@use '../../node_modules/highlight.js/scss/default.scss';
