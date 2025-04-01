@@ -1,5 +1,9 @@
 // Navigation
 header nav {
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-end;
+
   ul, li {
     list-style: none;
     margin: 0;
@@ -13,6 +17,7 @@ header nav {
     a { flex-grow: 1; }
   }
   // Navigation toggle buttons
+  // Most take the form where they animate between + and --
   button {
     appearance: none;
     background: transparent;
@@ -47,5 +52,28 @@ header nav {
     }
     // + becomes -
     &[aria-expanded="true"]:before { transform: scale(1, 0); }
+
+    // Burger menu
+    &[data-js="mainnav-toggle"] {
+      border-bottom: solid var(--keyline) var(--bodytext);
+      border-top: solid var(--keyline) var(--bodytext);
+      margin: calc(var(--gutter) / 2) 0;
+      transition: all .5s;
+
+      // Resetting | to --
+      &:before {
+        height: var(--keyline);
+        left: 0;
+        top: calc(50% - (var(--keyline) / 2));
+        width: var(--gutter);
+      }
+
+      // ×
+      &[aria-expanded="true"]{
+        border-color: transparent;
+        &:before { transform: scale(1, 1.4) rotate(35deg); }
+        &:after { transform: scale(1, 1.4) rotate(-35deg); }
+      }
+    }
   }
 }
