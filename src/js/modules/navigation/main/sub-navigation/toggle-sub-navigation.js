@@ -11,8 +11,8 @@ const toggleSubNavigation = (btn, id) => {
     subNavigation.removeAttribute('hidden');
     Object.entries({
       'aria-expanded': 'true',
-      'aria-label': constants.CLOSE_STRING,
-      'title': constants.CLOSE_STRING
+      'aria-label': constants.CLOSE_SUBNAV_STRING,
+      'title': constants.CLOSE_SUBNAV_STRING
     }).forEach(([key, value]) => {
       btn.setAttribute(key, value);
     });
@@ -20,8 +20,8 @@ const toggleSubNavigation = (btn, id) => {
     subNavigation.setAttribute('hidden', '');
     Object.entries({
       'aria-expanded': 'false',
-      'aria-label': constants.OPEN_STRING,
-      'title': constants.OPEN_STRING
+      'aria-label': constants.OPEN_SUBNAV_STRING,
+      'title': constants.OPEN_SUBNAV_STRING
     }).forEach(([key, value]) => {
       btn.setAttribute(key, value);
     });
