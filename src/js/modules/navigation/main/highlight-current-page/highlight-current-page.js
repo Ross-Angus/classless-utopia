@@ -10,7 +10,7 @@ const toggleTree = (element) => {
   if (toggleButton !== null) {
     toggleButton.click();
     toggleTree(element.parentElement);
-  } else if (element.tagName !== 'NAV') {
+  } else if (element.tagName !== 'NAV' && element.parentElement !== null) {
     // Move up the tree, as long as you haven't hit the `nav` element
     toggleTree(element.parentElement);
   }
