@@ -1,0 +1,13 @@
+// This is a hidden version of the main navigation whose purpose is to work out
+// if the main navigation will wrap or not
+// These styles will need to follow closely what the default horizontal layout
+// should look like. Might need to move some rules from here to _main.scss in
+// order for this to work properly.
+header nav ul[data-js="spacer-nav"] {
+  gap: var(--gutter);
+  left: 0;
+  position: absolute;
+  right: 0;
+
+  li { display: inline-block; }
+}

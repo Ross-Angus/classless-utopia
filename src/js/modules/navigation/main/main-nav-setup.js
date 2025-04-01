@@ -1,6 +1,7 @@
 import subnavSetup from "./sub-navigation/subnav-setup.js";
 import highlightCurrentPage from "./highlight-current-page/highlight-current-page.js";
 import generateBurgerButtons from "./generate-burger-buttons/generate-burger-buttons.js";
+import generateSpacerNav from "./generate-spacer-nav/generate-spacer-nav.js";
 
 // This runs once to set up all the extra markup which the main navigation needs
 // in order to work nicely
@@ -28,6 +29,7 @@ const mainNavSetup = () => {
   const navUls = document.querySelectorAll('header nav > ul');
   navUls.forEach((navUl, index) => {
     generateBurgerButtons(navUl, index);
+    generateSpacerNav(navUl, index);
   });
 
 };

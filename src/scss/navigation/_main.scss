@@ -1,8 +1,11 @@
+@use '_main-spacer.scss';
+
 // Navigation
 header nav {
   align-items: flex-start;
   display: flex;
   justify-content: flex-end;
+  position: relative;
 
   ul, li {
     list-style: none;

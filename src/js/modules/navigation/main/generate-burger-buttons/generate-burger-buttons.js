@@ -2,7 +2,6 @@ import constants from '../../../constants.js';
 
 const generateBurgerButtons = (ul, index) => {
   if (ul === null) return;
-  console.log(ul, index);
   const burgerButton = document.createElement('button');
   const id = `mainnav-${index}`;
   // Set of attributes to add to the button which toggles the visibility

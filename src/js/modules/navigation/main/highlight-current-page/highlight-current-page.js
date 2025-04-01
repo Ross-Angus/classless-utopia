@@ -34,15 +34,17 @@ const highlightCurrentPage = (navListItems) => {
   // for ... of used so I can break out of the loop early
   for (const li of navListItems) {
     const anchor = li.querySelector('a');
-    const href = anchor.getAttribute('href');
-    // Does this element represent the current node?
-    if (href.indexOf(path) !== -1) {
-      const highlightElement = document.createElement('strong');
-      // Highlight the current node
-      li.insertBefore(highlightElement, anchor);
-      highlightElement.appendChild(anchor);
-      toggleTree(li.parentElement);
-      return false;
+    if (anchor !== null) {
+      const href = anchor.getAttribute('href');
+      // Does this element represent the current node?
+      if (href.indexOf(path) !== -1) {
+        const highlightElement = document.createElement('strong');
+        // Highlight the current node
+        li.insertBefore(highlightElement, anchor);
+        highlightElement.appendChild(anchor);
+        toggleTree(li.parentElement);
+        return false;
+      }
     }
   }
 };
