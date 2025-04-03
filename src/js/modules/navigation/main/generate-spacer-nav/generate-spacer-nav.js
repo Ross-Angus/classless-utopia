@@ -18,7 +18,14 @@ const generateSpacerNav = (ul, index) => {
 
   topLevelListItems.forEach(listItem => {
     const li = document.createElement('li');
-    const link = listItem.querySelector(':scope > a');
+
+    // We need the link which is inside the `li` but not any of the
+    // sub-navigation links. Sometimes the link is wrapped in a
+    // `strong` tag if it represents the current page.
+    let link = listItem.querySelector(':scope > a');
+    if (link === null) link = listItem.querySelector(':scope > strong a');
+    if (link === null) return;
+
     const subNav = listItem.querySelector(':scope > ul');
     // If the current item has sub-navigation, we need to add a dummy
     // button, so the spacing of the spacer navigation will be the same
@@ -36,7 +43,7 @@ const generateSpacerNav = (ul, index) => {
     hasSubNav && li.appendChild(dummyButton);
     spacerUl.appendChild(li);
   });
-  ul.insertAdjacentElement("afterend", spacerUl);
+  ul.insertAdjacentElement("beforebegin", spacerUl);
 };
 
 export default generateSpacerNav;

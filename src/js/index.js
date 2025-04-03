@@ -8,7 +8,8 @@ import xml from 'highlight.js/lib/languages/xml';
 
 clickEvents();
 mainNavSetup();
-detectWrap('header nav');
+// The spacer nav is used to determine if the hamburger menu is shown or not
+detectWrap('[data-js="spacer-nav"]');
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('scss', scss);
