@@ -14,7 +14,7 @@ const mainNavSetup = () => {
     navElements.forEach((navLi, index) => {
       // Does this li have both an anchor tag and a nested `ul`?
       const anchor = navLi.querySelector(':scope > a');
-      const ul = navLi.querySelector('ul');
+      const ul = navLi.querySelector(':scope > ul');
       // Does this node have the required markup?
       anchor !== null && ul !== null && subnavSetup(anchor, ul, index);
     });
