@@ -5,7 +5,7 @@ import debounce from '../debounce/debounce.js';
 // Assumption: the element passed doesn't feature a mix of content, for example
 // h1, ul, li, p. If this is done, it will return how many times plane text
 // will wrap inside the element, rather than the original mix of block elements
-const lineNumbers = (element) => {
+export const lineNumbers = (element) => {
   const elementStyles = window.getComputedStyle(element);
 
   // As clientHeight contained the padding top and bottom values, we need
@@ -32,6 +32,7 @@ const lineNumbers = (element) => {
 
 // Let's not stress the browser any more than is necessary
 const checkForWrap = debounce((elements) => {
+  if (elements === null) return;
   elements.forEach((element) => {
     element.setAttribute("data-wrap", lineNumbers(element));
   });
