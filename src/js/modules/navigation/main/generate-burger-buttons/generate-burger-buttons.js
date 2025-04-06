@@ -8,7 +8,7 @@ const generateBurgerButtons = (ul, index) => {
   // of the main-navigation
   Object.entries({
     type: 'button',
-    'aria-expanded': 'true',
+    'aria-expanded': 'false',
     'aria-controls': id,
     'aria-label': constants.OPEN_MAINNAV_STRING,
     title: constants.OPEN_MAINNAV_STRING,
