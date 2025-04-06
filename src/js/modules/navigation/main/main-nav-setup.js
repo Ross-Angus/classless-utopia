@@ -3,6 +3,7 @@ import highlightCurrentPage from "./highlight-current-page/highlight-current-pag
 import generateBurgerButtons from "./generate-burger-buttons/generate-burger-buttons.js";
 import generateSpacerNav from "./generate-spacer-nav/generate-spacer-nav.js";
 import { lineNumbers } from "../../utility/detect-wrap/detect-wrap.js";
+import toggleFocus from "../../utility/toggle-focus/toggle-focus.js";
 
 // This runs once to set up all the extra markup which the main navigation needs
 // in order to work nicely
@@ -40,18 +41,32 @@ const mainNavSetup = () => {
       // We use the spacer nav to determine if the burger menu or the horizontal
       // menu should show
       const spacerNav = navUl.previousSibling;
-      if (spacerNav === null) return;
+      const burgerBtn = navUl.nextSibling;
+      //console.log(burgerBtn, spacerNav, navUl);
+      if (spacerNav === null || burgerBtn === null) return;
       const wrapCount = lineNumbers(spacerNav);
 
       // The navigation is horizontal
       if (wrapCount === 1) {
-        console.log(`The navigation is horizontal ${wrapCount}`);
+        // Hide burger menu
+        Object.entries({
+          'hidden': '',
+          'aria-hidden': 'true',
+          'tabindex': -1
+        }).forEach(([key, value]) => {
+          burgerBtn.setAttribute(key, value);
+        });
+        // Take focus away from sub-navigation
+        toggleFocus(navUl, false);
       }
       // The navigation is vertical
       else {
-        console.log(`The navigation is vertical ${wrapCount}`);
+        // Show burger menu
+        burgerBtn.removeAttribute('aria-hidden');
+        burgerBtn.removeAttribute('hidden');
+        burgerBtn.removeAttribute('tabindex');
+        toggleFocus(navUl, true);
       }
-
     });
   });
 };
