@@ -9,10 +9,8 @@ const toggleFocus = (element, addFocus = true) => {
   // The user wants to add the focus back in
   if (addFocus) {
     element.removeAttribute('tabindex');
-    element.removeAttribute('data-trap-focus');
   } else {
     element.setAttribute('tabindex', '-1');
-    element.setAttribute('data-trap-focus', 'true');
   }
 };
 

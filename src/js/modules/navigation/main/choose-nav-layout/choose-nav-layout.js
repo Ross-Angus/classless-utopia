@@ -11,7 +11,7 @@ const chooseNavLayout = (navUl) => {
   // menu should show
   const spacerNav = navUl.previousSibling;
   const burgerBtn = navUl.nextSibling;
-  const childMenus = navUl.querySelectorAll(':scope > ul');
+  const childMenus = navUl.querySelectorAll(':scope > li > ul');
 
   if (spacerNav === null || burgerBtn === null) return;
   const wrapCount = lineNumbers(spacerNav);
@@ -22,7 +22,6 @@ const chooseNavLayout = (navUl) => {
     // Hide burger menu
     Object.entries({
       'hidden': '',
-      'aria-hidden': 'true',
       'tabindex': -1
     }).forEach(([key, value]) => {
       burgerBtn.setAttribute(key, value);
@@ -41,7 +40,6 @@ const chooseNavLayout = (navUl) => {
   // The navigation is vertical
   else {
     // Show burger menu
-    burgerBtn.removeAttribute('aria-hidden');
     burgerBtn.removeAttribute('hidden');
     burgerBtn.removeAttribute('tabindex');
 
@@ -49,12 +47,7 @@ const chooseNavLayout = (navUl) => {
     navUl.setAttribute('data-layout', 'vertical');
 
     // Hides all navigation
-    Object.entries({
-      'hidden': '',
-      'aria-hidden': 'true'
-    }).forEach(([key, value]) => {
-      navUl.setAttribute(key, value);
-    });
+    navUl.setAttribute('hidden', '');
 
     // Remove focus from the navigation
     getFocusable(navUl, false);
@@ -64,16 +57,15 @@ const chooseNavLayout = (navUl) => {
   // Both vertical and horizontal navigation need to hide the second level
   // of navigation
   if (childMenus.length > 0) {
-    Object.entries({
-      'hidden': '',
-      'aria-hidden': 'true'
-    }).forEach(([key, value]) => {
-      childMenus.setAttribute(key, value);
-    });
 
-    // Take focus away from sub-navigation
     childMenus.forEach(child => {
+
+      // Hide the child menu
+      child.setAttribute('hidden', '');
+
+      // Take focus away from sub-navigation
       getFocusable(child, false);
+
     });
   };
 };
