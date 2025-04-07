@@ -2,13 +2,13 @@ import constants from '../../../constants.js';
 import toggleFocus, { getFocusable } from '../../../utility/toggle-focus/toggle-focus.js';
 import getTopLevel from "../get-top-level/get-top-level.js";
 
-// Toggles the sub-navigation
+// Toggles the main-navigation using the burger menu
 const toggleMainNavigation = (btn, id) => {
   const mainNavigation = document.getElementById(id);
   if (!mainNavigation || !btn) return;
 
   const isHidden = mainNavigation.hasAttribute('hidden');
-  // We need to show the sub-navigation
+  // We need to show the navigation
   if (isHidden) {
 
     mainNavigation.removeAttribute('hidden');

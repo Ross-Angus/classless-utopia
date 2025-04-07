@@ -41,7 +41,7 @@
 
     // Subnav mega-menus
     & > ul {
-      columns: 2;
+      columns: var(--nav-columns);
       column-gap: var(--gutter);
       left: 0;
       position: absolute;

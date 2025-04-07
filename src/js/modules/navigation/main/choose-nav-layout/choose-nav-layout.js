@@ -55,7 +55,7 @@ const chooseNavLayout = (navUl) => {
   }
 
   // Both vertical and horizontal navigation need to hide the second level
-  // of navigation
+  // of navigation (and any under that)
   if (childMenus.length > 0) {
 
     childMenus.forEach(child => {

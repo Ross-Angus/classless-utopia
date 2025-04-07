@@ -1,6 +1,7 @@
 import constants from '../../../constants.js';
-import toggleFocus, { getFocusable } from "../../../utility/toggle-focus/toggle-focus.js";
-
+import { getFocusable } from '../../../utility/toggle-focus/toggle-focus.js';
+import hideSubNavigation from '../sub-navigation/hide-sub-navigation.js';
+import closeSiblings from '../close-siblings/close-siblings.js';
 
 // Toggles the visibility of the sub-navigation
 const toggleSubNavigation = (btn, id) => {
@@ -10,6 +11,8 @@ const toggleSubNavigation = (btn, id) => {
   const isHidden = subNavigation.hasAttribute('hidden');
   // We need to show the sub-navigation
   if (isHidden) {
+
+    closeSiblings(btn);
 
     subNavigation.removeAttribute('hidden');
 
@@ -25,24 +28,7 @@ const toggleSubNavigation = (btn, id) => {
     getFocusable(subNavigation, true);
 
   } else {
-
-    Object.entries({
-      'hidden': ''
-    }).forEach(([key, value]) => {
-      subNavigation.setAttribute(key, value);
-    });
-
-    Object.entries({
-      'aria-expanded': 'false',
-      'aria-label': constants.OPEN_SUBNAV_STRING,
-      'title': constants.OPEN_SUBNAV_STRING
-    }).forEach(([key, value]) => {
-      btn.setAttribute(key, value);
-    });
-
-    // Remove the ability to focus
-    getFocusable(subNavigation, false);
-
+    hideSubNavigation(btn, subNavigation);
   }
 };
 
