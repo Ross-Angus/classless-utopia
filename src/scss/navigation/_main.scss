@@ -4,20 +4,52 @@
 // Main navigation, horizontal style
 [data-layout="horizontal"] {
   @extend %main-nav-shared;
+  position: relative;
 
-  // Subnav mega-menus
-  // ul {
-  //   left: 0;
-  //   opacity: 0;
-  //   position: absolute;
-  //   right: 0;
-  //   top: 100%;
-  // }
+  & > li {
 
-  // Burger menu
-  // & ~ [data-js="mainnav-toggle"] {
-  //   display: none;
-  // }
+    // Button to toggle the display of the mega-menus
+    & > button {
+      outline: solid 1px red;
+      // v or ^
+      &:before, &:after {
+        height: var(--keyline);
+        position: absolute;
+        top: calc(50% - (var(--keyline) / 2));
+        width: 50%;
+      }
+      // \
+      &:before {
+        left: 0;
+        transform: skew(0, 30deg);
+      }
+      // /
+      &:after {
+        left: 50%;
+        transform: skew(0, -30deg);
+      }
+
+      // ^
+      &[aria-expanded="true"] {
+        // /
+        &:before { transform: skew(0, -30deg); }
+        // \
+        &:after { transform: skew(0, 30deg); }
+      }
+
+    }
+
+    // Subnav mega-menus
+    & > ul {
+      columns: 2;
+      column-gap: var(--gutter);
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      z-index: 1;
+    }
+  }
 }
 
 // Navigation
@@ -35,12 +67,17 @@ header nav {
   ul { width: 100%; }
   li {
     display: flex;
+    // We need the first level to wrap because this determines the horizontal
+    // or vertical layout
     flex-wrap: wrap;
 
-    a { flex-grow: 1; }
+    // This ensures that there's always room for the button which toggles the
+    // sub-navigation to appear on the same line
+    a { flex-basis: calc(100% - var(--gutter)); }
+
   }
   // Navigation toggle buttons
-  // Most take the form where they animate between + and --
+  // Most take the form where they animate between + and -
   button {
     appearance: none;
     background: transparent;
@@ -98,5 +135,11 @@ header nav {
         &:after { transform: scale(1, 1.4) rotate(-35deg); }
       }
     }
+  }
+
+  // Second level navigation
+  ul {
+    background: var(--background);
+    padding: var(--gutter);
   }
 }

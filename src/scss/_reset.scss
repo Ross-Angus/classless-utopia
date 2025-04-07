@@ -3,3 +3,7 @@ body {
   color: var(--bodytext);
   font-family: var(--fallback-font);
 }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
