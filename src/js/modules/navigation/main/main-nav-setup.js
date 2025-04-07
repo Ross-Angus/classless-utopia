@@ -1,3 +1,4 @@
+import debounce from "../../utility/debounce/debounce.js";
 import subnavSetup from "./sub-navigation/subnav-setup.js";
 import highlightCurrentPage from "./highlight-current-page/highlight-current-page.js";
 import generateBurgerButtons from "./generate-burger-buttons/generate-burger-buttons.js";
@@ -34,12 +35,16 @@ const mainNavSetup = () => {
     chooseNavLayout(navUl);
   });
 
+  const callLayout = debounce((elements) => {
+    elements.forEach(element => {
+      chooseNavLayout(element);
+    });
+  }, 100);
+
   // Listen for resize events so that we can switch the navigation between horizontal
   // and burger menu.
   window.addEventListener("resize", () => {
-    navUls.forEach(navUl => {
-      chooseNavLayout(navUl);
-    });
+    callLayout(navUls);
   });
 };
 
