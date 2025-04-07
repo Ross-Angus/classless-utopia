@@ -1,6 +1,7 @@
-import getTopLevel from "../get-top-level/get-top-level.js";
-import toggleFocus, { getFocusable } from "../../../utility/toggle-focus/toggle-focus.js";
-import { lineNumbers } from "../../../utility/detect-wrap/detect-wrap.js";
+import getTopLevel from '../get-top-level/get-top-level.js';
+import toggleFocus, { getFocusable } from '../../../utility/toggle-focus/toggle-focus.js';
+import { lineNumbers } from '../../../utility/detect-wrap/detect-wrap.js';
+import hideSubNavigation from '../sub-navigation/hide-sub-navigation.js';
 
 // This chooses if the main navigation should have a vertical or horizontal
 // layout. It will select horizontal if the top level navigation does not
@@ -61,10 +62,11 @@ const chooseNavLayout = (navUl) => {
     childMenus.forEach(child => {
 
       // Hide the child menu
-      child.setAttribute('hidden', '');
-
-      // Take focus away from sub-navigation
-      getFocusable(child, false);
+      const id = child.getAttribute('id');
+      if (!id) return;
+      const btn = document.querySelector(`[aria-controls="${id}"`);
+      if (btn === null) return;
+      hideSubNavigation(btn, child);
 
     });
   };
