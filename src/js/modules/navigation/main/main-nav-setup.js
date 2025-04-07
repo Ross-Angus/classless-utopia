@@ -35,6 +35,8 @@ const mainNavSetup = () => {
     chooseNavLayout(navUl);
   });
 
+  // Debounced as it will be called from within a `resize` event and might get
+  // triggered hundreds of times
   const callLayout = debounce((elements) => {
     elements.forEach(element => {
       chooseNavLayout(element);
