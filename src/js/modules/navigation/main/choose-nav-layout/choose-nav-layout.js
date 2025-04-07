@@ -1,3 +1,5 @@
+import getTopLevel from "../get-top-level/get-top-level.js";
+import toggleFocus, { getFocusable } from "../../../utility/toggle-focus/toggle-focus.js";
 import { lineNumbers } from "../../../utility/detect-wrap/detect-wrap.js";
 
 // This chooses if the main navigation should have a vertical or horizontal
@@ -10,7 +12,7 @@ const chooseNavLayout = (navUl) => {
   const spacerNav = navUl.previousSibling;
   const burgerBtn = navUl.nextSibling;
   const childMenus = navUl.querySelectorAll(':scope > ul');
-  //console.log(burgerBtn, spacerNav, navUl);
+
   if (spacerNav === null || burgerBtn === null) return;
   const wrapCount = lineNumbers(spacerNav);
 
@@ -28,6 +30,12 @@ const chooseNavLayout = (navUl) => {
 
     // Mark this navigation as horizontal
     navUl.setAttribute('data-layout', 'horizontal');
+
+    // Make sure the top navigation links and buttons can fall into focus
+    const topLevelElements = getTopLevel(navUl);
+    topLevelElements.forEach(element => {
+      toggleFocus(element);
+    });
 
   }
   // The navigation is vertical
@@ -48,17 +56,9 @@ const chooseNavLayout = (navUl) => {
       navUl.setAttribute(key, value);
     });
 
-    // Allows the first level of navigation to fall into focus
-    // const topLevelLinks = navUl.querySelectorAll(":scope :not('ul') a");
-    // topLevelLinks.forEach(link => {
-    //   toggleFocus(link, true);
-    // });
+    // Remove focus from the navigation
+    getFocusable(navUl, false);
 
-    // Allows the first level of toggle buttons to fall into focus
-    // const topLevelButtons = navUl.querySelectorAll(":scope :not('ul') button");
-    // topLevelButtons.forEach(button => {
-    //   toggleFocus(button, true);
-    // });
   }
 
   // Both vertical and horizontal navigation need to hide the second level

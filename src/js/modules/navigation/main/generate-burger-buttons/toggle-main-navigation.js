@@ -24,11 +24,12 @@ const toggleMainNavigation = (btn, id) => {
     // Add focus to the top level links and buttons only
     const topLevelElements = getTopLevel(mainNavigation);
     topLevelElements.forEach(element => {
-      toggleFocus(element)  ;
+      toggleFocus(element);
     });
 
   } else {
     mainNavigation.setAttribute('hidden', '');
+
     Object.entries({
       'aria-expanded': 'false',
       'aria-label': constants.OPEN_MAINNAV_STRING,
@@ -36,6 +37,7 @@ const toggleMainNavigation = (btn, id) => {
     }).forEach(([key, value]) => {
       btn.setAttribute(key, value);
     });
+
     // Remove focus from mainNavigation
     getFocusable(mainNavigation, false);
   }
