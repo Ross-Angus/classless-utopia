@@ -2,25 +2,22 @@
 @use '_main-spacer.scss';
 
 // Main navigation, horizontal style
-[data-js="spacer-nav"][data-wrap="1"] {
-  // Main navigation
-  & + ul {
-    @extend %main-nav-shared;
+[data-layout="horizontal"] {
+  @extend %main-nav-shared;
 
-    // Subnav mega-menus
-    ul {
-      left: 0;
-      opacity: 0;
-      position: absolute;
-      right: 0;
-      top: 100%;
-    }
-  }
+  // Subnav mega-menus
+  // ul {
+  //   left: 0;
+  //   opacity: 0;
+  //   position: absolute;
+  //   right: 0;
+  //   top: 100%;
+  // }
 
   // Burger menu
-  & ~ [data-js="mainnav-toggle"] {
-    display: none;
-  }
+  // & ~ [data-js="mainnav-toggle"] {
+  //   display: none;
+  // }
 }
 
 // Navigation
