@@ -1,16 +1,23 @@
+import emboldenElement from '../../../utility/embolden-element/embolden-element.js';
+
 // Recursive function which looks upward from the current DOM element
-// and attempts to find toggle buttons. It stops when it reaches
-// a `nav` element
+// and attempts to find toggle buttons. It also highlights the
+// parents of the current page. It stops when it reaches a `nav`
+// element.
 const toggleTree = (element, expandNavigation) => {
   if (element === null) return;
 
   const toggleButton = element.querySelector(':scope > button[data-js="subnav-toggle"]');
+  const anchor = element.querySelector(':scope > a');
   // Is this element a list item?
   // Does it have a `button` element inside?
   if (toggleButton !== null) {
     // If the second argument is set to `true`, the whole navigation tree
     // will expand so that the current navigation element is displayed.
     expandNavigation && toggleButton.click();
+    // Make the link bold
+    anchor !== null && emboldenElement(anchor);
+    // Move on up
     toggleTree(element.parentElement);
   } else if (element.tagName !== 'NAV' && element.parentElement !== null) {
     // Move up the tree, as long as you haven't hit the `nav` element
@@ -43,10 +50,7 @@ const highlightCurrentPage = (navListItems, expandNavigation = false) => {
       const href = anchor.getAttribute('href');
       // Does this element represent the current node?
       if (href.indexOf(path) !== -1) {
-        const highlightElement = document.createElement('strong');
-        // Highlight the current node
-        li.insertBefore(highlightElement, anchor);
-        highlightElement.appendChild(anchor);
+        emboldenElement(anchor);
         toggleTree(li.parentElement, expandNavigation);
         return false;
       }
