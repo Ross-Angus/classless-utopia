@@ -10,24 +10,23 @@
 
     // Button to toggle the display of the mega-menus
     & > button {
-      outline: solid 1px red;
       // v or ^
-      &:before, &:after {
-        height: var(--keyline);
-        position: absolute;
-        top: calc(50% - (var(--keyline) / 2));
-        width: 50%;
-      }
+      // &:before, &:after {
+      //   height: var(--keyline);
+      //   position: absolute;
+      //   top: calc(50% - (var(--keyline) / 2));
+      //   width: 50%;
+      // }
       // \
-      &:before {
-        left: 0;
-        transform: skew(0, 30deg);
-      }
-      // /
-      &:after {
-        left: 50%;
-        transform: skew(0, -30deg);
-      }
+      // &:before {
+      //   left: 0;
+      //   transform: skew(0, 30deg);
+      // }
+      // // /
+      // &:after {
+      //   left: 50%;
+      //   transform: skew(0, -30deg);
+      // }
 
       // ^
       &[aria-expanded="true"] {
@@ -77,7 +76,7 @@ header nav {
 
   }
   // Navigation toggle buttons
-  // Most take the form where they animate between + and -
+  // Animates between v and ^
   button {
     appearance: none;
     background: transparent;
@@ -93,25 +92,29 @@ header nav {
     &:before, &:after {
       background: var(--bodytext);
       content: "";
-      position: absolute;
-      transition: all .5s;
-    }
-    // |
-    &:before {
-      height: var(--gutter);
-      left: calc(50% - (var(--keyline) / 2));
-      top: 0;
-      width: var(--keyline);
-    }
-    // --
-    &:after {
       height: var(--keyline);
-      left: 0;
+      position: absolute;
       top: calc(50% - (var(--keyline) / 2));
-      width: var(--gutter);
+      transition: all .5s;
+      width: 50%;
     }
-    // + becomes -
-    &[aria-expanded="true"]:before { transform: scale(1, 0); }
+
+    // \
+    &:before {
+      left: 0;
+      transform: skew(0, 30deg);
+    }
+    // /
+    &:after {
+      left: 50%;
+      transform: skew(0, -30deg);
+    }
+    &[aria-expanded="true"] {
+      // /
+      &:before { transform: skew(0, -30deg); }
+      // \
+      &:after { transform: skew(0, 30deg); }
+    }
 
     // Burger menu
     &[data-js="mainnav-toggle"] {
@@ -120,11 +123,10 @@ header nav {
       margin: calc(var(--gutter) / 2) 0;
       transition: all .5s;
 
-      // Resetting | to --
-      &:before {
-        height: var(--keyline);
+      // Resetting ^ & v to --
+      &:before, &:after {
         left: 0;
-        top: calc(50% - (var(--keyline) / 2));
+        transform: skew(0, 0);
         width: var(--gutter);
       }
 
