@@ -6,7 +6,7 @@
   "scripts": {
     "sass-dev": "sass --watch --update --style=expanded src/scss:dist/css",
     "sass-prod": "sass --no-source-map --style=compressed src/scss:dist/css",
-    "serve": "browser-sync start --server \"dist\" --files \"dist\"",
+    "serve": "browser-sync start --server \"dist\" --files \"dist\" -w \"dist\"",
     "start": "concurrently \"npm run serve\" \"npm run sass-dev\" \"npm run watch-images\" \"npm run watch-js\" \"npm run watch-html\"",
     "prepare": "concurrently \"npm run sass-prod\" \"node tools/compress-all-images.js\" \"npx webpack --config webpack.prod.mjs\" \"npm run html-build\" \npm run copy-favicon\"",
     "watch-images": "onchange \"src/img\" -- node tools/image-compress.js {{file}} {{event}}",
