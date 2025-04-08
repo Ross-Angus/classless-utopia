@@ -36,6 +36,23 @@
   }
 }
 
+[data-layout="vertical"] {
+  background: var(--tint3);
+  left: 0;
+  padding: var(--gutter);
+  position: absolute;
+  top: 0;
+  transform: translate(0, 0);
+  transition: all .5s;
+  width: calc(100% - (var(--gutter) * 3));
+
+  &[hidden] {
+    @media (prefers-reduced-motion) { display: none; }
+    display: block;
+    transform: translate(-100%, 0);
+  }
+}
+
 // Mobile first - vertical layout
 header {
 
@@ -51,7 +68,6 @@ header {
     position: relative;
 
     ul {
-      //padding: var(--gutter) 0;
       width: 100%;
     }
     li {
@@ -61,8 +77,6 @@ header {
       // or vertical layout
       flex-wrap: wrap;
       gap: 0 var(--gutter);
-      // margin: calc(var(--gutter) * -1) 0;
-      // padding: var(--gutter);
 
       // This ensures that there's always room for the button which toggles the
       // sub-navigation to appear on the same line on mobile
@@ -77,9 +91,7 @@ header {
       // this would have limited the layout without some tricky CSS. This maintains
       // the spirit of what I set out to do, in that the markup itself doesn't have
       // classes and this is added automatically.
-      &[data-selected="true"] {
-        background: var(--tint1);
-      }
+      &[data-selected="true"] { background: var(--tint1); }
 
     }
     // Navigation toggle buttons
