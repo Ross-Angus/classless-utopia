@@ -72,7 +72,7 @@ header nav {
 
     // This ensures that there's always room for the button which toggles the
     // sub-navigation to appear on the same line
-    a { flex-basis: calc(100% - var(--gutter)); }
+    a, strong { flex-basis: calc(100% - var(--gutter)); }
 
   }
   // Navigation toggle buttons
