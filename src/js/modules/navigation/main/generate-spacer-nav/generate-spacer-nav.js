@@ -1,3 +1,5 @@
+import highlightCurrentPage from "../highlight-current-page/highlight-current-page.js";
+
 // This generates a version of the top level navigation only which
 // is hidden visually and from the accessibility DOM. Its purpose
 // is to determine exactly when the navigation wraps and then switch
@@ -42,7 +44,10 @@ const generateSpacerNav = (ul, index) => {
     li.appendChild(cloneLink);
     hasSubNav && li.appendChild(dummyButton);
     spacerUl.appendChild(li);
+
   });
+  const navElements = spacerUl.querySelectorAll('li');
+  highlightCurrentPage(navElements, false);
   ul.insertAdjacentElement("beforebegin", spacerUl);
 };
 

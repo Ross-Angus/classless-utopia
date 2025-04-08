@@ -6,9 +6,12 @@
 // Horizontal style
 [data-layout="horizontal"] {
   @extend %main-nav-shared;
+  //margin: calc(var(--gutter) * -1) 0;
   position: relative;
 
   & > li {
+    padding: var(--gutter);
+
     // Subnav mega-menus
     & > ul {
       columns: var(--nav-columns);
@@ -47,9 +50,11 @@
   width: calc(100% - (var(--gutter) * 3));
 
   &[hidden] {
-    @media (prefers-reduced-motion) { display: none; }
     display: block;
     transform: translate(-100%, 0);
+  }
+  @media (prefers-reduced-motion) {
+    &[hidden] { display: none; }
   }
 }
 
@@ -64,7 +69,7 @@ header {
     align-items: flex-start;
     display: flex;
     justify-content: flex-end;
-    padding: var(--gutter);
+    // padding: var(--gutter);
     position: relative;
 
     ul {
@@ -139,7 +144,7 @@ header {
       &[data-js="mainnav-toggle"] {
         border-bottom: solid var(--keyline) var(--bodytext);
         border-top: solid var(--keyline) var(--bodytext);
-        margin: calc(var(--gutter) / 2) 0;
+        margin: var(--gutter);
         transition: all .5s;
 
         // Resetting ^ & v to --
