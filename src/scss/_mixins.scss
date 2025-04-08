@@ -4,4 +4,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0 calc(var(--gutter) * 2);
+  margin: 0 auto;
+  max-width: var(--content-width);
 }
