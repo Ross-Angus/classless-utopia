@@ -110,8 +110,8 @@ header nav {
   }
 
   // Second level navigation
-  ul {
-    background: var(--background);
+  ul ul {
+    background: var(--tint1);
     padding: var(--gutter);
   }
 }
