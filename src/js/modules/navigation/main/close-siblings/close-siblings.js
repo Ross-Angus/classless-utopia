@@ -19,9 +19,7 @@ const closeSiblings = btn => {
       const id = btn.getAttribute('aria-controls');
       if (!id) return;
       const subNav = document.getElementById(id);
-      if (subNav === null) return;
-      parent.removeAttribute('data-selected');
-      hideSubNavigation(btn, subNav);
+      hideSubNavigation(btn, subNav, parent);
     });
   }
 };

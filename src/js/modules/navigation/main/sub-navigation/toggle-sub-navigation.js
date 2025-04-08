@@ -9,12 +9,12 @@ const toggleSubNavigation = (btn, id) => {
   if (!subNavigation || !btn) return;
 
   const isHidden = subNavigation.hasAttribute('hidden');
+  const btnParent = btn.closest('li');
   // We need to show the sub-navigation
   if (isHidden) {
 
     closeSiblings(btn);
 
-    const btnParent = btn.closest('li');
     btnParent.setAttribute('data-selected', 'true');
 
     subNavigation.removeAttribute('hidden');
@@ -31,7 +31,7 @@ const toggleSubNavigation = (btn, id) => {
     getFocusable(subNavigation, true);
 
   } else {
-    hideSubNavigation(btn, subNavigation);
+    hideSubNavigation(btn, subNavigation, btnParent);
   }
 };
 

@@ -66,8 +66,9 @@ const chooseNavLayout = (navUl) => {
       if (!id) return;
       const btn = document.querySelector(`[aria-controls="${id}"`);
       if (btn === null) return;
+      const btnParent = btn.closest('li');
       // Only hide the sub-navigation if it's not currently set to show
-      btn.getAttribute('aria-expanded') === 'false' && hideSubNavigation(btn, child);
+      btn.getAttribute('aria-expanded') === 'false' && hideSubNavigation(btn, child, btnParent);
 
     });
   };
