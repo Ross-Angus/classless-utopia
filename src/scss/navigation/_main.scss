@@ -17,7 +17,14 @@
       position: absolute;
       right: 0;
       top: 100%;
+      transform-origin: 0 0;
+      transition: all .5s;
       z-index: 1;
+
+      &[hidden] {
+        transform: scale(1, 0);
+        display: block;
+      }
     }
   }
 }
@@ -135,6 +142,7 @@ header nav {
     ul {
       background: var(--tint1);
       padding: var(--gutter);
+      transform: scale(1, 1);
     }
   }
 }
