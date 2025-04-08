@@ -3,6 +3,8 @@ import constants from '../../../constants.js';
 // This adds in a toggle button and updates the markup of sub navigation
 const subnavSetup = (anchor, subNav, index) => {
   if (anchor === null || subNav === null) return;
+  const menuName = anchor.innerText;
+  const openString = `Open ${menuName} ${constants.SUBNAV_NAME}`;
   const triggerButton = document.createElement('button');
   const id = `subnav-${index}`;
   // Set of attributes to add to the button which toggles the visibility
@@ -11,8 +13,8 @@ const subnavSetup = (anchor, subNav, index) => {
     type: 'button',
     'aria-expanded': 'false',
     'aria-controls': id,
-    'aria-label': constants.OPEN_SUBNAV_STRING,
-    title: constants.OPEN_SUBNAV_STRING,
+    'aria-label': openString,
+    title: openString,
     'data-js': 'subnav-toggle'
   }).forEach(([key, value]) => {
     triggerButton.setAttribute(key, value);
@@ -25,7 +27,8 @@ const subnavSetup = (anchor, subNav, index) => {
 
   Object.entries({
     id: id,
-    hidden: ''
+    hidden: '',
+    'aria-label': `${menuName} ${constants.SUBNAV_NAME}`
   }).forEach(([key, value]) => {
     subNav.setAttribute(key, value);
   });
