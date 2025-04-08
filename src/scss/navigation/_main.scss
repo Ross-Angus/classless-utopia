@@ -37,119 +37,127 @@
 }
 
 // Mobile first - vertical layout
-header nav {
-  align-items: flex-start;
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
+header {
 
-  ul {
-    padding: var(--gutter) 0;
-    width: 100%;
+  & > nav {
+    background: var(--tint2);
   }
-  li {
-    align-items: center;
+
+  nav {
+    align-items: flex-start;
     display: flex;
-    // We need the first level to wrap because this determines the horizontal
-    // or vertical layout
-    flex-wrap: wrap;
-    gap: 0 var(--gutter);
-    margin: calc(var(--gutter) * -1) 0;
+    justify-content: flex-end;
     padding: var(--gutter);
-
-    // This ensures that there's always room for the button which toggles the
-    // sub-navigation to appear on the same line on mobile
-    a, strong {
-      flex-basis: calc(100% - (var(--gutter) * 2));
-    }
-    // Marking when the user has opened a sub-navigation
-    // This verges dangerously close to adding classes, but just of a different
-    // type as the `data-selected` attribute is added and removed by JavaScript
-    // and not used to identify the list item. I originally used the next-sibling
-    // selector and switched the order of `button` and `a` in the markup but
-    // this would have limited the layout without some tricky CSS. This maintains
-    // the spirit of what I set out to do, in that the markup itself doesn't have
-    // classes and this is added automatically.
-    &[data-selected="true"] {
-      background: var(--tint1);
-    }
-
-  }
-  // Navigation toggle buttons
-  // Animates between v and ^
-  button {
-    appearance: none;
-    background: transparent;
-    border: none;
-    color: inherit;
-    cursor: pointer;
-    height: var(--gutter);
-    overflow: visible;
-    padding: 0;
     position: relative;
-    width: var(--gutter);
 
-    &:before, &:after {
-      background: var(--bodytext);
-      content: "";
-      height: var(--keyline);
-      position: absolute;
-      top: calc(50% - (var(--keyline) / 2));
-      transition: all .5s;
-      width: 50%;
-    }
-
-    // \
-    &:before {
-      left: 0;
-      transform: skew(0, 30deg);
-    }
-    // /
-    &:after {
-      left: 50%;
-      transform: skew(0, -30deg);
-    }
-    &[aria-expanded="true"] {
-      // /
-      &:before { transform: skew(0, -30deg); }
-      // \
-      &:after { transform: skew(0, 30deg); }
-    }
-
-    // Burger menu
-    &[data-js="mainnav-toggle"] {
-      border-bottom: solid var(--keyline) var(--bodytext);
-      border-top: solid var(--keyline) var(--bodytext);
-      margin: calc(var(--gutter) / 2) 0;
-      transition: all .5s;
-
-      // Resetting ^ & v to --
-      &:before, &:after {
-        left: 0;
-        transform: skew(0, 0);
-        width: var(--gutter);
-      }
-
-      // ×
-      &[aria-expanded="true"]{
-        border-color: transparent;
-        &:before { transform: scale(1, 1.4) rotate(35deg); }
-        &:after { transform: scale(1, 1.4) rotate(-35deg); }
-      }
-    }
-  }
-
-  li {
-
-    [aria-expanded="true"] {
-      background: var(--tint1);
-    }
-
-    // Second level navigation
     ul {
-      background: var(--tint1);
-      padding: var(--gutter);
-      transform: scale(1, 1);
+      //padding: var(--gutter) 0;
+      width: 100%;
+    }
+    li {
+      align-items: center;
+      display: flex;
+      // We need the first level to wrap because this determines the horizontal
+      // or vertical layout
+      flex-wrap: wrap;
+      gap: 0 var(--gutter);
+      // margin: calc(var(--gutter) * -1) 0;
+      // padding: var(--gutter);
+
+      // This ensures that there's always room for the button which toggles the
+      // sub-navigation to appear on the same line on mobile
+      a, strong {
+        flex-basis: calc(100% - (var(--gutter) * 2));
+      }
+      // Marking when the user has opened a sub-navigation
+      // This verges dangerously close to adding classes, but just of a different
+      // type as the `data-selected` attribute is added and removed by JavaScript
+      // and not used to identify the list item. I originally used the next-sibling
+      // selector and switched the order of `button` and `a` in the markup but
+      // this would have limited the layout without some tricky CSS. This maintains
+      // the spirit of what I set out to do, in that the markup itself doesn't have
+      // classes and this is added automatically.
+      &[data-selected="true"] {
+        background: var(--tint1);
+      }
+
+    }
+    // Navigation toggle buttons
+    // Animates between v and ^
+    button {
+      appearance: none;
+      background: transparent;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      height: var(--gutter);
+      overflow: visible;
+      padding: 0;
+      position: relative;
+      width: var(--gutter);
+
+      &:before, &:after {
+        background: var(--bodytext);
+        content: "";
+        height: var(--keyline);
+        position: absolute;
+        top: calc(50% - (var(--keyline) / 2));
+        transition: all .5s;
+        width: 50%;
+      }
+
+      // \
+      &:before {
+        left: 0;
+        transform: skew(0, 30deg);
+      }
+      // /
+      &:after {
+        left: 50%;
+        transform: skew(0, -30deg);
+      }
+      &[aria-expanded="true"] {
+        // /
+        &:before { transform: skew(0, -30deg); }
+        // \
+        &:after { transform: skew(0, 30deg); }
+      }
+
+      // Burger menu
+      &[data-js="mainnav-toggle"] {
+        border-bottom: solid var(--keyline) var(--bodytext);
+        border-top: solid var(--keyline) var(--bodytext);
+        margin: calc(var(--gutter) / 2) 0;
+        transition: all .5s;
+
+        // Resetting ^ & v to --
+        &:before, &:after {
+          left: 0;
+          transform: skew(0, 0);
+          width: var(--gutter);
+        }
+
+        // ×
+        &[aria-expanded="true"]{
+          border-color: transparent;
+          &:before { transform: scale(1, 1.4) rotate(35deg); }
+          &:after { transform: scale(1, 1.4) rotate(-35deg); }
+        }
+      }
+    }
+
+    li {
+
+      [aria-expanded="true"] {
+        background: var(--tint1);
+      }
+
+      // Second level navigation
+      ul {
+        background: var(--tint1);
+        padding: var(--gutter);
+        transform: scale(1, 1);
+      }
     }
   }
 }

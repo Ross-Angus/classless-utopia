@@ -7,6 +7,7 @@
 header nav ul[data-js="spacer-nav"] {
   @extend %main-nav-shared;
   left: 0;
+  padding: 0 var(--gutter);
   pointer-events: none;
   position: absolute;
   visibility: hidden;
