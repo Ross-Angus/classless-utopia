@@ -39,8 +39,8 @@ const generateSpacerNav = (ul, index) => {
     const dummyButton = document.createElement('button');
     dummyButton.setAttribute('type', 'button');
 
-    li.appendChild(cloneLink);
     hasSubNav && li.appendChild(dummyButton);
+    li.appendChild(cloneLink);
     spacerUl.appendChild(li);
   });
   ul.insertAdjacentElement("beforebegin", spacerUl);

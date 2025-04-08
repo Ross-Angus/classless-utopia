@@ -8,14 +8,20 @@ const closeSiblings = btn => {
   // the markup structure is predictable)
   const navParent = btn.closest('ul');
   if (navParent !== null) {
-    const toggleButtons = navParent.querySelectorAll(':scope > li > button');
-    toggleButtons.forEach(button => {
+    const buttonParents = navParent.querySelectorAll(':scope > li');
+
+    buttonParents.forEach(parent => {
+      const btn = parent.querySelector(':scope > button');
+      // This navigation element doesn't have sub-nav. Move on.
+      if (btn === null) return;
+
       // Finding the connected navigation and checking if it exists
-      const id = button.getAttribute('aria-controls');
+      const id = btn.getAttribute('aria-controls');
       if (!id) return;
       const subNav = document.getElementById(id);
       if (subNav === null) return;
-      hideSubNavigation(button, subNav);
+      parent.removeAttribute('data-selected');
+      hideSubNavigation(btn, subNav);
     });
   }
 };

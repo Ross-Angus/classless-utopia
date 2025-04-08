@@ -14,6 +14,9 @@ const toggleSubNavigation = (btn, id) => {
 
     closeSiblings(btn);
 
+    const btnParent = btn.closest('li');
+    btnParent.setAttribute('data-selected', 'true');
+
     subNavigation.removeAttribute('hidden');
 
     Object.entries({

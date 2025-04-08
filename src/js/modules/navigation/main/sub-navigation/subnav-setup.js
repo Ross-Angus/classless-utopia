@@ -18,6 +18,9 @@ const subnavSetup = (anchor, subNav, index) => {
     triggerButton.setAttribute(key, value);
   });
 
+  // The button is added before the anchor tag in order to leverage
+  // CSS sibling selectors to highlight when a particular node is
+  // open or closed
   anchor.insertAdjacentElement("afterend", triggerButton);
 
   Object.entries({

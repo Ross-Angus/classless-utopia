@@ -29,7 +29,10 @@ header nav {
   justify-content: flex-end;
   position: relative;
 
-  ul { width: 100%; }
+  ul {
+    padding: var(--gutter) 0;
+    width: 100%;
+  }
   li {
     align-items: center;
     display: flex;
@@ -37,11 +40,24 @@ header nav {
     // or vertical layout
     flex-wrap: wrap;
     gap: 0 var(--gutter);
+    margin: calc(var(--gutter) * -1) 0;
+    padding: var(--gutter);
 
     // This ensures that there's always room for the button which toggles the
     // sub-navigation to appear on the same line on mobile
     a, strong {
       flex-basis: calc(100% - (var(--gutter) * 2));
+    }
+    // Marking when the user has opened a sub-navigation
+    // This verges dangerously close to adding classes, but just of a different
+    // type as the `data-selected` attribute is added and removed by JavaScript
+    // and not used to identify the list item. I originally used the next-sibling
+    // selector and switched the order of `button` and `a` in the markup but
+    // this would have limited the layout without some tricky CSS. This maintains
+    // the spirit of what I set out to do, in that the markup itself doesn't have
+    // classes and this is added automatically.
+    &[data-selected="true"] {
+      background: var(--tint1);
     }
 
   }
@@ -109,9 +125,16 @@ header nav {
     }
   }
 
-  // Second level navigation
-  ul ul {
-    background: var(--tint1);
-    padding: var(--gutter);
+  li {
+
+    [aria-expanded="true"] {
+      background: var(--tint1);
+    }
+
+    // Second level navigation
+    ul {
+      background: var(--tint1);
+      padding: var(--gutter);
+    }
   }
 }
