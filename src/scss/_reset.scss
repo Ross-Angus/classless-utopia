@@ -2,7 +2,8 @@ body {
   background: var(--background);
   color: var(--bodytext);
   line-height: var(--line-height);
-  margin: 0;
+  margin: 0 auto;
+  max-width: var(--content-width);
   font-family: var(--fallback-font);
   padding: var(--gutter);
 }
