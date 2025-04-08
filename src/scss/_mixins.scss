@@ -1,7 +1,7 @@
-// These three properties are shared between the main navigation
-// and the version which is generated just for spacing
+// These three properties are shared between the main horizontal
+// navigation and the version which is generated just for spacing
 %main-nav-shared {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gutter);
+  gap: 0 calc(var(--gutter) * 2);
 }

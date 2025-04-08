@@ -1,25 +1,14 @@
 @use '../_mixins';
 @use '_main-spacer.scss';
 
-// Main navigation, horizontal style
+// Stylesheet for the main navigation, which switches between horizontal
+// and vertical, depending upon if the top level needs to wrap or not
+// Horizontal style
 [data-layout="horizontal"] {
   @extend %main-nav-shared;
   position: relative;
 
   & > li {
-
-    // Button to toggle the display of the mega-menus
-    & > button {
-      // ^
-      &[aria-expanded="true"] {
-        // /
-        &:before { transform: skew(0, -30deg); }
-        // \
-        &:after { transform: skew(0, 30deg); }
-      }
-
-    }
-
     // Subnav mega-menus
     & > ul {
       columns: var(--nav-columns);
@@ -33,28 +22,27 @@
   }
 }
 
-// Navigation
+// Mobile first - vertical layout
 header nav {
   align-items: flex-start;
   display: flex;
   justify-content: flex-end;
   position: relative;
 
-  ul, li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
   ul { width: 100%; }
   li {
+    align-items: center;
     display: flex;
     // We need the first level to wrap because this determines the horizontal
     // or vertical layout
     flex-wrap: wrap;
+    gap: 0 var(--gutter);
 
     // This ensures that there's always room for the button which toggles the
-    // sub-navigation to appear on the same line
-    a, strong { flex-basis: calc(100% - var(--gutter)); }
+    // sub-navigation to appear on the same line on mobile
+    a, strong {
+      flex-basis: calc(100% - (var(--gutter) * 2));
+    }
 
   }
   // Navigation toggle buttons
