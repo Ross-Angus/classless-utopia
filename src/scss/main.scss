@@ -1,6 +1,7 @@
 @use '_reset';
 @use '_grid';
 @use '_vars';
+@use 'navigation/_all';
 @use 'navigation/_main';
 @use 'forms/_horizontal';
 // It seems the elegant @ method only works in JS

@@ -10,24 +10,6 @@
 
     // Button to toggle the display of the mega-menus
     & > button {
-      // v or ^
-      // &:before, &:after {
-      //   height: var(--keyline);
-      //   position: absolute;
-      //   top: calc(50% - (var(--keyline) / 2));
-      //   width: 50%;
-      // }
-      // \
-      // &:before {
-      //   left: 0;
-      //   transform: skew(0, 30deg);
-      // }
-      // // /
-      // &:after {
-      //   left: 50%;
-      //   transform: skew(0, -30deg);
-      // }
-
       // ^
       &[aria-expanded="true"] {
         // /
