@@ -14,6 +14,7 @@
       columns: var(--nav-columns);
       column-gap: var(--gutter);
       left: 0;
+      opacity: 1;
       position: absolute;
       right: 0;
       top: 100%;
@@ -22,8 +23,14 @@
       z-index: 1;
 
       &[hidden] {
+        opacity: 0;
         transform: scale(1, 0);
         display: block;
+      }
+
+      // See developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+      @media (prefers-reduced-motion) {
+        &[hidden] { display: none; }
       }
     }
   }
