@@ -11,7 +11,7 @@ header nav ul[data-js="spacer-nav"] {
   padding: var(--gutter) 0;
   pointer-events: none;
   position: absolute;
-  // visibility: hidden;
-  // z-index: -1;
+  visibility: hidden;
+  z-index: -1;
   li { padding: 0 var(--gutter); }
 }

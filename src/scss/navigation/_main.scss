@@ -6,7 +6,6 @@
 // Horizontal style
 [data-layout="horizontal"] {
   @extend %main-nav-shared;
-  //margin: calc(var(--gutter) * -1) 0;
   position: relative;
 
   & > li {
@@ -69,12 +68,10 @@ header {
     align-items: flex-start;
     display: flex;
     justify-content: flex-end;
-    // padding: var(--gutter);
     position: relative;
 
-    ul {
-      width: 100%;
-    }
+    ul { width: 100%; }
+
     li {
       align-items: center;
       display: flex;
@@ -83,10 +80,15 @@ header {
       flex-wrap: wrap;
       gap: 0 var(--gutter);
 
-      // This ensures that there's always room for the button which toggles the
-      // sub-navigation to appear on the same line on mobile
+      // The anchor tag and the sub-nav toggle button have a kind of media object
+      // layout but the following `ul` sub-nav is also subject to the same flexbox
+      // container. The sub-nav has a `width: 100%` declaration and the following
+      // two declarations ensure that the anchor takes up as much space as possible,
+      // while also leaving space for the toggle button. Unless the toggle button
+      // isn't there, in which case it will take up all of the space.
       a, strong {
         flex-basis: calc(100% - (var(--gutter) * 2));
+        flex-grow: 2;
       }
       // Marking when the user has opened a sub-navigation
       // This verges dangerously close to adding classes, but just of a different
