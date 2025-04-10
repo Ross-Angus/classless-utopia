@@ -1,0 +1,14 @@
+nav {
+  p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter);
+    justify-content: space-between;
+
+    a {
+      background: var(--tint1);
+      display: block;
+      padding: calc(var(--gutter) / 2) var(--gutter);
+    }
+  }
+}
