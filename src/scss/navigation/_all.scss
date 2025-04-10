@@ -1,11 +1,9 @@
 nav {
+  li {
+    position: static;
 
-  ul, ol, li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    &::before { display: none; }
   }
 
   a { text-decoration: none; }
-
 }
