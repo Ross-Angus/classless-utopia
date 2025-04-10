@@ -7,3 +7,45 @@
   margin: 0 auto;
   max-width: var(--content-width);
 }
+
+// ≡
+// This is applied to the containing element for the ::before
+// and ::after pseudo-elements
+%btn-burger {
+  border-bottom: solid var(--keyline) var(--bodytext);
+  border-top: solid var(--keyline) var(--bodytext);
+  transition: all .5s;
+}
+
+  // Burger menu, ::before & ::after pseudo elements
+  %btn-burger-pseudo {
+    left: 0;
+    transform: skew(0, 0);
+    width: var(--gutter);
+  }
+
+  // Open burger menu, ::before element
+  %btn-burger-open-before {
+    transform: scale(1, 1.4) rotate(35deg);
+  }
+
+  // Open burger menu, ::after element
+  %btn-burger-open-after {
+    transform: scale(1, 1.4) rotate(-35deg);
+  }
+
+// ^ & v - vertical chevron button ::before and ::after
+// pseudo-elements
+%btn-chevron-closed-pseudo {
+  background: var(--bodytext);
+  content: "";
+  height: var(--keyline);
+  position: absolute;
+  transition: all .5s;
+  width: calc(var(--gutter) / 2);
+}
+
+// \
+%btn-chevron-se { transform: skew(0, 30deg); }
+// /
+%btn-chevron-ne { transform: skew(0, -30deg); }

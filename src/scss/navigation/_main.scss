@@ -116,51 +116,42 @@ header {
       width: var(--gutter);
 
       &:before, &:after {
-        background: var(--bodytext);
-        content: "";
-        height: var(--keyline);
-        position: absolute;
+        @extend %btn-chevron-closed-pseudo;
         top: calc(50% - (var(--keyline) / 2));
-        transition: all .5s;
-        width: 50%;
       }
 
       // \
       &:before {
         left: 0;
-        transform: skew(0, 30deg);
+        @extend %btn-chevron-se;
       }
       // /
       &:after {
         left: 50%;
-        transform: skew(0, -30deg);
+        @extend %btn-chevron-ne;
       }
       &[aria-expanded="true"] {
         // /
-        &:before { transform: skew(0, -30deg); }
+        &:before { @extend %btn-chevron-ne; }
         // \
-        &:after { transform: skew(0, 30deg); }
+        &:after { @extend %btn-chevron-se; }
       }
 
       // Burger menu
       &[data-js="mainnav-toggle"] {
-        border-bottom: solid var(--keyline) var(--bodytext);
-        border-top: solid var(--keyline) var(--bodytext);
+        @extend %btn-burger;
         margin: var(--gutter);
-        transition: all .5s;
 
         // Resetting ^ & v to --
         &:before, &:after {
-          left: 0;
-          transform: skew(0, 0);
-          width: var(--gutter);
+          @extend %btn-burger-pseudo;
         }
 
         // ×
         &[aria-expanded="true"]{
           border-color: transparent;
-          &:before { transform: scale(1, 1.4) rotate(35deg); }
-          &:after { transform: scale(1, 1.4) rotate(-35deg); }
+          &:before { @extend %btn-burger-open-before; }
+          &:after { @extend %btn-burger-open-after; }
         }
       }
     }

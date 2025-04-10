@@ -1,0 +1,44 @@
+@use '../_mixins';
+
+details {
+  summary {
+    // To leave space for the vertical chevron
+    padding: 0 calc(var(--gutter) * 2) 0 0;
+    position: relative;
+
+    &::marker { content: none; }
+
+    // ^ or v: vertical chevron button, reusing some declarations from
+    // the navigation.
+    // As the container is an unknown size, we need to have other
+    // left and top values.
+    &::before, &::after {
+      @extend %btn-chevron-closed-pseudo;
+      content: "";
+      position: absolute;
+      top: calc(var(--gutter) / 2);
+    }
+
+    // \
+    &::before {
+      @extend %btn-chevron-se;
+      right: calc(var(--gutter) / 2);
+    }
+
+    // /
+    &:after {
+      @extend %btn-chevron-ne;
+      right: 0;
+    }
+
+  }
+
+  &[open] {
+    summary {
+      // /
+      &:before { @extend %btn-chevron-ne; }
+      // \
+      &:after { @extend %btn-chevron-se; }
+    }
+  }
+}
