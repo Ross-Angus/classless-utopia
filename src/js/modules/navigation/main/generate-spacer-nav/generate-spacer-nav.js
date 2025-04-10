@@ -1,4 +1,4 @@
-import highlightCurrentPage from "../highlight-current-page/highlight-current-page.js";
+import emboldenElement from '../../../utility/embolden-element/embolden-element.js';
 
 // This generates a version of the top level navigation only which
 // is hidden visually and from the accessibility DOM. Its purpose
@@ -46,8 +46,23 @@ const generateSpacerNav = (ul, index) => {
     spacerUl.appendChild(li);
 
   });
-  const navElements = spacerUl.querySelectorAll('li');
-  highlightCurrentPage(navElements, false);
+
+
+  // At this point, the real navigation has already been created and
+  // the current page (and top level section) has been highlighted.
+  // We need to discover what the highlighted top level section is
+  // and replicate the highlight in the spacer nav.
+  const spacerNavLinks = spacerUl.querySelectorAll('a');
+  // The highlighted top level link in the real navigation
+  const topLevelLink = ul.querySelector(':scope > li > strong a');
+  if (topLevelLink !== null) {
+    for (const link of spacerNavLinks) {
+      if (link.innerText === topLevelLink.innerText) {
+        emboldenElement(link);
+        break;
+      }
+    }
+  }
   ul.insertAdjacentElement("beforebegin", spacerUl);
 };
 

@@ -17,6 +17,8 @@ const chooseNavLayout = (navUl) => {
   if (spacerNav === null || burgerBtn === null) return;
   const wrapCount = lineNumbers(spacerNav);
 
+  console.log("wrapCount", wrapCount);
+
   // The navigation is horizontal
   if (wrapCount === 1) {
 
