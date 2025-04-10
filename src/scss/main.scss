@@ -1,10 +1,13 @@
 @use '_reset';
 @use '_grid';
 @use '_vars';
+@use 'typography/_monospaced';
+@use 'typography/_lists';
+@use 'typography/_details';
 @use 'navigation/_all';
 @use 'navigation/_main';
 @use 'navigation/_linear';
-@use 'navigation/_details';
+@use 'navigation/_expand';
 @use 'forms/_horizontal';
 // It seems the elegant @ method only works in JS
 @use '../../node_modules/highlight.js/scss/default.scss';
