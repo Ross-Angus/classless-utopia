@@ -1,7 +1,6 @@
 ## Font sizes
 
 14px is the minimum bodytext size on mobile (aim higher)
-Google and Apple specify 16px and 17px bodytext
 Figcaption 14px?
 https://typescale.com/
 

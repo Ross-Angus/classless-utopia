@@ -3,8 +3,9 @@
 body {
   background: var(--background);
   color: var(--bodytext);
-  font-family: var(--fallback-font);
+  font-family: "Source Sans 3", var(--fallback-font);
   font-size: var(--bodytext-dt-size);
+  font-weight: var(--bodytext-weight);
   line-height: var(--bodytext-dt-line-height);
   margin: 0;
   padding: 0;

@@ -8,12 +8,13 @@
     "sass-prod": "sass --no-source-map --style=compressed src/scss:dist/css",
     "serve": "browser-sync start --server \"dist\" --files \"dist\" -w \"dist\"",
     "start": "concurrently \"npm run serve\" \"npm run sass-dev\" \"npm run watch-images\" \"npm run watch-js\" \"npm run watch-html\"",
-    "prepare": "concurrently \"npm run sass-prod\" \"node tools/compress-all-images.js\" \"npx webpack --config webpack.prod.mjs\" \"npm run html-build\" \npm run copy-favicon\"",
+    "prepare": "concurrently \"npm run sass-prod\" \"node tools/compress-all-images.js\" \"npx webpack --config webpack.prod.mjs\" \"npm run html-build\" \"npm run copy-favicon\" \"npm run copy-to-dist\"",
     "watch-images": "onchange \"src/img\" -- node tools/image-compress.js {{file}} {{event}}",
     "watch-js": "onchange \"src/js\" -- npx webpack --config webpack.dev.mjs",
     "html-build": "node tools/html-update.js",
     "watch-html": "onchange \"src/views\" \"src/fragments\" -- node tools/html-update.js {{file}} {{event}}",
-    "copy-favicon": "node tools/copy-favicon.js"
+    "copy-favicon": "node tools/copy-favicon.js",
+    "copy-to-dist": "node tools/copy-to-dist.js"
   },
   "author": "Ross Angus",
   "license": "ISC",
