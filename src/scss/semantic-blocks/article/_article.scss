@@ -1,0 +1,7 @@
+// Article is one way to limit the line length of content.
+main {
+  & > article {
+    margin: 0 auto;
+    max-width: var(--content-width);
+  }
+}

@@ -8,6 +8,7 @@
 @use 'navigation/_main';
 @use 'navigation/_linear';
 @use 'navigation/_expand';
+@use 'semantic-blocks/article/_article';
 @use 'forms/_horizontal';
 // It seems the elegant @ method only works in JS
 @use '../../node_modules/highlight.js/scss/default.scss';

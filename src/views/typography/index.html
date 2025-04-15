@@ -10,7 +10,30 @@
 
   <main>
 
-    <h1>Typography</h1>
+    <article>
+      <h1>Typography</h1>
+      <p>The width of the site is determined by the <abbr title="Cascading Style Sheet">CSS</abbr> variable <var>--site-width</var>. However, this is not the ideal content width as the line length will be too long for comfortable reading.</p>
+      <p>Elements such as <code>article</code>, when used as the direct child of <code>main</code> will use the <var>--content-width</var> <abbr>CSS</abbr> variable which limits the width to a more comfortable size for reading.</p>
+
+      <pre><code>&lt;main&gt;
+  &lt;p&gt;This text will have an uncomfortably long line length.&lt;/p&gt;
+  &lt;article&gt;
+    &lt;p&gt;This text will have a more suitable long line length.&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;</code></pre>
+
+<p>It's possible to bypass this behaviour by wrapping the <code>article</code> tag inside a <code>div</code> tag:</p>
+
+<pre><code>&lt;main&gt;
+  &lt;div&gt;
+    &lt;article&gt;
+      &lt;p&gt;This paragraph will take the full site width.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/div&gt;
+&lt;/main&gt;</code></pre>
+
+      <p>This might be useful if you intend to split up the content inside the <code>article</code> using <a href="/semantic-blocks/grid/">a multi-column layout</a>. Note that the <code>article</code> should be the only tag inside the <code>div</code> tag or it will trigger another multi-column layout.</p>
+    </article>
 
   </main>
 

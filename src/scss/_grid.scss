@@ -18,7 +18,7 @@ body {
   & > main,
   & > section {
     margin: 0 auto;
-    max-width: var(--content-width);
+    max-width: var(--site-width);
     padding: var(--gutter);
   }
 }
