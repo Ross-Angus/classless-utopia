@@ -1,7 +1,3 @@
-## Notes
-
-50 - 70 characters per line of body text
-
 ## Font sizes
 
 14px is the minimum bodytext size on mobile (aim higher)

@@ -4,13 +4,16 @@
   --gutter: 1rem;
   --keyline: 2px;
   --bodytext: #111;
+  --bodytext-dt-size: 1.125rem; // 18px
+  --bodytext-mob-size: 1rem; // 16px
   --background: #eee;
-  --line-height: 1.5;
+  --bodytext-dt-line-height: 1.5;
   --nav-columns: 3;
   // Width of the `main` element
   --site-width: 80rem;
   // Sensible widest content width
   --content-width: 60rem;
+  // For width values used in media queries, see `_vars-sass.scss`
 
   // Need to look into how tints are handled in the future
   --tint1: #ddd;

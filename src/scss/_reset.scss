@@ -2,9 +2,16 @@ body {
   background: var(--background);
   color: var(--bodytext);
   font-family: var(--fallback-font);
-  line-height: var(--line-height);
+  font-size: var(--bodytext-dt-size);
+  line-height: var(--bodytext-dt-line-height);
   margin: 0;
   padding: 0;
+}
+
+@media (width <= var(--mob-width)) {
+  body {
+    font-size: var(--bodytext-mob-size);
+  }
 }
 
 *, *:before, *:after {
