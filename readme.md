@@ -1,19 +1,12 @@
 ## Font sizes
 
-14px is the minimum bodytext size on mobile (aim higher)
-Figcaption 14px?
-https://typescale.com/
-
-1.4 - 1.6 line height bodytext desktop
-
 In dark mode, bodytext needs a nudge to its font weight to remain as readable as it was in light mode. Hilariously, very bold headings should be less bold in dark mode. Design is bullshit.
 
 Use clamp() for line height and letter spacing?
-https://fonts.google.com/specimen/Rosario?stylecount=7&categoryFilters=Technology:%2FTechnology%2FVariable;Sans+Serif:%2FSans%2FHumanist
-
-How to do a lead paragraph? (`:first-of-type` inside `header` `hgroup`?)
 
 ## Headings
+
+https://typescale.com/
 
 Headings should use margin top and bottom (collapsing) so that it's possible to have different gaps above them
 
