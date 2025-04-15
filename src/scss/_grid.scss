@@ -3,7 +3,6 @@
 // Grid
 // `div`s act as row elements. In order to cancel this behaviour, nest one
 // `div` inside another.
-// @media (min-width: var(--mob-width)) {
 @media (width > v.$mob-width) {
   div {
     display: flex;

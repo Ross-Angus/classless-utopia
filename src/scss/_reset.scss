@@ -1,3 +1,5 @@
+@use 'vars-sass' as v;
+
 body {
   background: var(--background);
   color: var(--bodytext);
@@ -8,7 +10,7 @@ body {
   padding: 0;
 }
 
-@media (width <= var(--mob-width)) {
+@media (width < v.$mob-width) {
   body {
     font-size: var(--bodytext-mob-size);
   }
