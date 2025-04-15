@@ -70,7 +70,10 @@ header {
     justify-content: flex-end;
     position: relative;
 
-    ul { width: 100%; }
+    ul {
+      margin: 0;
+      width: 100%;
+    }
 
     li {
       align-items: center;
@@ -90,6 +93,12 @@ header {
         flex-basis: calc(100% - (var(--gutter) * 2));
         flex-grow: 2;
       }
+
+      strong {
+        text-decoration: underline;
+        text-underline-offset: 0.3rem;
+      }
+
       // Marking when the user has opened a sub-navigation
       // This verges dangerously close to adding classes, but just of a different
       // type as the `data-selected` attribute is added and removed by JavaScript

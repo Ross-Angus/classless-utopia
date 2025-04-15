@@ -15,9 +15,16 @@
     <p>Use of a <code>details</code> tag allows for a collapsing vertical style navigation. This might be useful for in-page navigation, for example a table of contents.</p>
 
     <pre><code>&lt;nav&gt;
-  &lt;a href="#"&gt;Loose link inside of nav element&lt;/a&gt;
-  &lt;a href="#"&gt;Another loose link&lt;/a&gt;
-  &lt;a href="#"&gt;A third example&lt;/a&gt;
+  &lt;details open&gt;
+    &lt;summary&gt;Jump to:&lt;/summary&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Loose link inside of nav element&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Aenean sed orci purus&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/details&gt;
 &lt;/nav&gt;</code></pre>
 
     <h2>Example</h2>
