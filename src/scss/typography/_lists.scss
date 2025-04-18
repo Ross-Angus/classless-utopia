@@ -72,3 +72,31 @@ ol {
     }
   }
 }
+
+// Note that patterns such as this:
+// dl
+//  dt
+//  dt
+//  dd
+// ... and:
+// dl
+//  dt
+//  dd
+//  dd
+// are legal. Definition lists can also contain multiple sets of definitions.
+// Because of this, `margin-top` is used on definition terms to establish space.
+dl {
+  margin: 0 0 var(--gutter);
+
+  dt {
+    font-weight: var(--heading-weight);
+    margin: var(--gutter) 0 0;
+
+    &:first-child, & + dt { margin: 0; }
+  }
+
+  // Indent
+  dd {
+    margin: 0 0 0 var(--gutter);
+  }
+}
