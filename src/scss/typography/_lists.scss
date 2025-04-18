@@ -6,7 +6,7 @@ ul, ol, li, dl, dt, dd {
 
 // Unordered lists
 ul {
-  li {
+  & > li {
     padding: 0 0 var(--gutter) calc(var(--gutter) * 2);
     position: relative;
 
