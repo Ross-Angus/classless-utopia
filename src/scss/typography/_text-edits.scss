@@ -4,7 +4,9 @@ ins, del {
   border-top: solid var(--keyline) var(--tint5);
   font-size: var(--smalltext-size);
   line-height: var(--smalltext-line-height);
+  // Hard-coded with alert
   max-width: 10rem;
+  padding: calc(var(--gutter) / 2) var(--gutter);
   position: relative;
   text-decoration: none;
 
@@ -19,23 +21,13 @@ ins, del {
 ins {
   clear: left;
   float: left;
-  padding: calc(var(--gutter) / 2) var(--gutter) var(--gutter) 0;
-
-  &::after {
-    left: var(--gutter);
-    right: 0;
-  }
+  padding-left: 0;
 }
 
 del {
   clear: right;
   float: right;
-  padding: calc(var(--gutter) / 2) 0 var(--gutter) var(--gutter);
-
-  &::after {
-    left: 0;
-    right: var(--gutter);
-  }
+  padding-right: 0;
 }
 
 // Where there's enough space, the `ins` and `del` elements appear
@@ -49,6 +41,7 @@ del {
         border: none;
         display: block;
         float: none;
+        max-width: auto;
         padding: calc(var(--gutter) / 2) var(--gutter);
         position: absolute;
         // This is used to line up the connecting line with the
@@ -74,9 +67,23 @@ del {
         }
       }
 
-      ins { right: 100%; }
+      ins {
+        right: 100%;
 
-      del { left: 100%; }
+        &::after {
+          left: var(--gutter);
+          right: 0;
+        }
+      }
+
+      del {
+        left: 100%;
+
+        &::after {
+          left: 0;
+          right: var(--gutter);
+        }
+      }
     }
   }
 }
