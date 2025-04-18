@@ -1,0 +1,61 @@
+main {
+  article {
+    position: relative;
+
+    ins, del {
+      //border-top: solid var(--keyline) var(--bodytext);
+      display: block;
+      font-size: var(--smalltext-size);
+      line-height: var(--smalltext-line-height);
+      padding: calc(var(--gutter) / 2) var(--gutter);
+      position: absolute;
+      text-decoration: none;
+      // This is used to line up the connecting line with the
+      // ascender of the inline box
+      transform: translate(0, calc(var(--bodytext-size) / 2.6));
+      // Desktop size: the gap between the site width and the content
+      // width
+      width: calc((var(--site-width) - var(--content-width)) / 2);
+      // The `top` value if not specified will match where the element
+      // would appear in the original text, if not removed from the
+      // document flow
+
+      // Heading
+      &::before {
+        content: attr(title);
+        display: block;
+        font-weight: var(--heading-weight);
+      }
+
+      // Connecting line
+      // This needs to be an pseudo-element rather than a border because
+      // it needs to be offset slightly and I want to share other
+      // declarations between `del` and `ins`.
+      &::after {
+        background: var(--tint5);
+        content: "";
+        height: var(--keyline);
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    ins {
+      right: 100%;
+
+      &::after {
+        left: var(--gutter);
+        right: 0;
+      }
+    }
+
+    del {
+      left: 100%;
+
+      &::after {
+        left: 0;
+        right: var(--gutter);
+      }
+    }
+  }
+}

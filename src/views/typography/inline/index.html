@@ -1,0 +1,31 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+
+<module href="src/fragments/head.html">
+  <title>Classless Utopia - Inline</title>
+</module>
+
+<body>
+  <module href="src/fragments/main-navigation.html"></module>
+
+  <main>
+
+    <article>
+      <h1>Inline text</h1>
+
+      <h2>Text edits</h2>
+      <p>Three HTML tags are related to editing of text - <code>ins</code>, <code>del</code> and <code>mark</code>. These are intended to show where a document has changed. Taking inspiration of the comments feature of modern word processors, these have been styled to sit outside the main body of the text.</p>
+      <p><ins title="This is an example title on an ins element">This is an example <code>ins</code> tag. It always appears to the left of the main article.</ins>The first of these - <code>ins</code> - is used to pull a short piece of text out of the main paragraph and attach it to the left hand margin. This is like a footnote but with less scrolling required by the user. <del title="This is an example title on a del element">This is an example <code>del</code> tag. It always appears to the right of the main article.</del>The <code>del</code> tag works exactly the same, but appears to the right of the text.</p>
+      <p>These two tags can also have what appears to be a heading at the top. This string is pulled from the <code>title</code> attribute and surfaced for the reader. Examples of both techniques can be seen in the example text below.</p>
+
+      <p><ins><code>inst</code> does not always need a <code>title</code> attribute.</ins><del>The <code>del</code> element doesn't need to have a <code>title</code> attribute either.</del>Because both the <code>del</code> and <code>ins</code> tags are removed from the document flow, care should be taken to not add too many in quick succession or they will collide and make the text illegible.</p>
+      <p>When the width of the site means there is no longer enough room for them to appear to the side of the text, they float to the right and left instead, leaving a gutter.</p>
+    </article>
+
+  </main>
+
+
+  <module href="src/fragments/footer.html"></module>
+</body>
+
+</html>
