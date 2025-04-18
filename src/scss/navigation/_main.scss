@@ -13,8 +13,11 @@
 
     // Subnav mega-menus
     & > ul {
-      columns: var(--nav-columns);
-      column-gap: var(--gutter);
+      align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: calc(var(--gutter) * 2) var(--gutter);
       left: 0;
       opacity: 1;
       position: absolute;
@@ -28,6 +31,14 @@
         opacity: 0;
         transform: scale(1, 0);
         display: block;
+      }
+
+      // The CSS variable `--nav-columns` allows us to set a global ideal for the
+      // amount of columns the navigation attempts to create on desktop. Any left
+      // over will stretch or wrap onto the next line.
+      li {
+        // This isn't exact but flexbox fudges it so it is
+        flex: 1 0 calc((100% / var(--nav-columns)) - var(--gutter));
       }
 
       // See developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
@@ -54,6 +65,11 @@
   }
   @media (prefers-reduced-motion) {
     &[hidden] { display: none; }
+  }
+
+  // Need to revisit this in the light of standard CTA buttons
+  a {
+    padding: calc(var(--gutter) / 2) var(--gutter);
   }
 }
 
@@ -82,6 +98,7 @@ header {
       // or vertical layout
       flex-wrap: wrap;
       gap: 0 var(--gutter);
+      padding: 0;
 
       // The anchor tag and the sub-nav toggle button have a kind of media object
       // layout but the following `ul` sub-nav is also subject to the same flexbox
