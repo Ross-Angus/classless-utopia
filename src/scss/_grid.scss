@@ -3,7 +3,7 @@
 // Grid
 // `div`s act as row elements. In order to cancel this behaviour, nest one
 // `div` inside another.
-@media (width < v.$content-width) {
+@media (width > v.$content-width) {
   div {
     display: flex;
     gap: var(--gutter);
