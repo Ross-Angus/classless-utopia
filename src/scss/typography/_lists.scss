@@ -41,3 +41,34 @@ ul {
     }
   }
 }
+
+// Ordered lists
+// Pinched from here:
+// https://stackoverflow.com/questions/4098195/can-ordered-list-produce-result-that-looks-like-1-1-1-2-1-3-instead-of-just-1#answer-26245056
+ol {
+  counter-reset: item;
+
+  & > li {
+    display: table;
+    counter-increment: item;
+    margin-bottom: var(--gutter);
+
+    &::before {
+      content: counters(item, ".") ". ";
+      display: table-cell;
+      padding-right: var(--gutter);
+    }
+  }
+
+  li {
+    ol {
+      margin: var(--gutter) 0 calc(var(--gutter) * -1);
+
+      & > li {
+        &::before {
+          content: counters(item, ".") " ";
+        }
+      }
+    }
+  }
+}
