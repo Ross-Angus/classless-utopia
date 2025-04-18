@@ -87,3 +87,10 @@ del {
     }
   }
 }
+
+mark {
+  background: var(--highlight);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: var(--keyline) calc(var(--gutter) / 2);
+}

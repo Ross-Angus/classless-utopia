@@ -37,6 +37,9 @@
   --tint3: #bbb;
   --tint4: #aaa;
   --tint5: #999;
+  --warning: #903;
+  --success: #093;
+  --highlight: rgb(255 255 0 / 0.5);
 }
 
 @media (width < v.$content-width) {
