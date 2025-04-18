@@ -10,16 +10,30 @@ ul {
     padding: 0 0 var(--gutter) calc(var(--gutter) * 2);
     position: relative;
 
+    // This changes the bullet to a triangle if an element inside the
+    // list item falls into focus
+    &:focus-within {
+      // ▸
+      &::before {
+        border-color: transparent;
+        border-left-color: var(--bodytext);
+        border-width: calc(var(--gutter) / 3);
+        border-left-width: calc(var(--gutter) / 2);
+        border-radius: 0;
+      }
+    }
+
+    // Default bullet is a disk
     // •
     &::before {
-      background: var(--bodytext);
+      border: solid calc(var(--gutter) / 4) var(--bodytext);
       border-radius: 50%;
       content: "";
-      height: calc(var(--gutter) / 2);
       left: var(--gutter);
       position: absolute;
       top: calc(var(--gutter) / 2);
-      width: calc(var(--gutter) / 2);
+      // Not sure about this
+      transition: border-radius 0.5s;
     }
 
     ul {
