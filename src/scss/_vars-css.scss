@@ -5,32 +5,27 @@
   --fallback-font: "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --monospaced-font: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New", monospace;
 
-  --gutter: 1rem;
+  // See _vars-sass.scss
+  // the #{} syntax is required for CSS variables as they can have almost
+  // any string value
+  --gutter: #{v.$gutter};
   --keyline: 2px;
 
   --bodytext-size: 1.125rem; // 18px
   --bodytext-weight: 420; // Not a drugs reference
   --bodytext-line-height: 1.5;
   --heading-weight: 600;
-}
-
-@media (width < v.$mob-width) {
-  :root {
-    --bodytext-line-height: 1.3;
-    --bodytext-size: 1rem; // 16px
-  }
-}
-
-:root {
   // Navigation
   --nav-columns: 3;
 
   // Widths
+  // Because these variables are used in media queries, they need to be
+  // set at the SASS level (CSS variables cannot be used to define
+  // media queries)
   // Width of the `main` element
-  --site-width: 80rem;
+  --site-width: #{v.$site-width};
   // Sensible widest content width
-  --content-width: 60rem;
-  // For width values used in media queries, see `_vars-sass.scss`
+  --content-width: #{v.$content-width};
 
   // Colours
   --bodytext: #111;
@@ -40,4 +35,11 @@
   --tint3: #bbb;
   --tint4: #aaa;
   --tint5: #999;
+}
+
+@media (width < v.$content-width) {
+  :root {
+    --bodytext-line-height: 1.3;
+    --bodytext-size: 1rem; // 16px
+  }
 }
