@@ -9,12 +9,12 @@
   <module href="src/fragments/main-navigation.html"></module>
 
   <main>
+    <article>
+      <h1>Multi-level navigation</h1>
 
-    <h1>Multi-level navigation</h1>
+      <h2>Markup</h2>
 
-    <h2>Markup</h2>
-
-    <p>To create an infinitely nested collapsing navigation tree, use the following pattern:</p>
+      <p>To create an infinitely nested collapsing navigation tree, use the following pattern:</p>
 
   <pre><code>&lt;header&gt;
   &lt;nav&gt;
@@ -28,9 +28,23 @@
   &lt;/nav&gt;
 &lt;/header&gt;</code></pre>
 
-    <p>Note that the <code>nav</code> tag is expected to be an immediate child of the <code>body</code> tag.</p>
+      <p>Note that the <code>nav</code> tag is expected to be an immediate child of the <code>header</code> tag.</p>
 
-    <h2>Example</h2>
+      <p>You can continue nesting lists as deep as you like (within reason).</p>
+
+      <p>The functionality and features of the main navigation drew inspiration from work by <a href="https://www.nngroup.com/articles/menu-design/" target="_blank" title="Previously called the Nielsen group">NN/g</a> and <a href="https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation-hybrid/" target="_blank"><abbr title="Accessible Rich Internet Applications">ARIA</abbr> Authoring Practices Guide</a>. This leads to a lot of JavaScript concerned with labelling elements correctly, reflecting the navigation state back to the user and handling keyboard navigation.</p>
+
+      <h2>Desktop</h2>
+      <p>Only the top level of navigation will display. Users will see a chevron inside a button to the right of each navigation item which has children. Clicking on the link will navigate to the page as normal. Clicking on the button will toggle the child nodes open or closed.</p>
+
+      <h2>Mobile</h2>
+      <p>The navigation will display horizontally until the top line wraps. After this point, it will switch to a hamburger menu and vertical orientation. This means that there is no breakpoint perse - this switch is determined by the content of the navigation.</p>
+
+      <h2>Accessibility</h2>
+      <p>Accessibility markup is automatically added and updated as the user interacts with the navigation.</p>
+
+      <h2>Example</h2>
+    </article>
   </main>
 
   <header>
@@ -55,19 +69,6 @@
       </ul>
     </nav>
   </header>
-
-  <section>
-
-    <p>You can continue nesting lists as deep as you like (within reason).</p>
-
-    <p>The functionality and features of the main navigation drew inspiration from work by <a href="https://www.nngroup.com/articles/menu-design/" target="_blank" title="Previously called the Nielsen group">NN/g</a> and <a href="https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation-hybrid/" target="_blank"><abbr title="Accessible Rich Internet Applications">ARIA</abbr> Authoring Practices Guide</a>. This leads to a lot of JavaScript concerned with labelling elements correctly, reflecting the navigation state back to the user and handling keyboard navigation.</p>
-
-    <p>Only the top level of navigation will display. Users will see a chevron inside a button to the right of each navigation item which has children. Clicking on the link will navigate to the page as normal. Clicking on the button will toggle the child nodes open or closed.</p>
-
-    <p>The navigation will display horizontally until the top line wraps. After this point, it will switch to a hamburger menu and vertical orientation. This means that there is no breakpoint perse - this switch is determined by the content of the navigation.</p>
-
-    <p>Accessibility markup is automatically added and updated as the user interacts with the navigation.</p>
-  </section>
 
   <module href="src/fragments/footer.html"></module>
 </body>

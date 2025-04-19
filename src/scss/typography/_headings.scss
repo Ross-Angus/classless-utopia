@@ -3,12 +3,16 @@ h1, h2, h3, h4, h5, h6 {
   margin: 1.5em 0 0;
 }
 
+// This is intended for the main content area but this pattern
+// could also hit content in an `aside`.
 h1, h2 {
-  // Lead paragraph - size echoes h5
-  & + p {
-    line-height: calc(var(--bodytext-line-height) - 0.1);
-    font-size: 1.4rem;
-    font-weight: 300;
+  &:first-child {
+    // Lead paragraph - size echoes h5
+    & + p {
+      line-height: calc(var(--bodytext-line-height) - 0.1);
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
   }
 }
 
