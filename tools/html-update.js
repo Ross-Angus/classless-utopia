@@ -6,6 +6,7 @@ import generateAllHTML from "./generate-all-html.js";
 // Destructuring the Array from Node which includes data we need
 const [node, thisFile, srcPath, fileEvent] = argv;
 
+
 // If this script is called with no arguments, rebuild all HTML files
 typeof srcPath === "undefined" && typeof fileEvent === "undefined" && generateAllHTML();
 
