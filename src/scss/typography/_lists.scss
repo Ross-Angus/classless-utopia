@@ -37,8 +37,13 @@ ul {
     }
 
     ul {
-      margin: var(--gutter) 0 calc(var(--gutter) * -1);
     }
+  }
+}
+
+li {
+  ul, ol {
+    margin: var(--gutter) 0 calc(var(--gutter) * -1);
   }
 }
 
@@ -62,8 +67,6 @@ ol {
 
   li {
     ol {
-      margin: var(--gutter) 0 calc(var(--gutter) * -1);
-
       & > li {
         &::before {
           content: counters(item, ".") " ";

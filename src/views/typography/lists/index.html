@@ -9,28 +9,35 @@
   <module href="src/fragments/main-navigation.html"></module>
 
   <main>
-
-    <h1>Lists</h1>
-    <h2>Mixed lists</h2>
-    <p>Ordered and unordered lists can be infinitely nested and may contain other inline elements.</p>
-    <p>Content before the list</p>
-    <ol>
-      <module href="src/fragments/list-items.html">
-        <ul>
-          <module href="src/fragments/list-items.html">
-            <ol>
-              <module href="src/fragments/list-items.html">
-                <ul>
-                  <module href="src/fragments/list-items.html"></module>
-                </ul>
-              </module>
-            </ol>
-          </module>
-        </ul>
-      </module>
-    </ol>
-    <p>Content after the list</p>
-
+    <nav aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/typography/">Typography</a></li>
+        <li><em title="You are here">Lists</em></li>
+      </ol>
+    </nav>
+    <article>
+      <h1>Lists</h1>
+      <h2>Mixed lists</h2>
+      <p>Ordered and unordered lists can be infinitely nested and may contain other inline elements.</p>
+      <p>Content before the list</p>
+      <ol>
+        <module href="src/fragments/list-items.html">
+          <ul>
+            <module href="src/fragments/list-items.html">
+              <ol>
+                <module href="src/fragments/list-items.html">
+                  <ul>
+                    <module href="src/fragments/list-items.html"></module>
+                  </ul>
+                </module>
+              </ol>
+            </module>
+          </ul>
+        </module>
+      </ol>
+      <p>Content after the list</p>
+    </article>
   </main>
 
 
