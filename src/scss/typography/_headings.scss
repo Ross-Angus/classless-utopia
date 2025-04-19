@@ -7,6 +7,8 @@ h1, h2, h3, h4, h5, h6 {
 // could also hit content in an `aside`.
 h1, h2 {
   &:first-child {
+    margin: 0;
+
     // Lead paragraph - size echoes h5
     & + p {
       line-height: calc(var(--bodytext-line-height) - 0.1);

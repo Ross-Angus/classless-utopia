@@ -1,0 +1,38 @@
+nav {
+  ol {
+    li {
+      display: inline;
+
+      &::after {
+        content: "»";
+        margin: 0 var(--gutter) 0 0;
+      }
+
+      &:last-child::after {
+        content: "";
+        margin: 0;
+      }
+    }
+
+    a {
+      display: inline-block;
+      margin: 0 var(--gutter) 0 0;
+    }
+
+    // You are here
+    em {
+      font-style: normal;
+      font-weight: var(--heading-weight);
+    }
+  }
+}
+
+// If a crumb trail is a sibling to an `article`, it should match its width
+main {
+  & > nav {
+    ol {
+      margin: 0 auto;
+      max-width: var(--content-width);
+    }
+  }
+}

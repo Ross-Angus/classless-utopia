@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+
+<module href="src/fragments/head.html">
+  <title>Classless Utopia - Breadcrumb</title>
+</module>
+
+<body>
+  <module href="src/fragments/main-navigation.html"></module>
+
+  <main>
+    <nav aria-label="Crumb trail">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/navigation/">Navigation</a></li>
+        <li><em title="You are here">Breadcrumb</em></li>
+      </ol>
+    </nav>
+    <article>
+      <h1>Breadcrumb</h1>
+      <p>Breadcrumb or crumb trails are used to show the hierarchy of the site, reflecting the vertical depth of the navigation tree.</p>
+      <h2>Markup</h2>
+      <pre><code>&lt;nav aria-label="Crumb trail"&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Top level section&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Sub-level section&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;em title="You are here"&gt;The current page&lt;/em&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+
+      <h2>Accessibility</h2>
+      <p>The functionality and features of the breadcrumb drew inspiration from work by <a href="https://www.nngroup.com/articles/breadcrumbs/" target="_blank" title="Previously called the Nielsen group">NN/g</a> and <a href="https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/examples/breadcrumb/" target="_blank"><abbr title="Accessible Rich Internet Applications">ARIA</abbr> Authoring Practices Guide</a>. However, the NN/g article suggests avoiding duplicating the <em>home</em> link on both the main navigation and the breadcrumb. Later, it suggests hiding long breadcrumbs from mobile. This was not implemented.</p>
+      <p>The <code>aria-label</code> attribute is used to label the crumb trail. This was not used as a <abbr title="Cascading Style Sheet">CSS</abbr> selector.</p>
+    </article>
+  </main>
+
+  <module href="src/fragments/footer.html"></module>
+</body>
+
+</html>

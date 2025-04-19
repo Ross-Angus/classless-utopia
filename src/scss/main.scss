@@ -11,6 +11,7 @@
 @use 'navigation/_main';
 @use 'navigation/_linear';
 @use 'navigation/_expand';
+@use 'navigation/_breadcrumb';
 @use 'semantic-blocks/article/_article';
 @use 'forms/_horizontal';
 // It seems the elegant @ method only works in JS
