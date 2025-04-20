@@ -1,0 +1,5 @@
+button, a:only-child {
+  border-radius: 1rem;
+  border: solid var(--keyline) red;
+  padding: calc(var(--gutter) / 2) var(--gutter);
+}

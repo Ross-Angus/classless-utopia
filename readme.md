@@ -85,3 +85,5 @@ Look into the disaster of desktop mega menus - `:scope > li` forms the columns i
 
 ## Other
 Is there anything to be done with width fit content?
+
+https://www.w3.org/TR/css-pseudo-4/#selectordef-target-text

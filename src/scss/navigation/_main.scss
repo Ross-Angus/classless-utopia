@@ -127,17 +127,10 @@ header {
       &[data-selected="true"] { background: var(--tint1); }
 
     }
-    // Navigation toggle buttons
+    // Navigation toggle buttons - inherits some styles from /scss/forms/forms-reset.scss
     // Animates between v and ^
     button {
-      appearance: none;
-      background: transparent;
-      border: none;
-      color: inherit;
-      cursor: pointer;
       height: var(--gutter);
-      overflow: visible;
-      padding: 0;
       position: relative;
       width: var(--gutter);
 
