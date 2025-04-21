@@ -19,28 +19,45 @@
     </nav>
     <article>
       <h1>Call to action</h1>
-      <p>Ut ullamcorper egestas consequat. Aliquam at lectus in augue pulvinar luctus. Nulla venenatis finibus euismod.</p>
-      <p>Donec et elit nibh. Aliquam vitae lorem at nunc hendrerit tincidunt. Praesent ac ultrices urna, ultricies mollis metus. Fusce odio augue, placerat quis nunc vitae, pretium cursus quam. Aenean vulputate fermentum ex, eu bibendum ipsum vestibulum varius. Fusce id urna in odio porta molestie eget consectetur massa.</p>
-      <footer>
-        <p><a href="/" rel="related">Call to action</a> <a href="/" rel="related" data-js="fresh">Fresh link</a></p>
-        <p>
-          <a href="/" rel="first">First link</a>
-          <a href="/" rel="start">Start link</a>
-          <a href="/" rel="prev">Previous link</a>
-          <a href="/" rel="next">Next link</a>
-          <a href="/" rel="last">Last link</a>
-        </p>
-        <p>
-          <a href="/" rel="first" data-js="fresh">First link</a>
-          <a href="/" rel="start" data-js="fresh">Start link</a>
-          <a href="/" rel="prev" data-js="fresh">Previous link</a>
-          <a href="/" rel="next" data-js="fresh">Next link</a>
-          <a href="/" rel="last" data-js="fresh">Last link</a>
-        </p>
-        <p><a href="/" rel="help">Help link</a> <a href="/" rel="help" data-js="fresh">Fresh help</a></p>
-      </footer>
+      <p>Call-to-action styles need to be flexible to allow them to be added almost anywhere in a document. Because of this requirement, the <code>rel</code> attribute was used to identify them.</p>
+      <p>In order to limit <abbr title="Cascading Style Sheets">CSS</abbr> resets, these styles have been scoped to children of the <code>main</code> element.</p>
+      <p>The <code>rel</code> attribute has specific semantic meaning which are occasionally updated. For example, <a href="https://www.iana.org/assignments/link-relations/link-relations.xhtml" target="_blank">the Internet Assigned Numbers Authority maintains a list of current valid strings</a>. The list is long but only a few examples could be reused here.</p>
+
+      <h2>Default state</h2>
+      <p>Adding a <code>rel</code> attribute to an anchor tag will generate a default chevron to the right of the link text and invoke the button styling. However, it's recommended that the value of the <code>rel</code> attribute be set to <var>related</var> instead of being left empty. This will result in the styles below:</p>
+      <p><a href="/" rel="related">Call to action</a> <a href="/" rel="related" data-js="fresh">Fresh link</a></p>
+
+      <h2>Pagination examples</h2>
+      <p>There are a number of <code>rel</code> values which fit well into a pagination group. These are <var>start</var>, <var>first</var>, <var>prev</var> (or <var>previous</var>, if you're not into the whole brevity thing), <var>next</var> and <var>last</var>. You can see examples of these below:</p>
+      <h3>Visited links</h3>
+      <p>
+        <a href="/" rel="start">Start</a>
+        <a href="/" rel="first">First</a>
+        <a href="/" rel="prev">Prev</a>
+        <a href="/" rel="previous">Previous</a>
+        <a href="/" rel="next">Next</a>
+        <a href="/" rel="last">Last</a>
+      </p>
+
+      <h3>Fresh links</h3>
+      <p>
+        <a href="/" rel="start" data-js="fresh">Start</a>
+        <a href="/" rel="first" data-js="fresh">First</a>
+        <a href="/" rel="prev" data-js="fresh">Prev</a>
+        <a href="/" rel="previous" data-js="fresh">Previous</a>
+        <a href="/" rel="next" data-js="fresh">Next</a>
+        <a href="/" rel="last" data-js="fresh">Last</a>
+      </p>
+
+      <p>Please see <a href="/navigation/pagination/">the pagination page</a> for a more comprehensive view of this.</p>
+
+      <h2>Help links</h2>
+      <p>Links to help pages can be identified with a <code>rel</code> attribute with a value of <var>help</var>.</p>
+      <p><a href="/" rel="help">Help link</a> <a href="/" rel="help" data-js="fresh">Fresh help</a></p>
+
+      <h2>Buttons</h2>
+      <p>Normal buttons inside of <code>main</code> look like this:</p>
       <p><button type="button">Button</button></p>
-      <p>Interdum et malesuada fames <em>ac ante ipsum primis</em> in faucibus.</p>
     </article>
 
   </main>

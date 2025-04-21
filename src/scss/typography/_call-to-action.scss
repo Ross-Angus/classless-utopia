@@ -97,20 +97,34 @@ main {
       }
     }
 
-    // First or start links - good for pagination
-    &[rel="first"], &[rel="start"] {
-      // |
+    // Combining rules to create |
+    &[rel="first"]::after, &[rel="start"]::after, &[rel="last"]::before {
+      display: block;
       // This needs to roughly match the size of < and > which are
       // rotated squares so trigonometry would be required for
       // perfect accurate height
+      height: calc(var(--bodytext-size) * 0.75);
+      margin: 0;
+      transform: none;
+      width: auto;
+    }
+
+    // First or start links - good for pagination
+    &[rel="first"], &[rel="start"] {
+      // |
       &::after {
         border-top: none;
-        display: block;
-        height: calc(var(--bodytext-size) * 0.75);
-        margin: 0;
         order: -1;
-        transform: none;
-        width: auto;
+      }
+    }
+
+    // Last links
+    &[rel="last"] {
+      // |
+      &::before {
+        border-left: solid var(--keyline) var(--bodytext);
+        border-color: inherit;
+        order: 9;
       }
     }
   }
