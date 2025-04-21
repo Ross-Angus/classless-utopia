@@ -38,6 +38,10 @@ Ratio of font size of quote to font size of citation should be 1.75:1
 
 Vertical lines are implicit from the alignment of text. Use horizontal lines only
 
+## Pagination
+
+Using `rel` to mark `first`, `prev`, `next` and `last` in a series of ctas (`start`?)
+
 ## Call to action
 
 If an anchor is the only child of a paragraph, it's a call-to-action

@@ -1,5 +1,102 @@
-button, a:only-child {
-  border-radius: 1rem;
-  border: solid var(--keyline) red;
-  padding: calc(var(--gutter) / 2) var(--gutter);
+// To make an anchor tag into a call-to-action, it needs a `rel` attribute.
+// This can take a lot of different values but the normal one is `rel="related"`
+// This is poorly explained here:
+
+// https://www.rfc-editor.org/rfc/rfc4287.html
+
+// 'The value "related" signifies that the IRI in the value of the
+// href attribute identifies a resource related to the resource
+// described by the containing element.  For example, the feed for a
+// site that discusses the performance of the search engine at
+// "http://search.example.com" might contain, as a child of
+// atom:feed'
+
+// While this approach could justifiably be criticised as simply a class by
+// another name, the `rel` attribute does have semantic meaning whereas
+// `class` does not. Despite the indication above that `rel="related"` should
+// only apply to `link` elements, using it on an anchor tag passes validation.
+main {
+  button, a[rel] {
+    background: var(--tint2);
+    border-radius: calc(var(--gutter) * 2);
+    border: solid var(--keyline) var(--bodytext);
+    display: inline-block;
+    font-weight: var(--heading-weight);
+    padding: calc(var(--gutter) / 2) var(--gutter);
+
+    &::before, &::after {
+      content: "";
+      height: 1ch;
+      transform: rotate(45deg) translate(-0.1rem, 0);
+      width: 1ch;
+    }
+
+    // Default call-to-action buttons have a right facing chevron
+    // >
+    &::after {
+      border-right: solid var(--keyline) var(--bodytext);
+      border-top: solid var(--keyline) var(--bodytext);
+      display: inline-block;
+      margin: 0 0 0 calc(var(--gutter) / 2);
+    }
+
+    // Back buttons have a left facing chevron
+    // <
+    &[rel="prev"], &[rel="previous"] {
+      &::before {
+        border-bottom: solid var(--keyline) var(--bodytext);
+        border-left: solid var(--keyline) var(--bodytext);
+        display: inline-block;
+        margin: 0 calc(var(--gutter) / 2) 0 0;
+      }
+
+      &::after { display: none; }
+    }
+
+    // Help link
+    // https://html.spec.whatwg.org/multipage/links.html#link-type-help
+    &[rel="help"] {
+      &::after {
+        background: var(--bodytext);
+        border: none;
+        border-radius: 50%;
+        color: var(--background);
+        content: "?";
+        height: 3ch;
+        line-height: 3ch;
+        text-align: center;
+        transform: none;
+        width: 3ch;
+      }
+
+      &:visited::after {
+        background: rgb(var(--link-visited-text));
+      }
+    }
+
+    &:hover, &:focus {
+      outline: solid var(--keyline) var(--bodytext);
+      outline-offset: var(--keyline);
+    }
+
+    // Red-shifted and blurred
+    &:active {
+      filter: hue-rotate(70deg) blur(0.05rem);
+    }
+  }
+
+  a[rel] {
+    background: rgb(var(--link-text) / 20%);
+    border-color: rgb(var(--link-text));
+    color: rgb(var(--link-text));
+    text-decoration: none;
+    transition: filter 0.5s;
+
+    // See https://developer.mozilla.org/en-US/docs/Web/CSS/:visited
+    &:visited {
+      background: rgb(var(--link-visited-text) / 20%);
+      border-color: rgb(var(--link-visited-text));
+      color: rgb(var(--link-visited-text));
+    }
+  }
 }
