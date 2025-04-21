@@ -17,18 +17,33 @@
 // only apply to `link` elements, using it on an anchor tag passes validation.
 main {
   button, a[rel] {
+    // This means that text which wraps inside a CTA won't look good
+    align-items: center;
     background: var(--tint2);
     border-radius: calc(var(--gutter) * 2);
     border: solid var(--keyline) var(--bodytext);
-    display: inline-block;
+    display: inline-flex;
     font-weight: var(--heading-weight);
     padding: calc(var(--gutter) / 2) var(--gutter);
+    width: fit-content;
 
     &::before, &::after {
       content: "";
       height: 1ch;
-      transform: rotate(45deg) translate(-0.1rem, 0);
+      transform: rotate(45deg);
       width: 1ch;
+    }
+
+    &::before { display: none; }
+
+    &:hover, &:focus {
+      outline: solid var(--keyline) var(--bodytext);
+      outline-offset: var(--keyline);
+    }
+
+    // Red-shifted and blurred
+    &:active {
+      filter: hue-rotate(70deg) blur(0.05rem);
     }
 
     // Default call-to-action buttons have a right facing chevron
@@ -36,16 +51,20 @@ main {
     &::after {
       border-right: solid var(--keyline) var(--bodytext);
       border-top: solid var(--keyline) var(--bodytext);
+      border-right-color: inherit;
+      border-top-color: inherit;
       display: inline-block;
       margin: 0 0 0 calc(var(--gutter) / 2);
     }
 
     // Back buttons have a left facing chevron
     // <
-    &[rel="prev"], &[rel="previous"] {
+    &[rel="prev"], &[rel="previous"], &[rel="first"], &[rel="start"] {
       &::before {
         border-bottom: solid var(--keyline) var(--bodytext);
         border-left: solid var(--keyline) var(--bodytext);
+        border-bottom-color: inherit;
+        border-left-color: inherit;
         display: inline-block;
         margin: 0 calc(var(--gutter) / 2) 0 0;
       }
@@ -53,7 +72,7 @@ main {
       &::after { display: none; }
     }
 
-    // Help link
+    // Help link (?)
     // https://html.spec.whatwg.org/multipage/links.html#link-type-help
     &[rel="help"] {
       &::after {
@@ -69,19 +88,30 @@ main {
         width: 3ch;
       }
 
+      &:link::after {
+        background: rgb(var(--link-text));
+      }
+
       &:visited::after {
         background: rgb(var(--link-visited-text));
       }
     }
 
-    &:hover, &:focus {
-      outline: solid var(--keyline) var(--bodytext);
-      outline-offset: var(--keyline);
-    }
-
-    // Red-shifted and blurred
-    &:active {
-      filter: hue-rotate(70deg) blur(0.05rem);
+    // First or start links - good for pagination
+    &[rel="first"], &[rel="start"] {
+      // |
+      // This needs to roughly match the size of < and > which are
+      // rotated squares so trigonometry would be required for
+      // perfect accurate height
+      &::after {
+        border-top: none;
+        display: block;
+        height: calc(var(--bodytext-size) * 0.75);
+        margin: 0;
+        order: -1;
+        transform: none;
+        width: auto;
+      }
     }
   }
 
@@ -92,11 +122,19 @@ main {
     text-decoration: none;
     transition: filter 0.5s;
 
+    &::before, &::after {
+      border-color: rgb(var(--link-text));
+    }
+
     // See https://developer.mozilla.org/en-US/docs/Web/CSS/:visited
     &:visited {
       background: rgb(var(--link-visited-text) / 20%);
       border-color: rgb(var(--link-visited-text));
       color: rgb(var(--link-visited-text));
+
+      &::before, &::after {
+        border-color: rgb(var(--link-visited-text));
+      }
     }
   }
 }

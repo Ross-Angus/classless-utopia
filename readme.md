@@ -42,6 +42,8 @@ Vertical lines are implicit from the alignment of text. Use horizontal lines onl
 
 Using `rel` to mark `first`, `prev`, `next` and `last` in a series of ctas (`start`?)
 
+Pagination should be inside `nav` so the [1] [2] [3] buttons don't have chevrons
+
 ## Call to action
 
 If an anchor is the only child of a paragraph, it's a call-to-action
