@@ -15,6 +15,7 @@
 @use 'navigation/_linear';
 @use 'navigation/_expand';
 @use 'navigation/_breadcrumb';
+@use 'navigation/_buttons';
 @use 'semantic-blocks/article/_article';
 // It seems the elegant @ method only works in JS
 @use '../../node_modules/highlight.js/scss/default.scss';
