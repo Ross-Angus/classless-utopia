@@ -26,6 +26,7 @@ main {
     font-weight: var(--heading-weight);
     line-height: 2.5; // ~ 49px high
     padding: 0 var(--gutter);
+    vertical-align: middle;
     width: fit-content;
 
     &::before, &::after {
@@ -71,6 +72,24 @@ main {
       }
 
       &::after { display: none; }
+    }
+
+    // The difference between `prev` and `previous` is that `previous`
+    // has a backward facing arrow (like a back button) and `prev`
+    // only has a chevron
+    // --
+    &[rel="previous"] {
+      &::before { order: -2; }
+
+      &::after {
+        border-right: none;
+        display: block;
+        height: auto;
+        order: -1;
+        margin: 0 calc(var(--gutter) / 2) 0 calc(var(--gutter) * -1);
+        transform: none;
+        width: var(--gutter);
+      }
     }
 
     // Help link (?)
