@@ -68,12 +68,12 @@
   }
 
   // Need to revisit this in the light of standard CTA buttons
-  a {
+  a, strong {
     padding: calc(var(--gutter) / 2) var(--gutter);
   }
+  strong a { padding: 0; }
 }
 
-// Mobile first - vertical layout
 header {
 
   & > nav {
@@ -85,6 +85,7 @@ header {
     display: flex;
     justify-content: flex-end;
     position: relative;
+    z-index: 9;
 
     ul {
       margin: 0;
@@ -107,13 +108,9 @@ header {
       // while also leaving space for the toggle button. Unless the toggle button
       // isn't there, in which case it will take up all of the space.
       a, strong {
-        flex-basis: calc(100% - (var(--gutter) * 2));
+        // Need to revisit this when the new button size is known
+        flex-basis: calc(100% - (var(--gutter) * 10));
         flex-grow: 2;
-      }
-
-      strong {
-        text-decoration: underline;
-        text-underline-offset: 0.3rem;
       }
 
       // Marking when the user has opened a sub-navigation
@@ -127,12 +124,14 @@ header {
       &[data-selected="true"] { background: var(--tint1); }
 
     }
+
     // Navigation toggle buttons - inherits some styles from /scss/forms/forms-reset.scss
+    // This mimics the size of small call-to-action buttons, but doesn't share styles
     // Animates between v and ^
     button {
-      height: var(--gutter);
+      height: 1.75rem;
       position: relative;
-      width: var(--gutter);
+      width: 1.75rem;
 
       &:before, &:after {
         @extend %btn-chevron-closed-pseudo;
@@ -141,7 +140,7 @@ header {
 
       // \
       &:before {
-        left: 0;
+        right: 50%;
         @extend %btn-chevron-se;
       }
       // /
@@ -162,7 +161,7 @@ header {
         margin: var(--gutter);
 
         // Resetting ^ & v to --
-        &:before, &:after {
+        &::before, &::after {
           @extend %btn-burger-pseudo;
         }
 
@@ -172,6 +171,13 @@ header {
           &:before { @extend %btn-burger-open-before; }
           &:after { @extend %btn-burger-open-after; }
         }
+      }
+    }
+
+    ul {
+      button {
+        border: solid var(--keyline) var(--bodytext);
+        border-radius: 50%;
       }
     }
 

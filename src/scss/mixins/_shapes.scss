@@ -10,8 +10,9 @@
   // Burger menu, ::before & ::after pseudo elements
   %btn-burger-pseudo {
     left: 0;
+    right: 0;
     transform: skew(0, 0);
-    width: var(--gutter);
+    width: auto;
   }
 
   // Open burger menu, ::before element

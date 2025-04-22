@@ -17,7 +17,6 @@
 // only apply to `link` elements, using it on an anchor tag passes validation.
 main {
   button, a[rel] {
-    // This means that text which wraps inside a CTA won't look good
     align-items: center;
     background: var(--tint2);
     border-radius: calc(var(--gutter) * 2);
