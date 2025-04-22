@@ -17,12 +17,6 @@ Line spacing for headings is between 1.1 and 1.4
 
 All caps headings require wider letter spacing.
 
-## Lists
-
-Animate bullets between • and ‣ when `focus-within`
-
-`ol` should use 1.1, 1.2 style bullets, with a flexbox layout to resize elegantly when the number gets big
-
 ## Blockquotes
 
 Not bold text
@@ -93,3 +87,5 @@ Look into the disaster of desktop mega menus - `:scope > li` forms the columns i
 Is there anything to be done with width fit content?
 
 https://www.w3.org/TR/css-pseudo-4/#selectordef-target-text
+
+Click outside of main nav should close nav (close all nav?)

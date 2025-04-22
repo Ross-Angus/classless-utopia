@@ -24,7 +24,8 @@ main {
     border: solid var(--keyline) var(--bodytext);
     display: inline-flex;
     font-weight: var(--heading-weight);
-    padding: calc(var(--gutter) / 2) var(--gutter);
+    line-height: 2.5; // ~ 49px high
+    padding: 0 var(--gutter);
     width: fit-content;
 
     &::before, &::after {
