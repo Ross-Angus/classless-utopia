@@ -4,5 +4,5 @@ label {
   align-items: flex-start;
   display: flex;
   gap: var(--gutter);
-  input { flex-grow: 2; }
+  input:not([type="radio"], [type="checkbox"]) { flex-grow: 2; }
 }
