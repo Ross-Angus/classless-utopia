@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+
+<module href="src/fragments/head.html">
+  <title>Classless Utopia - Horizontal layout</title>
+</module>
+
+<body>
+  <module href="src/fragments/main-navigation.html"></module>
+
+  <main>
+    <nav aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/forms/">Forms</a></li>
+        <li><em title="You are here">Horizontal layout</em></li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1>Horizontal layout</h1>
+      <p>Placing form elements inside a paragraph tag as immediate child of a <code>fieldset</code> or <code>form</code> element allows them to take a horizontal layout. For example:</p>
+
+      <pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;
+    &lt;label for="search"&gt;Search&lt;/label&gt;
+  &lt;/legend&gt;
+  &lt;p&gt;
+    &lt;input name="q" id="search" type="search"&gt;
+    &lt;button&gt;Search&lt;/button&gt;
+  &lt;/p&gt;
+&lt;/fieldset&gt;</code></pre>
+
+      <p>In the above example, the <code>input</code> and <code>button</code> tags are in a horizontal flexbox layout with the <code>input</code> element taking up the remaining space, after the button width has been calculated. This can work in a similar way to media object.</p>
+
+      <fieldset>
+        <legend>
+          <label for="type-search-button">Type <code>search</code> (button submit)</label>
+        </legend>
+        <p>
+          <input name="type-search-button" id="type-search-button" type="search">
+          <button>Search</button>
+        </p>
+      </fieldset>
+
+      <p>In the following example, this layout does not work as well because both elements are <code>input</code>:</p>
+
+      <fieldset>
+        <legend><label for="type-search-input">Type <code>search</code> (input submit)</label></legend>
+        <p>
+          <input name="type-search-input" id="type-search-input" type="search"><input type="submit" value="Search">
+        </p>
+      </fieldset>
+
+    </article>
+  </main>
+
+  <module href="src/fragments/footer.html"></module>
+</body>
+
+</html>

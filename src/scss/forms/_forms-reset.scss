@@ -1,8 +1,10 @@
 @use '../mixins/cta-input';
 @use '../mixins/cta-style';
+@use './horizontal';
 @use './search';
 @use './select';
 @use './textarea';
+@use './fieldset';
 
 input, select, button, textarea, label {
   appearance: none;
@@ -41,6 +43,5 @@ main {
       display: block;
       width: 100%;
     }
-
   }
 }
