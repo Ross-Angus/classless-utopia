@@ -18,9 +18,29 @@
 
     <article>
       <h1>Forms</h1>
-      <p>Single column layout</p>
+      <p>Vertical layouts of form fields in a single column can be achieved with the following markup:</p>
+
+      <pre><code>&lt;form method="get" action="#"&gt;
+  &lt;span&gt;
+    &lt;p&gt;
+      &lt;label for="name"&gt;What is your first name?&lt;/label&gt;
+      &lt;input name="first-name" id="name"&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;button&gt;Submit&lt;/button&gt;
+    &lt;/p&gt;
+  &lt;/span&gt;
+&lt;/form&gt;</code></pre>
+
+      <p>Because a <a href="/forms/horizontal/">horizontal layout</a> automatically occurs when a paragraph is the immediate child of either a <code>form</code> or a <code>fieldset</code> element, a <code>span</code> tag is used as a buffer to break this behaviour.</p>
+
+      <p>Avoid using a <code>div</code> tag instead as this will trigger <a href="/semantic-blocks/grid/">a multi-column layout</a>.</p>
+
+      <h2>Other input tags in this layout</h2>
       <form method="get" action="#">
-        <module href="src/fragments/form-elements-linear.html"></module>
+        <span>
+          <module href="src/fragments/form-elements-linear.html"></module>
+        </span>
       </form>
     </article>
   </main>

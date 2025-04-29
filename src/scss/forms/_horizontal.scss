@@ -1,40 +1,9 @@
-// This was a plan to use a layout such as this:
-// <label>
-//  Form control name
-//  <input name="my-name">
-// </label>
-// ... and then have a media object layout so that
-// the form control expanded to fill the space left
-// by the text. However, this layout only worked if
-// no other tags were inside the `label` apart from
-// `input`. This is an unrealistic expectation
-// label {
-//   align-items: flex-start;
-//   display: flex;
-
-//   input {
-//     &:not([type="radio"], [type="checkbox"]) {
-//       flex-grow: 2;
-//     }
-
-//     &:first-child {
-//       margin-right: var(--gutter);
-//     }
-
-//     &:last-child {
-//       margin-left: var(--gutter);
-//     }
-//   }
-// }
-
 form, fieldset {
   & > p {
     align-items: flex-start;
     display: flex;
 
     label {
-      // flex-basis: content;
-
       &:first-child {
         margin-right: var(--gutter);
       }
