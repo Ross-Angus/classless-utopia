@@ -1,0 +1,9 @@
+%cta-style {
+  background: var(--tint2);
+  font-weight: var(--heading-weight);
+}
+
+%cta-focus {
+  outline: solid var(--keyline) var(--bodytext);
+  outline-offset: var(--keyline);
+}

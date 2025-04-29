@@ -1,0 +1,14 @@
+// This makes search and input or search and button pairings
+// pill shaped. Ideally there should be no whitespace between them.
+input {
+  &[type="search"] {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+
+    + input, + button {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      margin-left: calc(var(--keyline) * -1);
+    }
+  }
+}

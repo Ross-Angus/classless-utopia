@@ -1,0 +1,32 @@
+main {
+  select {
+    border-radius: 0;
+    // v
+    background: transparent var(--chev-s);
+    background-position: calc(100% - var(--gutter)) var(--gutter);
+    background-repeat: no-repeat;
+    background-size: 1.2rem;
+
+    &:focus {
+      // ^
+      background-image: var(--chev-n);
+    }
+
+    &[size] {
+      background: transparent;
+    }
+
+    &[size="1"] {
+      background: transparent var(--chev-s);
+    }
+  }
+
+  option {
+    background: transparent;
+
+    // You could also use the selector `&[selected]`
+    &:checked {
+      background: var(--tint1);
+    }
+  }
+}

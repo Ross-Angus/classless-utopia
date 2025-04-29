@@ -1,16 +1,46 @@
+@use '../mixins/cta-input';
+@use '../mixins/cta-style';
+@use './search';
+@use './select';
+@use './textarea';
+
 input, select, button, textarea {
+  appearance: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
+  overflow: visible;
 }
 
-button {
-  appearance: none;
-  background: transparent;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-  overflow: visible;
-  padding: 0;
+main {
+  // 49px high, to match call-to-action
+  input, button, select, textarea {
+    @extend %cta-input;
+
+    &:focus, &:hover {
+      @extend %cta-focus;
+    }
+  }
+
+  select, textarea {
+    display: block;
+    width: 100%;
+  }
+
+  // Button style
+  input {
+    &[type="button"], &[type="submit"], &[type="reset"] {
+      @extend %cta-style;
+    }
+
+    &:not([type="radio"], [type="checkbox"], [type="button"], [type="submit"], [type="reset"], [type="search"]) {
+      display: block;
+      width: 100%;
+    }
+
+  }
 }

@@ -1,0 +1,10 @@
+// Declarations shared between the call-to-action buttons
+// and input elements
+%cta-input {
+  border-radius: calc(var(--gutter) * 2);
+  border: solid var(--keyline) var(--bodytext);
+  line-height: 1.3;
+  min-height: 3.063rem; // ~ 49px high
+  padding: calc(var(--gutter) / 2) var(--gutter);
+  vertical-align: middle;
+}
