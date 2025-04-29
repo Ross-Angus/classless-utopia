@@ -1,0 +1,249 @@
+<div>
+  <p>
+    <label for="type-text">Type <code>text</code></label>
+  </p>
+  <p>
+    <input name="type-text" id="type-text">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-text-datalist">Type <code>text</code> with <code>datalist</code></label>
+  </p>
+  <p>
+    <input name="type-text-datalist" id="type-text-datalist" list="country-names" placeholder="Please start to type a country name">
+    <datalist id="country-names">
+      <module href="./country-names.html"></module>
+    </datalist>
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-password">Type <code>password</code></label>
+  </p>
+  <p>
+    <input name="type-password" id="type-password" type="password">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-email">Type <code>email</code></label>
+  </p>
+  <p>
+    <input name="type-email" id="type-email" type="email">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-search-input">Type <code>search</code> (input submit)</label>
+  </p>
+  <p>
+    <input name="type-search-input" id="type-search-input" type="search"><input type="submit" value="Search">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-search-button">Type <code>search</code> (button submit)</label>
+  </p>
+  <p>
+    <input name="type-search-button" id="type-search-button" type="search"><button>Search</button>
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-tel">Type <code>tel</code></label>
+  </p>
+  <p>
+    <input name="type-tel" id="type-tel" type="tel" value="+44">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-url">Type <code>url</code></label>
+  </p>
+  <p>
+    <input name="type-url" id="type-url" type="url" value="https://">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-number">Type <code>number</code></label>
+  </p>
+  <p>
+    <input name="type-number" id="type-number" type="number" min="0" max="1000" step="1">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-range">Type <code>range</code></label>
+  </p>
+  <p>
+    <input name="type-range" id="type-range" type="range" min="0" max="1000" step="1" value="500">
+    <output for="type=range"></output>
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-date">Type <code>date</code></label>
+  </p>
+  <p>
+    <input name="type-date" id="type-date" type="date" min="1971-01-01" max="2050-01-01">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-datetime-local">Type <code>datetime-local</code></label>
+  </p>
+  <p>
+    <input name="type-datetime-local" id="type-datetime-local" type="datetime-local">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-month">Type <code>month</code></label>
+  </p>
+  <p>
+    <input name="type-month" id="type-month" type="month">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-time">Type <code>time</code></label>
+  </p>
+  <p>
+    <input name="type-time" id="type-time" type="time">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-week">Type <code>week</code></label>
+  </p>
+  <p>
+    <input name="type-week" id="type-week" type="week">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-color">Type <code>color</code></label>
+  </p>
+  <p>
+    <input name="type-color" id="type-color" type="color" value="#666666">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-file">Type <code>file</code></label>
+  </p>
+  <p>
+    <input name="type-file" id="type-file" type="file">
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-select">Type <code>select</code> size 1</label>
+  </p>
+  <p>
+    <select name="type-select" id="type-select">
+      <option selected="selected">Please select a country</option>
+      <optgroup label="Countries">
+        <module href="./country-names.html"></module>
+      </optgroup>
+    </select>
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-select-large">Type <code>select</code> large size</label>
+  </p>
+  <p>
+    <select name="type-select-large" id="type-select-large" size="10">
+      <option selected="selected">Please select a country</option>
+      <optgroup label="Countries">
+        <module href="./country-names.html"></module>
+      </optgroup>
+    </select>
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="type-select-multiple">Type <code>select</code> multiple</label>
+  </p>
+  <p>
+    <select name="type-select-multiple" id="type-select-multiple" size="10" multiple>
+      <option selected="selected">Please select a country</option>
+      <optgroup label="Countries">
+        <module href="./country-names.html"></module>
+      </optgroup>
+    </select>
+  </p>
+</div>
+
+<div>
+  <p>
+    <label for="textarea"><code>textarea</code></label>
+  </p>
+  <p>
+    <textarea name="textarea" id="textarea" rows="10" cols="50">Example text within a textarea</textarea>
+  </p>
+</div>
+
+<div>
+
+  <fieldset>
+    <legend>Checkboxes</legend>
+    <p>
+      <label><input type="checkbox" name="checkbox" value="1"> Nullam felis mi, dignissim eu diam dignissim, vestibulum tristique neque</label><br>
+      <label><input type="checkbox" name="checkbox" value="2"> In vulputate consectetur lorem vel accumsan</label><br>
+      <label><input type="checkbox" name="checkbox" value="3"> Donec tempus aliquam elementum</label><br>
+      <label><input type="checkbox" name="checkbox" value="4"> Curabitur condimentum dolor non ultricies consectetur</label><br>
+      <label><input type="checkbox" name="checkbox" value="5"> Aliquam erat volutpat</label><br>
+      <label><input type="checkbox" name="checkbox" value="6"> Nam pretium eget odio dapibus feugiat</label><br>
+      <label><input type="checkbox" name="checkbox" value="7"> Aliquam sit amet malesuada nisi, at pellentesque lorem</label><br>
+      <label><input type="checkbox" name="checkbox" value="8"> Interdum et malesuada fames ac ante ipsum primis in faucibus</label><br>
+      <label><input type="checkbox" name="checkbox" value="9"> Donec elementum sapien et ligula aliquet vulputate</label><br>
+      <label><input type="checkbox" name="checkbox" value="10"> Donec interdum, elit eu imperdiet malesuada, massa leo semper lacus, sit amet lacinia augue velit at leo</label>
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Radio buttons</legend>
+    <p>
+      <label><input type="radio" name="radio" value="1"> Nullam felis mi, dignissim eu diam dignissim, vestibulum tristique neque</label><br>
+      <label><input type="radio" name="radio" value="2"> In vulputate consectetur lorem vel accumsan</label><br>
+      <label><input type="radio" name="radio" value="3"> Donec tempus aliquam elementum</label><br>
+      <label><input type="radio" name="radio" value="4"> Curabitur condimentum dolor non ultricies consectetur</label><br>
+      <label><input type="radio" name="radio" value="5"> Aliquam erat volutpat</label><br>
+      <label><input type="radio" name="radio" value="6"> Nam pretium eget odio dapibus feugiat</label><br>
+      <label><input type="radio" name="radio" value="7"> Aliquam sit amet malesuada nisi, at pellentesque lorem</label><br>
+      <label><input type="radio" name="radio" value="8"> Interdum et malesuada fames ac ante ipsum primis in faucibus</label><br>
+      <label><input type="radio" name="radio" value="9"> Donec elementum sapien et ligula aliquet vulputate</label><br>
+      <label><input type="radio" name="radio" value="10"> Donec interdum, elit eu imperdiet malesuada, massa leo semper lacus, sit amet lacinia augue velit at leo</label>
+    </p>
+  </fieldset>
+</div>
+
+<p>
+  <input name="type-button" type="button" value="Input type button">
+  <input name="type-reset" type="reset" value="Input type reset">
+  <input name="type-submit" type="submit" value="Input type submit">
+  <button>Button</button>
+</p>

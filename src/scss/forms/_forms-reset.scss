@@ -4,7 +4,7 @@
 @use './select';
 @use './textarea';
 
-input, select, button, textarea {
+input, select, button, textarea, label {
   appearance: none;
   background: transparent;
   color: inherit;
