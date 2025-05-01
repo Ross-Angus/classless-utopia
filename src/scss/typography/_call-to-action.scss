@@ -20,8 +20,8 @@
 // only apply to `link` elements, using it on an anchor tag passes validation.
 main {
   button, a[rel] {
-    @extend %cta-input;
-    @extend %cta-style;
+    @extend %cta-input !optional;
+    @extend %cta-style !optional;
     align-items: center;
     display: inline-flex;
     width: fit-content;
@@ -40,7 +40,7 @@ main {
     &::before { display: none; }
 
     &:hover, &:focus {
-      @extend %cta-focus;
+      @extend %cta-focus !optional;
 
       // > animates to the right slightly
       &::after {

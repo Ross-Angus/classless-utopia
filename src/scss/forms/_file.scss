@@ -1,0 +1,23 @@
+@use '../mixins/cta-input';
+@use '../mixins/cta-style';
+
+main {
+  input {
+    &[type="file"] {
+      padding: 0;
+
+      &::file-selector-button {
+        @extend %cta-input;
+        @extend %cta-style;
+        border-radius: 0;
+        font-family: inherit;
+        margin: calc(var(--keyline) * -1);
+        margin-right: var(--gutter);
+
+        &:hover {
+          @extend %cta-focus;
+        }
+      }
+    }
+  }
+}
