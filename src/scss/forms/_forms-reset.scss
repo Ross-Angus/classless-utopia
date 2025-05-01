@@ -2,6 +2,7 @@
 @use '../mixins/cta-style';
 @use './horizontal';
 @use './search';
+@use './button';
 @use './radio';
 @use './checkbox';
 @use './file';
@@ -38,12 +39,7 @@ main {
     width: 100%;
   }
 
-  // Button style
   input {
-    &[type="button"], &[type="submit"], &[type="reset"] {
-      @extend %cta-style;
-    }
-
     &:not([type="radio"], [type="checkbox"], [type="button"], [type="submit"], [type="reset"], [type="search"]) {
       display: block;
       width: 100%;

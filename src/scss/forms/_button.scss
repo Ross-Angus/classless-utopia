@@ -1,0 +1,73 @@
+@use '../mixins/cta-style';
+
+main {
+  input {
+    &[type="button"], &[type="submit"], &[type="reset"] {
+      @extend %cta-style;
+    }
+  }
+
+  button {
+    // Reset buttons have a sort of undo button
+    // ↺
+    &[type="reset"] {
+      // u-shaped
+      &::before {
+        border: solid var(--keyline) var(--bodytext);
+        border-left-color: transparent;
+        border-radius: 0 1.5ch 1.5ch 0;
+        display: block;
+        height: 1.5ch;
+        order: 2;
+        transform: rotate(0);
+        width: 1.5ch;
+      }
+
+      // <
+      &::after {
+        border: solid var(--keyline) var(--bodytext);
+        border-right-color: transparent;
+        border-top-color: transparent;
+        content: "";
+        height: 1ch;
+        transform: rotate(45deg) translate(0.2ch, -1.1ch);
+        width: 1ch;
+      }
+
+      &:focus, &:hover {
+        &::before {
+          transform: rotate(0) translate(0.5ch, 0);
+        }
+        &::after {
+          transform: rotate(45deg) translate(0.5ch, -1.5ch);
+        }
+      }
+    }
+
+    // ➔
+    &[type="submit"] {
+      // --
+      &::before {
+        content: "";
+        border-top: solid var(--keyline) var(--bodytext);
+        display: block;
+        height: 0;
+        order: 2;
+        margin: 0 0 0 -2ch;
+        transform: rotate(0);
+        width: 2ch;
+      }
+
+      // >
+      &::after {
+        margin: 0 0 0 var(--gutter);
+      }
+
+      &:hover, &:focus {
+        &::before {
+          transform: translate(0.5ch, 0);
+        }
+      }
+    }
+  }
+}
