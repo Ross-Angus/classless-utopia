@@ -2,12 +2,12 @@ main {
   input {
     &[type="radio"] {
       align-items: center;
-      display: flex;
-      height: var(--gutter);
+      display: inline-flex;
+      height: 2ch;
       justify-content: center;
       min-height: 0;
       padding: 0;
-      width: var(--gutter);
+      width: 2ch;
 
       // •
       &::before {
@@ -15,10 +15,10 @@ main {
         border-radius: 50%;
         content: "";
         display: block;
-        height: calc(var(--keyline) * 4);
+        height: 1ch;
         transition: all 0.2s;
         transform: scale(0);
-        width: calc(var(--keyline) * 4);
+        width: 1ch;
       }
 
       &:checked {
