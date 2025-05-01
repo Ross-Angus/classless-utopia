@@ -5,6 +5,7 @@
 @use './radio';
 @use './checkbox';
 @use './file';
+@use './range';
 @use './select';
 @use './textarea';
 @use './fieldset';
@@ -33,6 +34,7 @@ main {
 
   select, textarea {
     display: block;
+    overflow: hidden;
     width: 100%;
   }
 

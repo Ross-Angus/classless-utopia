@@ -1,0 +1,44 @@
+// While it seems insane that these need to be different
+// rules, that's how browser prefixes work, I guess
+@mixin range-thumb {
+  background: var(--background);
+  border-radius: 50%;
+  border: solid var(--keyline) var(--bodytext);
+  cursor: ew-resize;
+  height: var(--gutter);
+  width: var(--gutter);
+}
+
+main {
+  input {
+    &[type="range"] {
+      &::-webkit-slider-thumb {
+        @include range-thumb;
+        -webkit-appearance: none;
+        margin: calc((var(--gutter) / -2) + (var(--keyline) / 2)) 0;
+      }
+
+      &::-moz-range-thumb {
+        @include range-thumb;
+      }
+
+      &::-ms-thumb {
+        @include range-thumb;
+      }
+
+      &::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        background: var(--bodytext);
+        height: var(--keyline);
+      }
+
+      &::-moz-range-track {
+        background: var(--bodytext);
+      }
+
+      &::-ms-track {
+        background: var(--bodytext);
+      }
+    }
+  }
+}

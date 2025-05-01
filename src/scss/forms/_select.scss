@@ -24,7 +24,10 @@ main {
   option {
     background: transparent;
 
-    // You could also use the selector `&[selected]`
+    &[selected] {
+      color: var(--bodytext);
+    }
+
     &:checked {
       background: var(--tint1);
     }
