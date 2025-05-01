@@ -1,0 +1,31 @@
+main {
+  input {
+    &[type="radio"] {
+      align-items: center;
+      display: flex;
+      height: var(--gutter);
+      justify-content: center;
+      min-height: 0;
+      padding: 0;
+      width: var(--gutter);
+
+      // •
+      &::before {
+        background: var(--bodytext);
+        border-radius: 50%;
+        content: "";
+        display: block;
+        height: calc(var(--keyline) * 4);
+        transition: all 0.2s;
+        transform: scale(0);
+        width: calc(var(--keyline) * 4);
+      }
+
+      &:checked {
+        &::before {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
