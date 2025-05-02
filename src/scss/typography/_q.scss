@@ -1,0 +1,126 @@
+@use '../vars-sass' as v;
+
+// To surface the `cite` attribute to users, it can display
+// if the user hovers their mouse over it. Additionally, if
+// a `tabindex="0"` attribute is added to the `q` element,
+// the tooltip can display when the `cite` tag falls into
+// focus, for users navigating using the keyboard.
+q {
+  // To leave room for the quotes
+  padding: 0 1.5ch;
+
+  // The default use of `before` and `after` of opening
+  // and closing quotation marks is useful as it
+  // indicates that the text is a quotation. These will
+  // only be dynamically swapped out for the tooltip
+  // when the user expresses interest in them. For this
+  // to work without a layout shift, I need these quotes
+  // to take up zero space.
+  &::before, &::after {
+    display: inline-block;
+    width: 0;
+  }
+
+  &::before {
+    position: relative;
+    left: -1ch;
+  }
+
+  &[cite] {
+    cursor: help;
+
+    &:focus, &:hover {
+
+      &::before, &::after {
+        display: block;
+        position: absolute;
+        width: auto;
+        z-index: 1;
+      }
+
+      // Speech bubble, default size, no larger than the
+      // `q` tag
+      &::before {
+        background: var(--tint1);
+        bottom: calc(100% + var(--gutter));
+        content: attr(cite);
+        font-size: var(--smalltext-size);
+        left: 0;
+        padding: var(--gutter);
+        right: 0;
+      }
+
+      // Tick mark
+      //  v
+      &::after {
+        border: solid var(--gutter) transparent;
+        border-bottom-width: 0;
+        border-top-color: var(--tint1);
+        bottom: 100%;
+        content: "";
+        left: calc(var(--gutter) * 2);
+        right: auto;
+      }
+    }
+  }
+}
+
+// If the tooltip needs to display in a narrow browser width,
+// it takes the full width of the page (minus the gutter) and
+// the left and right are relative to the `body` and as the
+// `top` and `bottom` are unset, they will default to the
+// natural position of the `::before` element.
+@media (width < v.$site-width) {
+  q {
+    &[cite] {
+      &:focus, &:hover {
+        &::before {
+          bottom: auto;
+          left: var(--gutter);
+          right: var(--gutter);
+          transform: translate(0, calc(-100% - (var(--gutter) * 2)));
+        }
+
+        // As the tick mark appears an unknowable distance
+        // later down the DOM, it could not be attached to the
+        // tooltip without JavaScript (at least as far as I can
+        // work out)
+        &::after { display: none; }
+      }
+    }
+  }
+}
+
+// If the `q` tag which has a tooltip happens to start at the end of a
+// line of text, there is very little room for the tooltip to display.
+// However, assuming that the whole page has the `main > article` tag
+// structure, there is a little space to play with outside of the
+// boundaries of the text column.
+@media (width > v.$site-width) {
+  main {
+    & > article {
+
+      // This variable represents half of the difference between the site
+      // width and the content width, which is a gutter into which the
+      // tooltips can intrude, at least on desktop.
+      --content-gap: calc((var(--site-width) - var(--content-width)) / 2);
+
+      q {
+        &[cite] {
+          // `position: relative` is useful here, but we need to try
+          // something different for mobile when space is tight
+          position: relative;
+
+          &:focus, &:hover {
+            // Speech bubble - wider
+            // (is there a prize for the most nested SASS rule?)
+            &::before {
+              left: calc(var(--content-gap) * -1);
+              right: calc(var(--content-gap) * -1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
