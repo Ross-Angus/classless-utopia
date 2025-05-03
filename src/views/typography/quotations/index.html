@@ -18,6 +18,7 @@
     </nav>
     <article>
       <h1>Quotations</h1>
+
       <h2>Inline quotations</h2>
       <p>Inline quotations can be marked up using the <code>q</code> tag: <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/q">The <code>q</code> HTML element indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks. This element is intended for short quotations that don't require paragraph breaks; for long quotations use the <code>blockquote</code> element.</q></p>
       <p>Tooltips will display on <code>q</code> elements under the following conditions:</p>
@@ -29,8 +30,26 @@
             </ul>
         </li>
       </ul>
-      <p>The <code>tabindex</code> attribute <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex" tabindex="0">...allows developers to make <abbr title="Hyper Text Markup Language">HTML</abbr> elements focusable, allow or prevent them from being sequentially focusable (usually with the Tab key, hence the name) and determine their relative ordering for sequential focus navigation.</q></p>
+      <p>The <code>tabindex</code> attribute <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex" tabindex="0" autofocus>...allows developers to make <abbr title="Hyper Text Markup Language">HTML</abbr> elements focusable, allow or prevent them from being sequentially focusable (usually with the Tab key, hence the name) and determine their relative ordering for sequential focus navigation.</q></p>
       <p>If a quotation does not have a <code>cite</code> attribute, <q>no tooltip will display</q>. If a quotation has an empty <code>cite</code> attribute, <q cite="">an empty tooltip will display</q></p>
+
+      <h2>Blockquotes</h2>
+
+      <h3>Blockquote with <code>cite</code> attribute:</h3>
+      <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote">
+        <p>The <code>blockquote</code> <abbr>HTML</abbr> element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the <code>cite</code> element.</p>
+      </blockquote>
+
+      <h3>Blockquote with just text</h3>
+      <blockquote>Cras consectetur at turpis ut accumsan. Vestibulum maximus justo nec gravida mollis. Ut quam leo, ultricies ut posuere ut, viverra a lectus. Sed faucibus condimentum elementum. Pellentesque feugiat, nisl ut porta maximus, magna ipsum sagittis lectus, ac suscipit lacus ante id massa. Quisque ullamcorper leo mi, sit amet tempor eros faucibus eu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec eu eros eu est porttitor consectetur sed quis urna.</blockquote>
+
+      <h3>Blockquote with <code>cite</code> attribute, multiple paragraphs, <code>footer</code> and <code>cite</code> tag</h3>
+      <blockquote cite="https://www.calflyn.com/nonfiction-books/islands-of-abandonment-nature-rebounding-post-human-landscape">
+        <p>Ludmilla waves my panic away. <q>Hot spot</q> she ways, and my fear evaporates with the label, in the way a grave medical diagnosis might sometimes bring relief. She points to the bottom step; liquidators returning from the reactor area kicked the dirt from their boots and removed their clothes here before getting into minibuses that parked out front. (These minibuses, too contaminated to save, would later be buried in vast mass graves lined with concrete.) The dust they left behind has left a radioactive trace which persists into the present.</p>
+        <p>I hold my dosimeter over what seems to be the hotspot's epicentre - a concrete slab shrouded in leaf mould - and watch the numbers climbing. It stops at 15.82 microsieverts an hour - around a hundred times the background dose. Ludmilla thrusts her hand out over mine: the dosimeter in her grip is bigger, more professional-looking. Its reading is different, higher. <q>It likes caesium,</q> she shrugs and although I don't understand I feel myself jealous. <q>Can I hold it?</q> I ask. I take the wailing device. When I step away, it falls silent. I relax.</p>
+        <p>The sky is white cloud, too bright to look at. The air is still. I follow the steps down to the café's private jetty, from which I look across to a smooth curve of ice that lids the lake's surface, one that does not break when I drop a rock onto it. What I think about is this: how the past is imprinted upon the present, in every place, but never more tangibly than here. I navigate it blindly in the present, with a dosimeter as a torch.</p>
+        <footer><cite>Flyn, C. (2022) <q>Islands of Abandonment: Life in the Post-Human Landscape</q>. Great Britain: William Collins</cite></footer>
+      </blockquote>
     </article>
   </main>
 

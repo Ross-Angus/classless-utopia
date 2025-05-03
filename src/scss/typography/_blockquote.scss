@@ -1,0 +1,55 @@
+blockquote {
+  --quotesize: 4rem;
+  --quoteheight: .1;
+
+  font-size: var(--largetext-size);
+  font-style: italic;
+  line-height: var(--smalltext-line-height);
+
+  & > p {
+    &::before, &:last-of-type::after {
+      display: inline-block;
+      font-size: var(--quotesize);
+      line-height: var(--quoteheight);
+      transform: translate(0, 1.8rem);
+    }
+
+    &::before {
+      // Open quotes
+      content: "“";
+      margin: 0 .5rem 0 0;
+    }
+
+    &:last-of-type {
+      &::after {
+        // CLosing quotes
+        content: "”";
+        margin: 0 0 0 .5rem;
+      }
+    }
+  }
+
+  footer {
+    border-top: solid var(--keyline) var(--bodytext);
+    padding-top: var(--gutter);
+  }
+
+  &[cite]::after, footer {
+    font-size: var(--smalltext-size);
+  }
+
+  &[cite] {
+    &::after {
+      border-top: dotted var(--keyline) var(--bodytext);
+      content: "Source: " attr(cite);
+      display: block;
+      margin-top: var(--gutter);
+      padding-top: var(--gutter);
+    }
+  }
+
+  // Confusingly, this is the `cite` tag and attribute
+  cite, &[cite]::after {
+    font-style: normal;
+  }
+}
