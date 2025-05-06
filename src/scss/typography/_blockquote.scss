@@ -1,31 +1,49 @@
 blockquote {
-  --quotesize: 4rem;
-  --quoteheight: .1;
-
   font-size: var(--largetext-size);
   font-style: italic;
-  line-height: var(--smalltext-line-height);
+  line-height: var(--line-height-tight);
+  margin: var(--gutter) calc(var(--gutter) * 2);
+  quotes: "“" "”" "‘" "’";
 
   & > p {
-    &::before, &:last-of-type::after {
+    text-indent: -1.6ch;
+
+    * { text-indent: 0; }
+
+    // Big, chunky opening and closing quotes
+    &::before, &::after {
       display: inline-block;
-      font-size: var(--quotesize);
-      line-height: var(--quoteheight);
-      transform: translate(0, 1.8rem);
+      font-size: 4rem;
+      line-height: 0.1;
+      transform: translate(0, 0.9ch);
     }
 
     &::before {
-      // Open quotes
-      content: "“";
-      margin: 0 .5rem 0 0;
+      content: open-quote;
+      margin: 0 0.3ch 0 0;
     }
 
+    // Because we're using `open-quote` and `close-quote`, the rendering
+    // engine keeps track of how quotes are nested inside of each other.
+    // This means if we open a quote without closing it, the browser
+    // will assume everything after that point will be nested. We add
+    // an invisible closing quote in order to correct this behaviour.
+    &::after {
+      content: close-quote;
+      margin: 0 0 0 0.5ch;
+      opacity: 0;
+    }
+
+    // Only show the closing quote on the last paragraph
     &:last-of-type {
-      &::after {
-        // CLosing quotes
-        content: "”";
-        margin: 0 0 0 .5rem;
-      }
+      &::after { opacity: 1; }
+    }
+  }
+
+  @supports (hanging-punctuation: first) {
+    & > p {
+      hanging-punctuation: first;
+      text-indent: 0;
     }
   }
 
@@ -52,4 +70,15 @@ blockquote {
   cite, &[cite]::after {
     font-style: normal;
   }
+}
+
+// A `figure` element is used in conjunction with a `blockquote` element
+// to attach a citation to a `blockquote` in a way which meets the W3C
+// guidelines
+// https://css-tricks.com/quoting-in-html-quotations-citations-and-blockquotes/#aa-hey-what-about-the-figure-element
+
+blockquote + figcaption {
+  border-top: dotted var(--keyline) var(--bodytext);
+  padding-top: var(--gutter);
+  margin: var(--gutter) calc(var(--gutter) * 2) 0;
 }

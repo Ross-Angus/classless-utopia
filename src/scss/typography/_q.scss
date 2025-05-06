@@ -7,7 +7,8 @@
 // focus, for users navigating using the keyboard.
 q {
   // To leave room for the quotes
-  padding: 0 1.5ch;
+  padding: 0 1.1ch;
+  quotes: "“" "”" "‘" "’";
 
   // The default use of `before` and `after` of opening
   // and closing quotation marks is useful as it

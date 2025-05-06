@@ -40,16 +40,47 @@
         <p>The <code>blockquote</code> <abbr>HTML</abbr> element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the <code>cite</code> element.</p>
       </blockquote>
 
-      <h3>Blockquote with just text</h3>
+      <h3>Blockquote with just text nodes inside</h3>
       <blockquote>Cras consectetur at turpis ut accumsan. Vestibulum maximus justo nec gravida mollis. Ut quam leo, ultricies ut posuere ut, viverra a lectus. Sed faucibus condimentum elementum. Pellentesque feugiat, nisl ut porta maximus, magna ipsum sagittis lectus, ac suscipit lacus ante id massa. Quisque ullamcorper leo mi, sit amet tempor eros faucibus eu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec eu eros eu est porttitor consectetur sed quis urna.</blockquote>
 
-      <h3>Blockquote with <code>cite</code> attribute, multiple paragraphs, <code>footer</code> and <code>cite</code> tag</h3>
-      <blockquote cite="https://www.calflyn.com/nonfiction-books/islands-of-abandonment-nature-rebounding-post-human-landscape">
-        <p>Ludmilla waves my panic away. <q>Hot spot</q> she ways, and my fear evaporates with the label, in the way a grave medical diagnosis might sometimes bring relief. She points to the bottom step; liquidators returning from the reactor area kicked the dirt from their boots and removed their clothes here before getting into minibuses that parked out front. (These minibuses, too contaminated to save, would later be buried in vast mass graves lined with concrete.) The dust they left behind has left a radioactive trace which persists into the present.</p>
-        <p>I hold my dosimeter over what seems to be the hotspot's epicentre - a concrete slab shrouded in leaf mould - and watch the numbers climbing. It stops at 15.82 microsieverts an hour - around a hundred times the background dose. Ludmilla thrusts her hand out over mine: the dosimeter in her grip is bigger, more professional-looking. Its reading is different, higher. <q>It likes caesium,</q> she shrugs and although I don't understand I feel myself jealous. <q>Can I hold it?</q> I ask. I take the wailing device. When I step away, it falls silent. I relax.</p>
-        <p>The sky is white cloud, too bright to look at. The air is still. I follow the steps down to the café's private jetty, from which I look across to a smooth curve of ice that lids the lake's surface, one that does not break when I drop a rock onto it. What I think about is this: how the past is imprinted upon the present, in every place, but never more tangibly than here. I navigate it blindly in the present, with a dosimeter as a torch.</p>
-        <footer><cite>Flyn, C. (2022) <q>Islands of Abandonment: Life in the Post-Human Landscape</q>. Great Britain: William Collins</cite></footer>
-      </blockquote>
+      <h3><code>figure</code> tag with <code>blockquote</code></h3>
+      <p>This example uses a <code>figure</code> tag as a wrapper for the <code>blockquote</code> element. The <code>blockquote</code> has a <code>cite</code> attribute. The <code>figure</code> element has a <code>figcaption</code> element after the <code>blockquote</code> which has the book referenced formatted in a <a href="https://library-guides.ucl.ac.uk/harvard">Harvard style citation</a>. The markup structure is as follows:</p>
+      <ul>
+        <li><code>figure</code>
+          <ul>
+            <li><code>blockquote</code>
+              <ul>
+                <li><code>p</code></li>
+                <li><code>p</code></li>
+                <li><code>p</code></li>
+              </ul>
+            </li>
+            <li><code>figcaption</code>
+              <ul>
+                <li>Text nodes (author name, date)</li>
+                <li>Book title wrapped inside a <code>cite</code> tag</li>
+                <li>Text nodes (region where the book was published, publisher)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <figure>
+        <blockquote cite="https://www.calflyn.com/nonfiction-books/islands-of-abandonment-nature-rebounding-post-human-landscape">
+          <p>Ludmilla waves my panic away. <q>Hot spot</q> she ways, and my fear evaporates with the label, in the way a grave medical diagnosis might sometimes bring relief. She points to the bottom step; liquidators returning from the reactor area kicked the dirt from their boots and removed their clothes here before getting into minibuses that parked out front. (These minibuses, too contaminated to save, would later be buried in vast mass graves lined with concrete.) The dust they left behind has left a radioactive trace which persists into the present.</p>
+          <p>I hold my dosimeter over what seems to be the hotspot's epicentre - a concrete slab shrouded in leaf mould - and watch the numbers climbing. It stops at 15.82 microsieverts an hour - around a hundred times the background dose. Ludmilla thrusts her hand out over mine: the dosimeter in her grip is bigger, more professional-looking. Its reading is different, higher. <q>It likes caesium,</q> she shrugs and although I don't understand I feel myself jealous. <q>Can I hold it?</q> I ask. I take the wailing device. When I step away, it falls silent. I relax.</p>
+          <p>The sky is white cloud, too bright to look at. The air is still. I follow the steps down to the café's private jetty, from which I look across to a smooth curve of ice that lids the lake's surface, one that does not break when I drop a rock onto it. What I think about is this: how the past is imprinted upon the present, in every place, but never more tangibly than here. I navigate it blindly in the present, with a dosimeter as a torch.</p>
+        </blockquote>
+        <figcaption>Flyn, C. (2022) <cite>Islands of Abandonment: Life in the Post-Human Landscape</cite>. Great Britain: William Collins</figcaption>
+      </figure>
+
+      <h3><code>figure</code> tag with <code>blockquote</code> inside, single paragraph</h3>
+      <figure>
+        <blockquote cite="https://quotlr.com/author/richard-p-feynman">
+          <p>It appears that there are enormous differences of opinion as to the probability of a failure with loss of vehicle and of human life. The estimates range from roughly 1 in 100 to 1 in 100,000. The higher figures come from the working engineers, and the very low figures from management.</p>
+        </blockquote>
+        <figcaption><strong>Richard P. Feynman</strong></figcaption>
+      </figure>
     </article>
   </main>
 

@@ -3,7 +3,7 @@
 ins, del {
   border-top: solid var(--keyline) var(--tint5);
   font-size: var(--smalltext-size);
-  line-height: var(--smalltext-line-height);
+  line-height: var(--line-height-tight);
   // Hard-coded with alert
   max-width: 10rem;
   padding: calc(var(--gutter) / 2) var(--gutter);
