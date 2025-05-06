@@ -45,26 +45,17 @@
 
       <h3><code>figure</code> tag with <code>blockquote</code></h3>
       <p>This example uses a <code>figure</code> tag as a wrapper for the <code>blockquote</code> element. The <code>blockquote</code> has a <code>cite</code> attribute. The <code>figure</code> element has a <code>figcaption</code> element after the <code>blockquote</code> which has the book referenced formatted in a <a href="https://library-guides.ucl.ac.uk/harvard">Harvard style citation</a>. The markup structure is as follows:</p>
-      <ul>
-        <li><code>figure</code>
-          <ul>
-            <li><code>blockquote</code>
-              <ul>
-                <li><code>p</code></li>
-                <li><code>p</code></li>
-                <li><code>p</code></li>
-              </ul>
-            </li>
-            <li><code>figcaption</code>
-              <ul>
-                <li>Text nodes (author name, date)</li>
-                <li>Book title wrapped inside a <code>cite</code> tag</li>
-                <li>Text nodes (region where the book was published, publisher)</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
+
+      <pre><code>&lt;figure&gt;
+  &lt;blockquote cite="https://url-of-quote"&gt;
+    &lt;p&gt;Quotation text&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;figcaption&gt;
+    Any other information
+    &lt;cite&gt;Title of text being quoted&lt;/cite&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
       <figure>
         <blockquote cite="https://www.calflyn.com/nonfiction-books/islands-of-abandonment-nature-rebounding-post-human-landscape">
           <p>Ludmilla waves my panic away. <q>Hot spot</q> she ways, and my fear evaporates with the label, in the way a grave medical diagnosis might sometimes bring relief. She points to the bottom step; liquidators returning from the reactor area kicked the dirt from their boots and removed their clothes here before getting into minibuses that parked out front. (These minibuses, too contaminated to save, would later be buried in vast mass graves lined with concrete.) The dust they left behind has left a radioactive trace which persists into the present.</p>
