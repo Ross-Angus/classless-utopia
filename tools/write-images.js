@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import sharp from "sharp";
 import getDistPath from "./get-dist-path.js";
 
-export default function writeImages(filePath) {
+const writeImages = filePath => {
   const { distPath, fileName } = getDistPath(filePath);
 
   !fs.existsSync(distPath) && fs.mkdirSync(distPath, {recursive: true});
@@ -20,3 +20,5 @@ export default function writeImages(filePath) {
     .toFile(`${distPath}/${fileName}.jpg`)
 
 };
+
+export default writeImages;

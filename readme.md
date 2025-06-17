@@ -19,13 +19,7 @@ All caps headings require wider letter spacing.
 
 ## Blockquotes
 
-Not bold text
-Larger
-Smaller line height
-Narrower?
-Italic?
 Use a serif typeface for blockquotes?
-Pretty opening and closing quotes, natch
 Ratio of font size of quote to font size of citation should be 1.75:1
 
 ## Tables
