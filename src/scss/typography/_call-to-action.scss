@@ -185,6 +185,17 @@ main, header > *:not(nav) {
     }
   }
 
+  // We need to replicate some declarations for ::scroll-button(*) because
+  // Firefox ignores the whole rule if we add it to the other selectors
+  ::scroll-button(*) {
+    border-radius: var(--cta-radius);
+    border: solid var(--keyline) var(--bodytext);
+    min-height: 3.063rem; // ~ 49px high
+    padding: calc(var(--gutter) / 2) var(--gutter);
+    background: var(--tint2);
+    font-weight: var(--heading-weight);
+  }
+
   a[rel] {
     background: rgb(var(--link-text) / 20%);
     border-color: rgb(var(--link-text));

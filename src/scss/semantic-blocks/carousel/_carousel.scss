@@ -1,0 +1,56 @@
+[aria-roledescription="carousel"] {
+  overflow: auto;
+  position: relative;
+
+  [aria-roledescription="slide"] {
+    flex: 100% 0 0;
+
+    &:first-child {
+      &::before {
+        background: var(--tint1);
+        content: "⚠️ Your web browser does not support native CSS carousel functionality";
+        display: block;
+        font-size: var(--smalltext-size);
+        line-height: var(--line-height-tight);
+        margin: 0 0 var(--gutter);
+        padding: var(--gutter);
+      }
+    }
+  }
+}
+
+@supports (scroll-marker-group: after) {
+  [aria-roledescription="carousel"] {
+    anchor-name: --carousel;
+    overflow: hidden;
+    scroll-marker-group: after;
+    scroll-snap-type: x mandatory;
+
+    [aria-roledescription="slide"] {
+      scroll-snap-align: center;
+
+      // Hide the warning message about lack of support
+      &:first-child::before { display: none; }
+    }
+
+    &::scroll-button(*) {
+      aspect-ratio: 1;
+      position: fixed;
+      position-anchor: --carousel;
+    }
+
+    &::scroll-button(left) {
+      content: "⟪";
+      position-area: center left;
+    }
+
+    &::scroll-button(right) {
+      content: "⟫";
+      position-area: center right;
+    }
+
+    &::scroll-marker-group {
+    }
+  }
+
+}
