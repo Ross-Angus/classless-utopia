@@ -1,9 +1,20 @@
 @use '../mixins/shapes.scss';
 
 details {
+  border: solid var(--keyline) var(--bodytext);
+  margin: 0 0 var(--gutter);
+  padding: var(--gutter);
+
+  // Adjacent `details` are flush with each other, if both have a `name`
+  // attribute (the `name` doesn't have to have the same value)
+  &[name] + details[name] {
+    margin-top: calc((var(--gutter) + var(--keyline)) * -1);
+  }
+
   summary {
+    margin: calc(var(--gutter) * -1);
     // To leave space for the vertical chevron
-    padding: 0 calc(var(--gutter) * 2) 0 0;
+    padding: var(--gutter) calc(var(--gutter) * 2) var(--gutter) var(--gutter);
     position: relative;
 
     &::marker { content: none; }
@@ -16,25 +27,27 @@ details {
       @extend %btn-chevron-closed-pseudo;
       content: "";
       position: absolute;
-      top: calc(var(--gutter) / 2);
+      top: calc(var(--gutter) * 2);
     }
 
     // \
     &::before {
       @extend %btn-chevron-se;
-      right: calc(var(--gutter) / 2);
+      right: calc((var(--gutter) / 2) + var(--gutter));
     }
 
     // /
     &:after {
       @extend %btn-chevron-ne;
-      right: 0;
+      right: var(--gutter);
     }
 
   }
 
   &[open] {
     summary {
+        border-bottom: solid var(--keyline) var(--tint2);
+        margin-bottom: var(--gutter);
       // /
       &:before { @extend %btn-chevron-ne; }
       // \

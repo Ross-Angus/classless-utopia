@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+
+<module href="src/fragments/head.html">
+  <title>Classless Utopia - Accordion</title>
+</module>
+
+<body>
+  <module href="src/fragments/main-navigation.html"></module>
+
+  <main>
+    <nav aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/semantic-blocks/">Semantic blocks</a></li>
+        <li><em title="You are here">Accordion</em></li>
+      </ol>
+    </nav>
+    <article>
+      <h1>Accordion</h1>
+      <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details">HTML <code>details</code> tag</a> has accordion-like functionality built in.</p>
+      <h2>Individual accordions</h2>
+
+      <details>
+        <summary>This is the summary</summary>
+        <p>This is the detail content. Curabitur turpis ipsum, ornare vel massa non, pretium ultrices felis. Vivamus tincidunt tempor urna, eget scelerisque eros sodales sed. Ut semper ante enim, nec rhoncus augue dapibus quis. Mauris facilisis scelerisque velit commodo viverra. Nunc elementum risus eu orci varius accumsan. Suspendisse sollicitudin metus orci, sit amet ultrices orci hendrerit ac. Sed dolor dolor, feugiat id bibendum at, gravida a tellus.</p>
+        <p>Donec neque ligula, commodo in pulvinar eu, vestibulum a velit. Praesent suscipit dolor maximus, scelerisque velit et, pharetra augue. Nam rhoncus cursus faucibus. Ut sem enim, finibus viverra suscipit sed, facilisis nec nibh.</p>
+      </details>
+
+      <details>
+        <summary>This is a second details element</summary>
+        <p>Nunc tellus dui, cursus ac lacus vitae, congue egestas turpis. Etiam at vestibulum lectus. Sed nec libero est. In pretium ipsum sit amet dolor volutpat, at luctus elit pellentesque. Duis nec dolor neque. Sed vitae justo eget erat scelerisque dapibus. Vivamus suscipit odio nec lobortis ultricies.</p>
+        <ul>
+          <li>Morbi aliquet arcu quis magna cursus ornare</li>
+          <li>Curabitur dignissim aliquet ipsum id auctor</li>
+          <li>Sed blandit et diam sed ornare</li>
+          <li>Proin dapibus placerat mauris, sed porttitor velit elementum pulvinar</li>
+          <li>Ut aliquam elit sed ante consequat, in imperdiet turpis ultricies</li>
+          <li>Suspendisse vitae ligula tempus, tempus nunc sed, porttitor arcu</li>
+          <li>Cras gravida felis ac rutrum euismod. Nunc sit amet eros a quam convallis semper eu eget nibh</li>
+          <li>Fusce sagittis eleifend ante at iaculis. Donec rutrum quis lectus sodales finibus</li>
+        </ul>
+        <p>Nullam efficitur purus et velit sollicitudin sollicitudin. Nulla ac egestas lacus. Vivamus semper nunc ut neque fermentum consequat. Morbi congue eros sit amet consectetur venenatis. Pellentesque metus purus, lacinia vitae velit non, lobortis cursus augue. Pellentesque nec tortor vitae mi fermentum auctor. Nulla quis eleifend nulla.</p>
+      </details>
+
+      <h2>Sets of accordions which open and close together</h2>
+      <h3>Detail element attributes</h3>
+
+      <details name="detail-attributes">
+        <summary>Open</summary>
+        <p>The <code>open</code> attribute can be added to a <code>details</code> element in order to make it open by default. It is similar to the <code>disabled</code> attribute on a form element in that it has no value. The presence of the attribute with any value will open the <code>details</code> element when the page is first rendered.</p>
+        <p>In order to stop this functionality, the attribute should be removed. Changing the value of the attribute to another value such as <var>false</var> will have no effect.</p>
+      </details>
+
+      <details name="detail-attributes">
+        <summary>Name</summary>
+        <p>The <code>name</code> attribute can be added to a <code>details</code> element in order to make an explicit connection between it and another attribute on the same page. This works in a similar way to how groups of radio buttons can be linked together so that only one can be selected at any time.</p>
+      </details>
+
+      <details name="detail-attributes">
+        <summary>ID</summary>
+        <p>Of course, the <code>details</code> element can also have an <code>ID</code> attribute.</p>
+      </details>
+
+    </article>
+  </main>
+
+  <module href="src/fragments/footer.html"></module>
+</body>
+
+</html>
