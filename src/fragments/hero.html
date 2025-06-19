@@ -1,0 +1,14 @@
+<header>
+  <picture>
+    <source srcset="/img/hero/lg-{{ file_name }}.avif" media="(min-width: 1248px)" type="image/avif">
+    <source srcset="/img/hero/lg-{{ file_name }}.webp" media="(min-width: 1248px)" type="image/webp">
+    <source srcset="/img/hero/lg-{{ file_name }}.jpg" media="(min-width: 1248px)" type="image/jpeg">
+    <source srcset="/img/hero/md-{{ file_name }}.avif" media="(min-width: 930px) and (max-width: 1248px)" type="image/avif">
+    <source srcset="/img/hero/md-{{ file_name }}.webp" media="(min-width: 930px) and (max-width: 1248px)" type="image/webp">
+    <source srcset="/img/hero/md-{{ file_name }}.jpg" media="(min-width: 930px) and (max-width: 1248px)" type="image/jpeg">
+    <source srcset="/img/hero/sm-{{ file_name }}.avif" media="(max-width: 930px)" type="image/avif">
+    <source srcset="/img/hero/sm-{{ file_name }}.webp" media="(max-width: 930px)" type="image/webp">
+    <img src="/img/hero/sm-{{ file_name }}.jpg" alt="{{ alt_text }}">
+  </picture>
+  <content></content>
+</header>

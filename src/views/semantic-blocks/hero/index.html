@@ -1,0 +1,103 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+
+<module href="src/fragments/head.html">
+  <title>Classless Utopia - Hero</title>
+</module>
+
+<body>
+  <module href="src/fragments/main-navigation.html"></module>
+
+  <module href="src/fragments/hero.html" locals='{
+    "file_name": "ocean",
+    "alt_text": "The surface of the ocean"
+  }'>
+    <div>
+      <div>
+        <h2>Example full bleed panel</h2>
+        <p>Hero panel markup which appears outside of the <code>main</code> tag will extend to the edge of the browser.</p>
+        <p>Layout inside of hero panels can use the <a href="/semantic-blocks/grid/">standard grid layout techniques</a>.</p>
+        <p><a href="#" rel="related">Example call-to-action</a></p>
+        <footer>
+          <p><small>Ocean image by <a href="https://matthardy.com/">Matt Hardy</a></small></p>
+        </footer>
+      </div>
+      <div></div>
+      <div></div>
+    </div>
+  </module>
+
+  <main>
+    <nav aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/semantic-blocks/">Semantic blocks</a></li>
+        <li><em title="You are here">Hero panels</em></li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1>Hero panels</h1>
+      <p>The width of the hero panel is determined by the container. In order to have a wider hero panel, it should sit in different positions in the markup.</p>
+      <p>The CSS for the hero panel assumes that a grid layout is used. Any standard grid can be used but only panels with content inside them will render with the background which allows text over an image to have sufficient contrast.</p>
+      <p>Empty elements can be used in order to create gaps for users to see the image behind the text.</p>
+
+      <pre><code>&lt;header&gt;
+  &lt;picture&gt;
+    &lt;!-- source tags, if required --&gt;
+    &lt;img src="hero-image-name.jpg" alt="Hero image alt text"&gt;
+  &lt;/picture&gt;
+  &lt;div&gt;
+    &lt;div&gt;
+      &lt;h2&gt;Hero heading&lt;/h2&gt;
+      &lt;p&gt;Hero intro text - assuming the parent `div` has two siblings,
+      this will take up one third of the space on desktop.&lt;/p&gt;
+      &lt;p&gt;&lt;a href="#" rel="related"&gt;Call-to-action link&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- these empty elements are used to create space --&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+      <module href="src/fragments/hero.html" locals='{
+        "file_name": "flowers",
+        "alt_text": "A field of flowers"
+      }'>
+        <div>
+          <div>
+            <h2>Example content width hero panel</h2>
+            <p>Hero panel markup which appears inside the <code>article</code> will match the width of content.</p>
+            <p>Layout inside of hero panels can use the <a href="/semantic-blocks/grid/">standard grid layout techniques</a>.</p>
+            <p><a href="#" rel="related">Example call-to-action</a></p>
+            <footer>
+              <p><small>Flowers image by <a href="https://www.instagram.com/GoChrisGo_xyz/">Chris G</a></small></p>
+            </footer>
+          </div>
+          <div></div>
+        </div>
+      </module>
+    </article>
+
+    <module href="src/fragments/hero.html" locals='{
+      "file_name": "sunglasses-example",
+      "alt_text": "A pair of sunglasses"
+    }'>
+      <div>
+        <div></div>
+        <div></div>
+        <div>
+          <h2>Example wide hero panel</h2>
+          <p>Hero panel markup which appears outside of the <code>article</code> tag but inside the <code>main</code> tag will be wider than hero panels which appears inside it.</p>
+          <p><a href="#" rel="related">Example call-to-action</a></p>
+          <footer>
+            <p><small>Sunglasses image by <a href="https://www.pexels.com/@asim-razan/">asim alnamat</a></small></p>
+          </footer>
+        </div>
+      </div>
+    </module>
+  </main>
+
+  <module href="src/fragments/footer.html"></module>
+</body>
+
+</html>

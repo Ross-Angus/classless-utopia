@@ -18,7 +18,12 @@
 // another name, the `rel` attribute does have semantic meaning whereas
 // `class` does not. Despite the indication above that `rel="related"` should
 // only apply to `link` elements, using it on an anchor tag passes validation.
-main {
+
+// The second top-level selector here (`header > *:not(nav)`) is intended to
+// allow call-to-action buttons which sit in the root of the site (so they
+// can be full bleed) but are distinct from the main navigation (which also
+// sits inside a `header` element).
+main, header > *:not(nav) {
   button, a[rel] {
     @extend %cta-input !optional;
     @extend %cta-style !optional;

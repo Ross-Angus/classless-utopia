@@ -2,6 +2,7 @@
 // This is applied to the containing element for the ::before
 // and ::after pseudo-elements
 %btn-burger {
+  border: none;
   border-bottom: solid var(--keyline) var(--bodytext);
   border-top: solid var(--keyline) var(--bodytext);
   transition: all .5s;

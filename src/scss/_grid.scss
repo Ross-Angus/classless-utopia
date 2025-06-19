@@ -26,3 +26,14 @@ body {
     padding: var(--gutter);
   }
 }
+
+header {
+  + aside,
+  + article,
+  + details,
+  + form,
+  + main,
+  + section {
+    padding-top : 0;
+  }
+}

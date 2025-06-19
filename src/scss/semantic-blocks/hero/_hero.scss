@@ -1,0 +1,24 @@
+header {
+  margin: 0 0 var(--gutter);
+  position: relative;
+
+  picture {
+    img {
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  // Assumption: a grid layout will always exist inside a hero panel
+  & > div > div:has(*) {
+    backdrop-filter: blur(var(--gutter));
+    background: rgba(256 256 256 / 60%);
+    margin: var(--gutter);
+    padding: var(--gutter);
+  }
+}
