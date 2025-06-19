@@ -9,7 +9,45 @@
   <module href="src/fragments/main-navigation.html"></module>
 
   <main>
-    <pre><code>&lt;p&gt;Does this work?&lt;/p&gt;</code></pre>
+    <article>
+      <h1>Classless Utopia</h1>
+      <p>This is an experiment in semantic HTML in order to see how far we can go to create a set of web components without classes or IDs. It's purely an academic exercise which has a few secret goals:</p>
+      <ul>
+        <li>To demonstrate some little-used features of HTML and HTML5</li>
+        <li>To gently encourage a more semantic approach to HTML rather than <a href="https://briefs.video/videos/introducing-webbed-sites/"><code>div</code> soup</a></li>
+        <li>To demonstrate some native browser functionality which is often replicated in JavaScript, harming site performance</li>
+        <li>To give me a grab-bag of useful techniques to use in the future</li>
+        <li>To force me to learn more about typography thus giving me more empathy with my designer siblings (this stretch goal was revealed to me along the way)</li>
+      </ul>
+
+      <h2>Rules</h2>
+      <ol>
+        <li>It should be possible to create all of the components without the use of the <code>class</code> attribute
+          <ol>
+            <li><strong>Exception</strong>: I've used <a href="https://highlightjs.org/">highlight.js</a> to make markup easier to read. This adds classes using JavaScript which is styled with its own CSS. This would not be required in a brochureware site created using this framework.</li>
+          </ol>
+        </li>
+        <li>No use of the <code>ID</code> attribute, for the purposes of styling elements
+          <ol>
+            <li><strong>Exception</strong>: The <code>ID</code> attribute can still be used on form elements etc</li>
+          </ol>
+        </li>
+        <li>It should be possible to create all of the components without the use of the <code>data-</code> attribute
+          <ol>
+            <li><strong>Exception:</strong> <code>data-js</code> attributes were used to add functionality and accessibility to the <a href="/navigation/multi-level/">multi-level navigation</a> component. These attributes were added to elements injected directly into the DOM by the JavaScript and were not intended to be used by whoever adds markup. These same attributes were reused for styling purposes.</li>
+          </ol>
+        </li>
+      </ol>
+
+      <h2>What <em>is</em> allowed</h2>
+      <ul>
+        <li>Use of <code>rel</code> attributes, where such attributes have established semantic meaning (see the variety of <a href="/typography/inline/call-to-action/">call-to-action buttons</a> and <a href="/forms/">form styling</a>, for example)</li>
+        <li>Fancy CSS selectors with evergreen support</li>
+        <li><a href="/semantic-blocks/grid/">Empty elements used for spacing</a> (as long as they don't have semantic meaning)</li>
+        <li>Nesting elements where this helps with semantic meaning (for example <a href="/typography/quotations/">blockquotes</a>)</li>
+      </ul>
+      <p>The title of this project is <a href="https://en.wikipedia.org/wiki/Classless_society">a sly reference</a>.</p>
+    </article>
   </main>
 
   <module href="src/fragments/footer.html"></module>
