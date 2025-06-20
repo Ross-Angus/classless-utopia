@@ -1,10 +1,10 @@
 [aria-roledescription="carousel"] {
   overflow: auto;
-  position: relative;
 
   [aria-roledescription="slide"] {
     flex: 100% 0 0;
 
+    // Warning message for users of browsers which do not support this functionality
     &:first-child {
       &::before {
         background: var(--tint1);
@@ -20,6 +20,11 @@
 }
 
 @supports (scroll-marker-group: after) {
+
+  @media (prefers-reduced-motion: no-preference) {
+    [aria-roledescription="carousel"] { scroll-behavior: smooth; }
+  }
+
   [aria-roledescription="carousel"] {
     anchor-name: --carousel;
     overflow: hidden;
@@ -31,6 +36,27 @@
 
       // Hide the warning message about lack of support
       &:first-child::before { display: none; }
+
+      &::scroll-marker {
+        box-sizing: border-box;
+        content: "";
+        display: block;
+        border: var(--keyline) solid var(--bodytext);
+        min-height: var(--small-btn-size);
+        border-radius: 100%;
+        width: var(--small-btn-size);
+
+        // For reasons I don't understand, this selector has no effect
+        &:hover, &:focus-visible {
+          outline: var(--keyline) solid var(--bodytext);
+          outline-offset: calc(var(--keyline) * -4);
+        }
+
+        // This pip represents the currently visible pane
+        &:target-current {
+          border-width: calc(var(--keyline) * 2);
+        }
+      }
     }
 
     &::scroll-button(*) {
@@ -50,6 +76,9 @@
     }
 
     &::scroll-marker-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
     }
   }
 
