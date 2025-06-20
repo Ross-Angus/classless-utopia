@@ -18,6 +18,7 @@
   --smalltext-size: 1rem;
   --line-height-tight: 1.2;
   --heading-weight: 600;
+  --btn-size: 3.063rem; // ~ 49px high
   --small-btn-size: 2.75rem; // ~ 44px high
   // Navigation
   --nav-columns: 3;
@@ -44,6 +45,7 @@
   --warning: #903;
   --success: #093;
   --highlight: rgb(255 255 0 / 0.5);
+  --disabled: 0.5;
 
   // Downward pointing chevron
   --chev-s: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" fill="none"><path d="M 23,6 12,17 1,6"/></svg>');

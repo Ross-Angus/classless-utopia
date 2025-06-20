@@ -10,6 +10,11 @@ h1, h2 {
     margin: 0;
 
     // Lead paragraph - size echoes h5
+    // If this is not desirable, the following markup pattern can
+    // work around it:
+    // hgroup
+    //  h1 Heading text
+    // p Normal text size
     & + p {
       line-height: calc(var(--bodytext-line-height) - 0.1);
       font-size: var(--largetext-size);

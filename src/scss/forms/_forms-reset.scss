@@ -21,6 +21,10 @@ input, select, button, textarea, label {
   font-weight: inherit;
   line-height: inherit;
   overflow: visible;
+
+  &:disabled {
+    opacity: var(--disabled);
+  }
 }
 
 main {

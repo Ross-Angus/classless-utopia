@@ -1,3 +1,5 @@
+@use '../../vars-sass' as v;
+
 [aria-roledescription="carousel"] {
   overflow: auto;
 
@@ -19,6 +21,16 @@
   }
 }
 
+@media (width < v.$site-width) {
+  // Usually, the flexbox grid stops working below this point
+  [aria-roledescription="carousel"] {
+    display: flex;
+    gap: var(--gutter);
+    & > div { display: block; }
+    & > * { flex: 1; }
+  }
+}
+
 @supports (scroll-marker-group: after) {
 
   @media (prefers-reduced-motion: no-preference) {
@@ -28,6 +40,8 @@
   [aria-roledescription="carousel"] {
     anchor-name: --carousel;
     overflow: hidden;
+    margin: 0 var(--btn-size) var(--gutter);
+    padding: 0 var(--gutter);
     scroll-marker-group: after;
     scroll-snap-type: x mandatory;
 
@@ -46,10 +60,9 @@
         border-radius: 100%;
         width: var(--small-btn-size);
 
-        // For reasons I don't understand, this selector has no effect
         &:hover, &:focus-visible {
           outline: var(--keyline) solid var(--bodytext);
-          outline-offset: calc(var(--keyline) * -4);
+          outline-offset: var(--keyline);
         }
 
         // This pip represents the currently visible pane
@@ -63,6 +76,21 @@
       aspect-ratio: 1;
       position: fixed;
       position-anchor: --carousel;
+
+      &:disabled {
+        opacity: var(--disabled);
+
+        &:hover {
+          cursor: not-allowed;
+          outline: none;
+        }
+      }
+
+      &:hover, &:focus-visible {
+        cursor: pointer;
+        outline: var(--keyline) solid var(--bodytext);
+        outline-offset: var(--keyline);
+      }
     }
 
     &::scroll-button(left) {
@@ -78,8 +106,7 @@
     &::scroll-marker-group {
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      gap: var(--gutter);
     }
   }
-
 }

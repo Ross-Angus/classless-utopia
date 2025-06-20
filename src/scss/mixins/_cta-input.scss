@@ -4,7 +4,7 @@
   border-radius: var(--cta-radius);
   border: solid var(--keyline) var(--bodytext);
   line-height: 1.3;
-  min-height: 3.063rem; // ~ 49px high
+  min-height: var(--btn-size);
   padding: calc(var(--gutter) / 2) var(--gutter);
   vertical-align: middle;
 }

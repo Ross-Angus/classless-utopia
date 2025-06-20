@@ -19,11 +19,28 @@
     <article>
       <h1>Carousel</h1>
       <div aria-roledescription="carousel">
-        <section role="group" aria-roledescription="slide">
-          <p>Nunc neque sem, consectetur nec sapien vel, molestie consequat sem. Aliquam ut velit volutpat, ultrices nibh at, feugiat neque. Sed tincidunt nulla vitae justo pulvinar feugiat. Fusce dignissim hendrerit luctus. Proin et maximus magna. Duis fermentum massa in tempor bibendum. Integer tincidunt rutrum ex, id sodales libero fringilla quis. Integer pretium urna sed nisi commodo ornare. Maecenas commodo accumsan sem a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <section role="group" aria-roledescription="slide" aria-label="Introduction">
+          <hgroup>
+            <h2>Introduction</h2>
+          </hgroup>
+          <p>Native CSS carousels are only supported in Chrome at the time of writing. The technique used here is heavily based on the <a href="https://css-tricks.com/css-carousels/">CSS Tricks article</a>.</p>
+          <p>If the technique is not supported, a warning message is displayed and the browser shows a simple scrolling box instead.</p>
         </section>
-        <section role="group" aria-roledescription="slide">
-          <p>In mattis blandit libero, sit amet iaculis elit rhoncus eget. Nulla facilisis nisl ut metus aliquet, non ultricies dolor cursus. Duis id nisi dolor. Proin vel egestas diam. Nunc cursus, quam ultrices bibendum porta, quam arcu consectetur ligula, at vestibulum elit massa vitae enim. Praesent quis magna sed nisl malesuada tempus et quis odio. Integer lacinia dignissim nibh, vitae vehicula felis consectetur in. Praesent id lectus id nulla viverra pellentesque id vitae magna.</p>
+        <section role="group" aria-roledescription="slide" aria-label="Markup">
+          <hgroup>
+            <h2>Markup</h2>
+          </hgroup>
+          <p>This markup is based on the pattern demonstrated in the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/carousel/">ARIA Authoring Practices Guide (APG)</a>.</p>
+          <p>The <a href="/semantic-blocks/grid/">standard grid markup</a> is used which means that each slide could be any valid containing element such as <code>div</code>, <code>article</code>, <code>aside</code>, etc.</p>
+          <pre><code>&lt;div aria-roledescription="carousel"&gt;
+  &lt;section role="group" aria-roledescription="slide"&gt;
+    Slide content
+  &lt;/section&gt;
+  &lt;section role="group" aria-roledescription="slide"&gt;
+    Slide content
+  &lt;/section&gt;
+  ...
+&lt;/div&gt;</code></pre>
         </section>
         <section role="group" aria-roledescription="slide">
           <p>Duis ac justo non magna laoreet posuere eu et risus. Cras sit amet metus mi. Phasellus nisi orci, tincidunt eget urna in, semper sollicitudin erat. Praesent viverra pharetra felis, sit amet tempor libero scelerisque et. Nunc imperdiet leo et volutpat ultrices. Nam bibendum leo sed erat tempor vulputate. Aenean ante metus, blandit sit amet arcu a, rutrum placerat justo.</p>

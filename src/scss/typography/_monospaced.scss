@@ -1,3 +1,8 @@
 code, pre, kbd, var, samp {
   font-family: var(--monospaced-font);
 }
+
+pre {
+  max-width: 100%;
+  overflow: scroll;
+}

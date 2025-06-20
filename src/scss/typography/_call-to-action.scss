@@ -190,7 +190,7 @@ main, header > *:not(nav) {
   ::scroll-button(*) {
     border-radius: var(--cta-radius);
     border: solid var(--keyline) var(--bodytext);
-    min-height: 3.063rem; // ~ 49px high
+    min-height: var(--btn-size);
     padding: calc(var(--gutter) / 2) var(--gutter);
     background: var(--tint2);
     font-weight: var(--heading-weight);
