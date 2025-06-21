@@ -1,11 +1,11 @@
 <p>
   <label for="type-text">Type <code>text</code></label>
-  <input name="type-text" id="type-text">
+  <input name="type-text" id="type-text" disabled>
 </p>
 
 <p>
   <label for="type-text-datalist">Type <code>text</code> with <code>datalist</code></label>
-  <input name="type-text-datalist" id="type-text-datalist" list="country-names" placeholder="Please start to type a country name">
+  <input name="type-text-datalist" id="type-text-datalist" list="country-names" placeholder="Please start to type a country name" disabled>
   <datalist id="country-names">
     <module href="./country-names.html"></module>
   </datalist>
@@ -13,83 +13,83 @@
 
 <p>
   <label for="type-password">Type <code>password</code></label>
-  <input name="type-password" id="type-password" type="password">
+  <input name="type-password" id="type-password" type="password" disabled>
 </p>
 
 <p>
   <label for="type-email">Type <code>email</code></label>
-  <input name="type-email" id="type-email" type="email">
+  <input name="type-email" id="type-email" type="email" disabled>
 </p>
 
 <p>
   <label for="type-search-input">Type <code>search</code> (input submit)</label>
-  <input name="type-search-input" id="type-search-input" type="search"><input type="submit" value="Search">
+  <input name="type-search-input" id="type-search-input" type="search"><input type="submit" value="Search" disabled>
 </p>
 
 <p>
   <label for="type-search-button">Type <code>search</code> (button submit)</label>
-  <input name="type-search-button" id="type-search-button" type="search"><button>Search</button>
+  <input name="type-search-button" id="type-search-button" type="search" disabled><button disabled>Search</button>
 </p>
 
 <p>
   <label for="type-tel">Type <code>tel</code></label>
-  <input name="type-tel" id="type-tel" type="tel" value="+44">
+  <input name="type-tel" id="type-tel" type="tel" value="+44" disabled>
 </p>
 
 <p>
   <label for="type-url">Type <code>url</code></label>
-  <input name="type-url" id="type-url" type="url" value="https://">
+  <input name="type-url" id="type-url" type="url" value="https://" disabled>
 </p>
 
 <p>
   <label for="type-number">Type <code>number</code></label>
-  <input name="type-number" id="type-number" type="number" min="0" max="1000" step="1">
+  <input name="type-number" id="type-number" type="number" min="0" max="1000" step="1" disabled>
 </p>
 
 <p>
   <label for="type-range">Type <code>range</code></label>
-  <input name="type-range" id="type-range" type="range" min="0" max="1000" step="1" value="500">
+  <input name="type-range" id="type-range" type="range" min="0" max="1000" step="1" value="500" disabled>
   <output for="type-range"></output>
 </p>
 
 <p>
   <label for="type-date">Type <code>date</code></label>
-  <input name="type-date" id="type-date" type="date" min="1971-01-01" max="2050-01-01">
+  <input name="type-date" id="type-date" type="date" min="1971-01-01" max="2050-01-01" disabled>
 </p>
 
 <p>
   <label for="type-datetime-local">Type <code>datetime-local</code></label>
-  <input name="type-datetime-local" id="type-datetime-local" type="datetime-local">
+  <input name="type-datetime-local" id="type-datetime-local" type="datetime-local" disabled>
 </p>
 
 <p>
   <label for="type-month">Type <code>month</code></label>
-  <input name="type-month" id="type-month" type="month">
+  <input name="type-month" id="type-month" type="month" disabled>
 </p>
 
 <p>
   <label for="type-time">Type <code>time</code></label>
-  <input name="type-time" id="type-time" type="time">
+  <input name="type-time" id="type-time" type="time" disabled>
 </p>
 
 <p>
   <label for="type-week">Type <code>week</code></label>
-  <input name="type-week" id="type-week" type="week">
+  <input name="type-week" id="type-week" type="week" disabled>
 </p>
 
 <p>
   <label for="type-color">Type <code>color</code></label>
-  <input name="type-color" id="type-color" type="color" value="#666666">
+  <input name="type-color" id="type-color" type="color" value="#666666" disabled>
 </p>
 
 <p>
   <label for="type-file">Type <code>file</code></label>
-  <input name="type-file" id="type-file" type="file">
+  <input name="type-file" id="type-file" type="file" disabled>
 </p>
 
 <p>
   <label for="type-select">Type <code>select</code> size 1</label>
-  <select name="type-select" id="type-select">
+  <select name="type-select" id="type-select" disabled>
     <option selected="selected">Please select a country</option>
     <optgroup label="Countries">
       <module href="./country-names.html"></module>
@@ -99,7 +99,7 @@
 
 <p>
   <label for="type-select-large">Type <code>select</code> large size</label>
-  <select name="type-select-large" id="type-select-large" size="10">
+  <select name="type-select-large" id="type-select-large" size="10" disabled>
     <option selected="selected">Please select a country</option>
     <optgroup label="Countries">
       <module href="./country-names.html"></module>
@@ -109,7 +109,7 @@
 
 <p>
   <label for="type-select-multiple">Type <code>select</code> multiple</label>
-  <select name="type-select-multiple" id="type-select-multiple" size="10" multiple>
+  <select name="type-select-multiple" id="type-select-multiple" size="10" multiple disabled>
     <option selected="selected">Please select a country</option>
     <optgroup label="Countries">
       <module href="./country-names.html"></module>
@@ -119,27 +119,27 @@
 
 <p>
   <label for="textarea"><code>textarea</code></label>
-  <textarea name="textarea" id="textarea" rows="10" cols="50">Example text within a textarea</textarea>
+  <textarea name="textarea" id="textarea" rows="10" cols="50" disabled>Example text within a textarea</textarea>
 </p>
 
 <div>
   <fieldset>
     <legend>Checkboxes</legend>
     <span>
-      <module href="./checkboxes.html"></module>
+      <module href="./checkboxes-disabled.html"></module>
     </span>
   </fieldset>
 
   <fieldset>
     <legend>Radio buttons</legend>
     <span>
-      <module href="./radiobuttons.html"></module>
+      <module href="./radiobuttons-disabled.html"></module>
     </span>
   </fieldset>
 </div>
 
 <span>
   <p>
-    <module href="./form-buttons.html"></module>
+    <module href="./form-buttons-disabled.html"></module>
   </p>
 </span>
