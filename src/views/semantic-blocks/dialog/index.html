@@ -22,20 +22,20 @@
       </hgroup>
       <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog"><code>dialog</code> tag</a> renders a modal popup to the page. This type of control removes all distractions from the page and encourages the user to focus on only one task. It is usually styled with a box in the centre of the screen with the rest of the page behind a semi-transparent veil.</p>
       <p>
-        <button aria-controls="example-dialog1" rel="related" data-js="toggle-dialog">Open first dialog</button>
-        <button aria-controls="example-dialog2" rel="related" data-js="toggle-dialog">Open second dialog</button>
+        <button aria-controls="example-dialog1" data-js="toggle-dialog">Open first dialog</button>
+        <button aria-controls="example-dialog2" data-js="toggle-dialog">Open second dialog</button>
       </p>
 
       <dialog id="example-dialog1" closedby="any">
         <h2>First example dialog</h2>
-        <form>
+        <form method="dialog">
           <p><small><button formmethod="dialog" aria-label="Close dialog" title="Close dialog" autofocus>&times;</button></small></p>
         </form>
       </dialog>
 
       <dialog id="example-dialog2" closedby="any">
         <h2>Second example dialog</h2>
-        <form>
+        <form method="dialog">
           <p><small><button formmethod="dialog" aria-label="Close dialog" title="Close dialog" autofocus>&times;</button></small></p>
         </form>
       </dialog>

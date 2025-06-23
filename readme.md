@@ -32,14 +32,6 @@ Using `rel` to mark `first`, `prev`, `next` and `last` in a series of ctas (`sta
 
 Pagination should be inside `nav` so the [1] [2] [3] buttons don't have chevrons
 
-## Call to action
-
-If an anchor is the only child of a paragraph, it's a call-to-action
-This pattern also works:
-div
- p a
- p a
-
 ## Asides and figures
 
 Larger margin-bottom, to give breathing room from body text. If it has a `figcaption` the gap should be larger still
@@ -59,18 +51,15 @@ Look at [`hgroup`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/E
 
 ## Forms
 
-How to do small text under form fields? (`small`)
 Demo `data` and `datalist`
 
 ## Navigation
-Add `menu` instead of `ul` for nav stuff to add a new layout
 Nav spacing for mobile needs to be larger for fat fingers
 
 Look into the disaster of desktop mega menus - `:scope > li` forms the columns instead of the `columns` property in CSS?
 
 ## Tags
 `address`
-`del`, `ins` and `mark`
 `dfn` (tooltip?)
 `map` & `area`?
 `meter`, `progress`
@@ -83,3 +72,8 @@ Is there anything to be done with width fit content?
 https://www.w3.org/TR/css-pseudo-4/#selectordef-target-text
 
 Click outside of main nav should close nav (close all nav?)
+
+## Find and replace blog post:
+
+<option value="(.*)"></option>
+<option value="$1">$1</option>
