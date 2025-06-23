@@ -23,7 +23,12 @@ input, select, button, textarea, label {
   overflow: visible;
 
   &:disabled {
+    cursor: not-allowed;
     opacity: var(--disabled);
+
+    &:hover, &:focus {
+      outline: none;
+    }
   }
 }
 
