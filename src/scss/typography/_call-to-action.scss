@@ -183,6 +183,11 @@ main, header > *:not(nav) {
         &::before { transform: translate(0.707ch, 0); }
       }
     }
+
+    // Close buttons on dialog elements should not have a chevron
+    &[formmethod="dialog"]::after {
+      display: none;
+    }
   }
 
   // We need to replicate some declarations for ::scroll-button(*) because
