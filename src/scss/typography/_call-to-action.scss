@@ -227,7 +227,8 @@ main, header > *:not(nav) {
   // Small buttons - font-size inherited from `small` tag
   small {
     button, a[rel] {
-      min-height: var(--small-btn-size); // ~ 44px high
+      min-height: 0;
+      padding: calc(var(--gutter) / 3) calc(var(--gutter) / 1.5);
     }
   }
 }

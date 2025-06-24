@@ -2,9 +2,11 @@
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog#examples
 // Closed state of the dialog
 dialog {
+  border: solid var(--keyline) var(--bodytext);
   max-width: var(--content-width);
   opacity: 0;
-  transform: scaleY(0);
+  padding: var(--gutter);
+  transform: scale(0);
   transition:
     opacity 0.5s ease-out,
     transform 0.5s ease-out,
@@ -16,7 +18,7 @@ dialog {
   // Open state of the dialog
   &:open {
     opacity: 1;
-    transform: scaleY(1);
+    transform: scale(1);
 
     &::backdrop {
       background-color: var(--overlay);
@@ -33,6 +35,17 @@ dialog {
     // Equivalent to
     // transition: all 0.5s allow-discrete;
   }
+
+  // The `form` and `hgroup` tags are used as a media object to get the close
+  // button to appear top right
+  & > form[method="dialog"] {
+    display: flex;
+    gap: var(--gutter);
+
+    & > hgroup { flex: 1; }
+  }
+
+  & > :last-child { margin-bottom: 0; }
 }
 
 // Before open state
@@ -41,7 +54,7 @@ dialog {
 @starting-style {
   dialog:open {
     opacity: 0;
-    transform: scaleY(0);
+    transform: scale(0);
   }
 }
 
