@@ -58,6 +58,7 @@
         display: none;
       }
 
+      // The pips at the bottom of the carousel, for jumping to a slide
       &::scroll-marker {
         box-sizing: border-box;
         content: "";
@@ -114,8 +115,10 @@
 
     &::scroll-marker-group {
       display: flex;
-      justify-content: center;
       gap: var(--gutter);
+      height: var(--small-btn-size);
+      justify-content: center;
+      margin: 0 0 var(--gutter);
     }
   }
 }

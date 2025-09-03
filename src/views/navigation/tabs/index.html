@@ -56,6 +56,7 @@
     &lt;a href="#"&gt;Tab navigation&lt;/a&gt;
     &lt;a href="#"&gt;Another tab level navigation item&lt;/a&gt;
     &lt;a href="#"&gt;A third example&lt;/a&gt;
+    &lt;em&gt;Current tab&lt;/em&gt;
   &lt;/p&gt;
 &lt;/nav&gt;</code></pre>
 
@@ -71,11 +72,22 @@
           </p>
         </nav>
 
+        <h2>Carousel tabs</h2>
+
         <p>
           If a large number of tabs are required, carousel markup can ensure
           they all fit in the viewport.
         </p>
 
+        <pre><code>&lt;nav&gt;
+  &lt;p aria-roledescription="carousel"&gt;
+    &lt;a href="#" aria-roledescription="slide"&gt;Tab&lt;/a&gt;
+    &lt;a href="#" aria-roledescription="slide"&gt;Tab&lt;/a&gt;
+    &lt;em aria-roledescription="slide"&gt;Current tab&lt;/em&gt;
+  &lt;/p&gt;
+&lt;/nav&gt;</code></pre>
+
+        <h3>Example</h3>
         <nav>
           <p aria-roledescription="carousel">
             <a href="#" aria-roledescription="slide">Horizontal links</a>
