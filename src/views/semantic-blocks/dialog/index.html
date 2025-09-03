@@ -1,73 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en-GB">
+  <module href="src/fragments/head.html">
+    <title>Classless Utopia - Dialog</title>
+  </module>
 
-<module href="src/fragments/head.html">
-  <title>Classless Utopia - Dialog</title>
-</module>
+  <body>
+    <module href="src/fragments/main-navigation.html"></module>
 
-<body>
-  <module href="src/fragments/main-navigation.html"></module>
+    <main>
+      <nav aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/semantic-blocks/">Semantic blocks</a></li>
+          <li><em title="You are here">Dialog</em></li>
+        </ol>
+      </nav>
+      <article>
+        <hgroup>
+          <h1>Dialog</h1>
+        </hgroup>
+        <p>
+          The
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog"
+            ><code>dialog</code> tag</a
+          >
+          renders a modal popup to the page. This type of control removes all
+          distractions from the page and encourages the user to focus on only
+          one task. It is usually styled with a box in the centre of the screen
+          with the rest of the page behind a semi-transparent veil.
+        </p>
+        <p>
+          <button aria-controls="example-dialog1" data-js="toggle-dialog">
+            Open first dialog
+          </button>
+          <button aria-controls="example-dialog2" data-js="toggle-dialog">
+            Open second dialog
+          </button>
+        </p>
 
-  <main>
-    <nav aria-label="Breadcrumb">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/semantic-blocks/">Semantic blocks</a></li>
-        <li><em title="You are here">Dialog</em></li>
-      </ol>
-    </nav>
-    <article>
-      <hgroup>
-        <h1>Dialog</h1>
-      </hgroup>
-      <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog"><code>dialog</code> tag</a> renders a modal popup to the page. This type of control removes all distractions from the page and encourages the user to focus on only one task. It is usually styled with a box in the centre of the screen with the rest of the page behind a semi-transparent veil.</p>
-      <p>
-        <button aria-controls="example-dialog1" data-js="toggle-dialog">Open first dialog</button>
-        <button aria-controls="example-dialog2" data-js="toggle-dialog">Open second dialog</button>
-      </p>
+        <dialog id="example-dialog1" closedby="any">
+          <form method="dialog">
+            <hgroup>
+              <h2>First example dialog</h2>
+            </hgroup>
+            <small
+              ><button
+                formmethod="dialog"
+                aria-label="Close dialog"
+                title="Close dialog"
+                autofocus
+              >
+                &times;
+              </button></small
+            >
+          </form>
+          <p>
+            By default, <code>dialog</code> elements are only as wide as their
+            contents.
+          </p>
+        </dialog>
 
-      <dialog id="example-dialog1" closedby="any">
-        <form method="dialog">
-          <hgroup>
-            <h2>First example dialog</h2>
-          </hgroup>
-          <small><button formmethod="dialog" aria-label="Close dialog" title="Close dialog" autofocus>&times;</button></small>
-        </form>
-        <p>By default, <code>dialog</code> elements are only as wide as their contents.</p>
-      </dialog>
-
-      <dialog id="example-dialog2" closedby="any">
-        <form method="dialog">
-          <hgroup>
-            <h2>Second example dialog</h2>
-          </hgroup>
-          <small><button formmethod="dialog" aria-label="Close dialog" title="Close dialog" autofocus>&times;</button></small>
-        </form>
-        <p>Once text inside a <code>dialog</code> element wraps, the <code>dialog</code> element stretches to the full content width of the page.</p>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat. Morbi quis vehicula sem, vel lacinia nibh. Cras porttitor pharetra felis, ut fermentum leo molestie eget. Donec rhoncus, dui at commodo dictum, magna sem sollicitudin lorem, eu dapibus diam nulla ut libero. Integer ullamcorper lectus sit amet tempus finibus. Ut lacinia odio eget eros elementum, sit amet bibendum dui malesuada. Sed commodo eros et tincidunt tincidunt.</p>
-        <module href="src/fragments/hero.html" locals='{
+        <dialog id="example-dialog2" closedby="any">
+          <form method="dialog">
+            <hgroup>
+              <h2>Second example dialog</h2>
+            </hgroup>
+            <small
+              ><button
+                formmethod="dialog"
+                aria-label="Close dialog"
+                title="Close dialog"
+                autofocus
+              >
+                &times;
+              </button></small
+            >
+          </form>
+          <p>
+            Once text inside a <code>dialog</code> element wraps, the
+            <code>dialog</code> element stretches to the full content width of
+            the page.
+          </p>
+          <p>
+            Pellentesque habitant morbi tristique senectus et netus et malesuada
+            fames ac turpis egestas. Aliquam erat volutpat. Morbi quis vehicula
+            sem, vel lacinia nibh. Cras porttitor pharetra felis, ut fermentum
+            leo molestie eget. Donec rhoncus, dui at commodo dictum, magna sem
+            sollicitudin lorem, eu dapibus diam nulla ut libero. Integer
+            ullamcorper lectus sit amet tempus finibus. Ut lacinia odio eget
+            eros elementum, sit amet bibendum dui malesuada. Sed commodo eros et
+            tincidunt tincidunt.
+          </p>
+          <module
+            href="src/fragments/hero.html"
+            locals='{
           "file_name": "grassmarket",
           "alt_text": "The view from the Grassmarket, Edinburgh"
-        }'>
-          <div>
+        }'
+          >
             <div>
-              <h2>Example hero panel</h2>
-              <p>Any content can fit inside a dialog element</p>
-              <p><a href="#" rel="related">Example call-to-action</a></p>
-              <footer>
-                <p><small>Grassmakret image by <a href="https://www.pexels.com/@urlapovaanna/">Anna Urlapova</a></small></p>
-              </footer>
+              <div>
+                <h2>Example hero panel</h2>
+                <p>Any content can fit inside a dialog element</p>
+                <p><a href="#" rel="related">Example call-to-action</a></p>
+                <footer>
+                  <p>
+                    <small
+                      >Grassmarket image by
+                      <a href="https://www.pexels.com/@urlapovaanna/"
+                        >Anna Urlapova</a
+                      ></small
+                    >
+                  </p>
+                </footer>
+              </div>
+              <div></div>
+              <div></div>
             </div>
-            <div></div>
-            <div></div>
-          </div>
-        </module>
-      </dialog>
+          </module>
+        </dialog>
+      </article>
+    </main>
 
-    </article>
-  </main>
-
-  <module href="src/fragments/footer.html"></module>
-</body>
-
+    <module href="src/fragments/footer.html"></module>
+  </body>
 </html>
