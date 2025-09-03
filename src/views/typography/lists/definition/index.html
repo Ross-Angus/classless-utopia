@@ -1,73 +1,151 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en-GB">
+  <module href="src/fragments/head.html">
+    <title>Classless Utopia - Definition lists</title>
+  </module>
 
-<module href="src/fragments/head.html">
-  <title>Classless Utopia - Definition lists</title>
-</module>
+  <body>
+    <module href="src/fragments/main-navigation.html"></module>
 
-<body>
-  <module href="src/fragments/main-navigation.html"></module>
+    <main>
+      <nav aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/typography/">Typography</a></li>
+          <li><a href="/typography/lists/">Lists</a></li>
+          <li><em title="You are here">Definition lists</em></li>
+        </ol>
+      </nav>
+      <article>
+        <h1>Definition lists</h1>
+        <p>
+          Definition lists are rarely used but due to the variety of markup
+          configurations, I've resisted the temptation to make them two column.
+        </p>
+        <p>
+          Note that markup patterns can take the form of multiple definitions in
+          the same list, multiple definition <em>terms</em> being associated
+          with one definition and multiple definitions being applied to the same
+          term.
+        </p>
 
-  <main>
-    <nav aria-label="Breadcrumb">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/typography/">Typography</a></li>
-        <li><a href="/typography/lists/">Lists</a></li>
-        <li><em title="You are here">Definition lists</em></li>
-      </ol>
-    </nav>
-    <article>
-      <h1>Definition lists</h1>
-      <p>Definition lists are rarely used but due to the variety of markup configurations, I've resisted the temptation to make them two column.</p>
-      <p>Note that markup patterns can take the form of multiple definitions in the same list, multiple definition <em>terms</em> being associated with one definition and multiple definitions being applied to the same term.</p>
+        <dl>
+          <dt>Definition term</dt>
+          <dd>
+            Definition donec porttitor, orci ut consectetur pellentesque, diam
+            nisl varius massa, vitae convallis ipsum leo ut nisl
+          </dd>
+          <dt>Single term with multiple definitions</dt>
+          <dd>
+            First definiton: donec porttitor, orci ut consectetur pellentesque,
+            diam nisl varius massa, vitae convallis ipsum leo ut nisl
+          </dd>
+          <dd>
+            Second definition: pellentesque bibendum eleifend purus, eleifend
+            faucibus est. Ut dapibus ligula nec nulla aliquet posuere. Morbi nec
+            tellus tellus. Suspendisse imperdiet metus in ullamcorper
+            consectetur. Nulla facilisi. Ut vel ex lacinia, pulvinar risus quis,
+            mattis tellus. Nam placerat augue sit amet auctor finibus. Ut
+            pulvinar ipsum nec nibh ullamcorper, eget facilisis nulla hendrerit.
+            Morbi at ligula lorem. Aenean augue neque, pharetra mollis arcu
+            quis, efficitur aliquet tellus.
+          </dd>
+          <dt>
+            Example of multiple terms associated with the same definition. First
+            term
+          </dt>
+          <dt>Second term associated with the same definition</dt>
+          <dd>
+            Single definition for multiple terms. Cras viverra nisi vel ex
+            mollis rhoncus. Curabitur lorem ipsum, bibendum non massa et,
+            lobortis eleifend nisl.
+          </dd>
+          <dt>Semantic <abbr title="Hyper Text Markup Language">HTML</abbr></dt>
+          <dd>
+            Semantic <abbr>HTML</abbr> is the use of <abbr>HTML</abbr> markup to
+            reinforce the semantics, or meaning, of the information in web pages
+            and web applications rather than merely to define its presentation
+            or look. Semantic <abbr>HTML</abbr> is processed by traditional web
+            browsers as well as by many other user agents.
+            <abbr title="Cascading Style Sheets">CSS</abbr> is used to suggest
+            how it is presented to human users.
+            <footer>
+              <cite
+                ><a href="https://en.wikipedia.org/wiki/Semantic_HTML"
+                  >Wikipedia</a
+                ></cite
+              >
+            </footer>
+          </dd>
+          <dd>
+            <abbr>HTML</abbr> is the technology that defines the content and
+            structure of any website. Written properly, it should also define
+            the semantics (meaning) of the content in a machine-readable way,
+            which is vital for accessibility, search engine optimization, and
+            making use of the built-in features browsers provide for content to
+            work optimally.
+            <footer>
+              <cite
+                ><a
+                  href="https://developer.mozilla.org/en-US/curriculum/core/semantic-html/"
+                  ><abbr title="Mozilla Developers Network">MDN</abbr></a
+                ></cite
+              >
+            </footer>
+          </dd>
+          <dt>Aenean mattis posuere posuere</dt>
+          <dd>Donec in nibh ut nibh malesuada malesuada et convallis dui</dd>
+          <dt>Nam commodo sit amet nisl quis tempus</dt>
+          <dd>Nulla et enim massa</dd>
+          <dt>Nulla nec hendrerit nunc</dt>
+          <dd>
+            Cras semper, lacus vel fringilla accumsan, diam quam aliquet magna,
+            ac rutrum tellus leo a orci
+          </dd>
+          <dt>
+            Fusce egestas tortor quis lectus dapibus dapibus vitae in felis
+          </dt>
+          <dd>Suspendisse sed pharetra quam.</dd>
+        </dl>
 
-      <dl>
-        <dt>Definition term</dt>
-        <dd>Definition donec porttitor, orci ut consectetur pellentesque, diam nisl varius massa, vitae convallis ipsum leo ut nisl</dd>
-        <dt>Single term with multiple definitions</dt>
-        <dd>First definiton: donec porttitor, orci ut consectetur pellentesque, diam nisl varius massa, vitae convallis ipsum leo ut nisl</dd>
-        <dd>Second definition: pellentesque bibendum eleifend purus, eleifend faucibus est. Ut dapibus ligula nec nulla aliquet posuere. Morbi nec tellus tellus. Suspendisse imperdiet metus in ullamcorper consectetur. Nulla facilisi. Ut vel ex lacinia, pulvinar risus quis, mattis tellus. Nam placerat augue sit amet auctor finibus. Ut pulvinar ipsum nec nibh ullamcorper, eget facilisis nulla hendrerit. Morbi at ligula lorem. Aenean augue neque, pharetra mollis arcu quis, efficitur aliquet tellus.</dd>
-        <dt>Example of multiple terms associated with the same definition. First term</dt>
-        <dt>Second term associated with the same definition</dt>
-        <dd>Single definition for multiple terms. Cras viverra nisi vel ex mollis rhoncus. Curabitur lorem ipsum, bibendum non massa et, lobortis eleifend nisl.</dd>
-        <dt>Semantic <abbr title="Hyper Text Markup Language">HTML</abbr></dt>
-        <dd>Semantic <abbr>HTML</abbr> is the use of <abbr>HTML</abbr> markup to reinforce the semantics, or meaning, of the information in web pages and web applications rather than merely to define its presentation or look. Semantic <abbr>HTML</abbr> is processed by traditional web browsers as well as by many other user agents. <abbr title="Cascading Style Sheets">CSS</abbr> is used to suggest how it is presented to human users.
-        <footer><cite><a href="https://en.wikipedia.org/wiki/Semantic_HTML">Wikipedia</a></cite></footer>
-        </dd>
-        <dd><abbr>HTML</abbr> is the technology that defines the content and structure of any website. Written properly, it should also define the semantics (meaning) of the content in a machine-readable way, which is vital for accessibility, search engine optimization, and making use of the built-in features browsers provide for content to work optimally.
-          <footer><cite><a href="https://developer.mozilla.org/en-US/curriculum/core/semantic-html/"><abbr title="Mozilla Developers Network">MDN</abbr></a></cite></footer>
-        </dd>
-        <dt>Aenean mattis posuere posuere</dt>
-        <dd>Donec in nibh ut nibh malesuada malesuada et convallis dui</dd>
-        <dt>Nam commodo sit amet nisl quis tempus</dt>
-        <dd>Nulla et enim massa</dd>
-        <dt>Nulla nec hendrerit nunc</dt>
-        <dd>Cras semper, lacus vel fringilla accumsan, diam quam aliquet magna, ac rutrum tellus leo a orci</dd>
-        <dt>Fusce egestas tortor quis lectus dapibus dapibus vitae in felis</dt>
-        <dd>Suspendisse sed pharetra quam.</dd>
-      </dl>
+        <dl>
+          <dt>New definition list. Definition term</dt>
+          <dd>
+            Definition donec porttitor, orci ut consectetur pellentesque, diam
+            nisl varius massa, vitae convallis ipsum leo ut nisl
+          </dd>
+        </dl>
 
-      <dl>
-        <dt>New definition list. Definition term</dt>
-        <dd>Definition donec porttitor, orci ut consectetur pellentesque, diam nisl varius massa, vitae convallis ipsum leo ut nisl</dd>
-      </dl>
+        <p>Example of content after a definition list.</p>
 
-      <p>Example of content after a definition list.</p>
+        <h2>Single paragraph definitions</h2>
+        <p>
+          Instead of creating a definition list, sometimes a definition appears
+          naturally within a single block level element, for example a
+          paragraph, blockquote or a list item. In cases such as this, the
+          element can be changed into a definition by using the
+          <code>dfn</code> tag. This retroactively makes the entire parent block
+          element the definition and the string of text marked with the
+          <code>dfn</code> tag the term being explained. In the example below,
+          the string <code>retroactive</code> is wrapped in a
+          <code>dfn</code> tag:
+        </p>
 
-      <h2>Single paragraph definitions</h2>
-      <p>Instead of creating a definition list, sometimes a definition appears naturally within a single block level element, for example a paragraph, blockquote or a list item. In cases such as this, the element can be changed into a definition by using the <code>dfn</code> tag. This retroactively makes the entire parent block element the definition and the string of text marked with the <code>dfn</code> tag the term being explained. For example:</p>
+        <blockquote>
+          <p>
+            If a decision or action is <dfn>retroactive</dfn>, it is intended to
+            take effect from a date in the past.
+          </p>
+          <footer>
+            <a
+              href="https://www.collinsdictionary.com/dictionary/english/retroactive"
+              >Collins dictionary</a
+            >
+          </footer>
+        </blockquote>
+      </article>
+    </main>
 
-      <blockquote>
-        <p>If a decision or action is <dfn>retroactive</dfn>, it is intended to take effect from a date in the past.</p>
-        <footer><a href="https://www.collinsdictionary.com/dictionary/english/retroactive">Collins dictionary</a></footer>
-      </blockquote>
-
-    </article>
-  </main>
-
-
-  <module href="src/fragments/footer.html"></module>
-</body>
-
+    <module href="src/fragments/footer.html"></module>
+  </body>
 </html>
