@@ -1,4 +1,4 @@
-@use '../../vars-sass' as v;
+@use "../../vars-sass" as v;
 
 [aria-roledescription="carousel"] {
   overflow: auto;
@@ -26,15 +26,20 @@
   [aria-roledescription="carousel"] {
     display: flex;
     gap: var(--gutter);
-    & > div { display: block; }
-    & > * { flex: 1; }
+    & > div {
+      display: block;
+    }
+    & > * {
+      flex: 1;
+    }
   }
 }
 
 @supports (scroll-marker-group: after) {
-
   @media (prefers-reduced-motion: no-preference) {
-    [aria-roledescription="carousel"] { scroll-behavior: smooth; }
+    [aria-roledescription="carousel"] {
+      scroll-behavior: smooth;
+    }
   }
 
   [aria-roledescription="carousel"] {
@@ -49,7 +54,9 @@
       scroll-snap-align: center;
 
       // Hide the warning message about lack of support
-      &:first-child::before { display: none; }
+      &:first-child::before {
+        display: none;
+      }
 
       &::scroll-marker {
         box-sizing: border-box;
@@ -60,7 +67,8 @@
         border-radius: 100%;
         width: var(--small-btn-size);
 
-        &:hover, &:focus-visible {
+        &:hover,
+        &:focus-visible {
           outline: var(--keyline) solid var(--bodytext);
           outline-offset: var(--keyline);
         }
@@ -86,7 +94,8 @@
         }
       }
 
-      &:hover, &:focus-visible {
+      &:hover,
+      &:focus-visible {
         cursor: pointer;
         outline: var(--keyline) solid var(--bodytext);
         outline-offset: var(--keyline);
