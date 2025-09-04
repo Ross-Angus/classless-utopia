@@ -4,7 +4,7 @@ import scss from "highlight.js/lib/languages/scss";
 import xml from "highlight.js/lib/languages/xml";
 import clickEvents from "./modules/events/click-events.js";
 import mainNavSetup from "./modules/navigation/main/main-nav-setup.js";
-import tabsSetup from "./modules/navigation/tabs.js";
+import tabsSetup from "./modules/navigation/tabs/tabs.js";
 import typographyInit from "./modules/typography/typography-init.js";
 
 // For blocks of code and syntactic highlighting
