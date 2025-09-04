@@ -47,18 +47,33 @@
 
         <h2>Tabs</h2>
         <p>
-          Where anchors are inside a paragraph tag, the navigation will form a
-          set of tabs.
+          Where anchors or buttons have the appropriate ARIA attributes, the
+          navigation will form a set of tabs.
+        </p>
+        <p>
+          The markup pattern below will be updated using JavaScript to add
+          additional ARIA attributes. This markup pattern is taken from
+          <a
+            href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/examples/tabs-manual/"
+            >the ARIA Authoring Practices Guide</a
+          >.
         </p>
 
-        <pre><code>&lt;nav&gt;
-  &lt;p&gt;
-    &lt;a href="#"&gt;Tab navigation&lt;/a&gt;
-    &lt;a href="#"&gt;Another tab level navigation item&lt;/a&gt;
-    &lt;a href="#"&gt;A third example&lt;/a&gt;
-    &lt;em&gt;Current tab&lt;/em&gt;
-  &lt;/p&gt;
-&lt;/nav&gt;</code></pre>
+        <pre><code>&lt;p role="tablist"&gt;
+  &lt;a href="#tab1" role="tab"&gt;First tab&lt;/a&gt;
+  &lt;a href="#tab2" role="tab"&gt;Second tab&lt;/a&gt;
+  &lt;a href="#tab3" role="tab"&gt;Third tab&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div role="tabpanel" id="tab1"&gt;
+  &lt;p&gt;This is tab 1&lt;/p&gt;
+&lt;/div&gt;
+&lt;div role="tabpanel" id="tab2"&gt;
+  &lt;p&gt;This is tab 2&lt;/p&gt;
+&lt;/div&gt;
+&lt;div role="tabpanel" id="tab3"&gt;
+  &lt;p&gt;This is tab 3&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 
         <h3>Example</h3>
 
