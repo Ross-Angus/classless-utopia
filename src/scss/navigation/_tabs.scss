@@ -1,56 +1,138 @@
 @use "../vars-sass" as v;
 
 // Tabs
-nav {
-  p {
-    display: flex;
-    flex-wrap: wrap;
+[role="tablist"] {
+  display: flex;
+  flex-wrap: wrap;
 
-    a,
-    em {
-      background: var(--tint1);
-      border: solid var(--keyline) var(--bodytext);
-      border-radius: calc(var(--cta-radius) / 2) calc(var(--cta-radius) / 2) 0 0;
-      font-style: normal;
-      margin: 0 calc(var(--keyline) / -4) calc(var(--keyline) * -1);
-      padding: calc(var(--gutter) / 2) var(--gutter);
-      text-align: center;
-      overflow-wrap: normal;
-      hyphens: manual;
-    }
+  [role="tab"] {
+    background: var(--tint1);
+    border: solid var(--keyline) var(--bodytext);
+    border-radius: calc(var(--cta-radius) / 2) calc(var(--cta-radius) / 2) 0 0;
+    font-style: normal;
+    margin: 0 calc(var(--keyline) / -4) calc(var(--keyline) * -1);
+    padding: calc(var(--gutter) / 2) var(--gutter);
+    text-align: center;
+    overflow-wrap: normal;
+    hyphens: manual;
 
-    em {
+    &[aria-selected="true"] {
       background: var(--background);
       border-bottom-color: var(--background);
     }
 
-    a:hover,
-    a:focus {
+    &:hover,
+    &:focus {
       background: var(--tint2);
     }
   }
 }
 
 // Each tab takes the width of its content
-nav {
-  p[aria-roledescription="carousel"] {
-    flex-wrap: nowrap;
-    a,
-    em {
-      &[aria-roledescription="slide"] {
-        flex-wrap: nowrap;
-        flex: auto 0 0;
-        margin: 0 calc(var(--keyline) / -4);
-      }
-    }
-  }
-}
+// nav {
+//   p[role="tabs"] {
+//     flex-wrap: nowrap;
+//     a,
+//     em {
+//       &[role="tab"] {
+//         flex-wrap: nowrap;
+//         flex: auto 0 0;
+//         margin: 0 calc(var(--keyline) / -4);
+//       }
+//     }
+//   }
+// }
 
 @media (width < v.$site-width) {
   nav {
     // Usually, the flexbox grid stops working below this point
     p[aria-roledescription="carousel"] {
       gap: 0;
+    }
+  }
+}
+
+// If the browser supports scroll-marker-group, the tabs will be inside
+// a carousel to avoid wrapping.
+@supports (scroll-marker-group: after) {
+  @media (prefers-reduced-motion: no-preference) {
+    [role="tablist"] {
+      scroll-behavior: smooth;
+    }
+  }
+
+  [role="tablist"] {
+    anchor-name: --tabs;
+    overflow: hidden;
+    margin: 0 var(--btn-size) var(--gutter);
+    padding: 0 var(--gutter);
+    scroll-marker-group: after;
+    scroll-snap-type: x mandatory;
+
+    [aria-roledescription="slide"] {
+      scroll-snap-align: center;
+
+      // The pips at the bottom of the carousel, for jumping to a slide
+      &::scroll-marker {
+        box-sizing: border-box;
+        content: "";
+        display: block;
+        border: var(--keyline) solid var(--bodytext);
+        min-height: var(--small-btn-size);
+        border-radius: 100%;
+        width: var(--small-btn-size);
+
+        &:hover,
+        &:focus-visible {
+          outline: var(--keyline) solid var(--bodytext);
+          outline-offset: var(--keyline);
+        }
+
+        // This pip represents the currently visible pane
+        &:target-current {
+          border-width: calc(var(--keyline) * 2);
+        }
+      }
+    }
+
+    &::scroll-button(*) {
+      aspect-ratio: 1;
+      position: fixed;
+      position-anchor: --tabs;
+
+      &:disabled {
+        opacity: var(--disabled);
+
+        &:hover {
+          cursor: not-allowed;
+          outline: none;
+        }
+      }
+
+      &:hover,
+      &:focus-visible {
+        cursor: pointer;
+        outline: var(--keyline) solid var(--bodytext);
+        outline-offset: var(--keyline);
+      }
+    }
+
+    &::scroll-button(left) {
+      content: "⟪";
+      position-area: center left;
+    }
+
+    &::scroll-button(right) {
+      content: "⟫";
+      position-area: center right;
+    }
+
+    &::scroll-marker-group {
+      display: flex;
+      gap: var(--gutter);
+      height: var(--small-btn-size);
+      justify-content: center;
+      margin: 0 0 var(--gutter);
     }
   }
 }

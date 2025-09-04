@@ -63,13 +63,44 @@
         <h3>Example</h3>
 
         <nav>
-          <p>
-            <a href="#">Horizontal links</a>
-            <a href="#">Which form tabs</a>
-            <em>This is the current tab</em>
-            <a href="#">Sed sollicitudin velit ac metus vestibulum mollis</a>
-            <a href="#">Fusce et tristique nulla</a>
+          <p role="tablist">
+            <a href="#tabpanel1" role="tab">Horizontal links</a>
+            <a href="#tabpanel2" role="tab">Which form tabs</a>
+            <a href="#tabpanel3" role="tab"
+              >Sed sollicitudin velit ac metus vestibulum mollis</a
+            >
+            <a href="#tabpanel4" role="tab">Fusce et tristique nulla</a>
           </p>
+          <div role="tabpanel" id="tabpanel1">
+            <p>
+              Nullam euismod ipsum id urna porttitor congue. Praesent ex dui,
+              rutrum eu purus id, laoreet fringilla augue. Nam sapien ipsum,
+              aliquam ut euismod id, molestie in turpis.
+            </p>
+          </div>
+          <div role="tabpanel" id="tabpanel2">
+            <p>
+              Praesent pretium malesuada feugiat. Donec risus est, vulputate sed
+              tempor nec, tincidunt sed leo. Duis accumsan sollicitudin dolor
+              vitae facilisis.
+            </p>
+          </div>
+          <div role="tabpanel" id="tabpanel3">
+            <p>
+              Nam eu vestibulum mi. Praesent vulputate venenatis neque, id
+              dapibus elit euismod eget. Phasellus at elementum purus. Integer
+              vitae condimentum massa, vitae ultricies tortor.
+            </p>
+          </div>
+          <div role="tabpanel" id="tabpanel4">
+            <p>
+              Proin fermentum tempor sollicitudin. Suspendisse porta, quam eu
+              tempor euismod, mauris metus viverra nunc, id sagittis nulla ipsum
+              nec purus. Mauris eleifend, neque sed faucibus varius, enim nisi
+              consectetur ex, nec varius risus erat quis odio. Vestibulum
+              bibendum dui augue, eu gravida nulla vulputate at.
+            </p>
+          </div>
         </nav>
 
         <h2>Carousel tabs</h2>
