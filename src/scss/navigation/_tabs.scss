@@ -4,13 +4,19 @@
 [role="tablist"] {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 var(--gutter) calc(var(--keyline) * -0.5);
+  // overflow-y: hidden;
+  // overflow-x: auto;
 
+  // Tab buttons
   [role="tab"] {
     background: var(--tint1);
     border: solid var(--keyline) var(--bodytext);
     border-radius: calc(var(--cta-radius) / 2) calc(var(--cta-radius) / 2) 0 0;
     font-style: normal;
-    margin: 0 calc(var(--keyline) / -4) calc(var(--keyline) * -1);
+    font-weight: var(--bodytext-weight);
+    line-height: var(--bodytext-line-height);
+    margin: 0 calc(var(--keyline) / -4) calc(var(--keyline) * -0.5);
     padding: calc(var(--gutter) / 2) var(--gutter);
     text-align: center;
     overflow-wrap: normal;
@@ -23,32 +29,25 @@
 
     &:hover,
     &:focus {
-      background: var(--tint2);
+      background: var(--background);
+      outline: dotted var(--keyline) var(--bodytext);
+      outline-offset: calc(var(--gutter) * -0.5);
+    }
+
+    &:after {
+      display: none;
     }
   }
 }
 
-// Each tab takes the width of its content
-// nav {
-//   p[role="tabs"] {
-//     flex-wrap: nowrap;
-//     a,
-//     em {
-//       &[role="tab"] {
-//         flex-wrap: nowrap;
-//         flex: auto 0 0;
-//         margin: 0 calc(var(--keyline) / -4);
-//       }
-//     }
-//   }
-// }
+// Tab panels
+[role="tabpanel"] {
+  border: var(--keyline) solid var(--bodytext);
+  border-radius: calc(var(--cta-radius) / 2);
+  padding: var(--gutter);
 
-@media (width < v.$site-width) {
-  nav {
-    // Usually, the flexbox grid stops working below this point
-    p[aria-roledescription="carousel"] {
-      gap: 0;
-    }
+  &[hidden] {
+    display: none;
   }
 }
 
@@ -63,36 +62,14 @@
 
   [role="tablist"] {
     anchor-name: --tabs;
+    flex-wrap: nowrap;
+    margin: 0 var(--btn-size) calc(var(--keyline) * -0.5);
     overflow: hidden;
-    margin: 0 var(--btn-size) var(--gutter);
     padding: 0 var(--gutter);
-    scroll-marker-group: after;
     scroll-snap-type: x mandatory;
 
-    [aria-roledescription="slide"] {
+    [role="tab"] {
       scroll-snap-align: center;
-
-      // The pips at the bottom of the carousel, for jumping to a slide
-      &::scroll-marker {
-        box-sizing: border-box;
-        content: "";
-        display: block;
-        border: var(--keyline) solid var(--bodytext);
-        min-height: var(--small-btn-size);
-        border-radius: 100%;
-        width: var(--small-btn-size);
-
-        &:hover,
-        &:focus-visible {
-          outline: var(--keyline) solid var(--bodytext);
-          outline-offset: var(--keyline);
-        }
-
-        // This pip represents the currently visible pane
-        &:target-current {
-          border-width: calc(var(--keyline) * 2);
-        }
-      }
     }
 
     &::scroll-button(*) {
@@ -112,8 +89,9 @@
       &:hover,
       &:focus-visible {
         cursor: pointer;
-        outline: var(--keyline) solid var(--bodytext);
-        outline-offset: var(--keyline);
+        background: var(--background);
+        outline: dotted var(--keyline) var(--bodytext);
+        outline-offset: calc(var(--gutter) * -0.5);
       }
     }
 
@@ -125,14 +103,6 @@
     &::scroll-button(right) {
       content: "⟫";
       position-area: center right;
-    }
-
-    &::scroll-marker-group {
-      display: flex;
-      gap: var(--gutter);
-      height: var(--small-btn-size);
-      justify-content: center;
-      margin: 0 0 var(--gutter);
     }
   }
 }
