@@ -7,9 +7,8 @@ const clickEvents = () => {
     const clickee = event.target;
     if (clickee.closest("button") !== null) {
       handleBtnClick(clickee.closest("button"));
-    }
-    if (clickee.closest("[data-js]") !== null) {
-      handleDataClick(clickee.closest("[data-js]"));
+    } else if (clickee.hasAttribute("data-js")) {
+      handleDataClick(clickee);
     }
   });
 };

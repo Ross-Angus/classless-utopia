@@ -63,6 +63,7 @@
         <h3>Example</h3>
 
         <nav>
+          <h4>Tabs using href fragment links</h4>
           <p role="tablist">
             <a href="#tabpanel1" role="tab">Horizontal links</a>
             <a href="#tabpanel2" role="tab">Which form tabs</a>
@@ -103,6 +104,54 @@
           </div>
         </nav>
 
+        <nav>
+          <h4>Tabs using buttons</h4>
+          <p role="tablist">
+            <button type="button" aria-controls="tabpanel-a" role="tab">
+              Horizontal links
+            </button>
+            <button type="button" aria-controls="tabpanel-b" role="tab">
+              Which form tabs
+            </button>
+            <button type="button" aria-controls="tabpanel-c" role="tab">
+              Sed sollicitudin velit ac metus vestibulum mollis
+            </button>
+            <button type="button" aria-controls="tabpanel-d" role="tab">
+              Fusce et tristique nulla
+            </button>
+          </p>
+          <div role="tabpanel" id="tabpanel-a">
+            <p>
+              Nullam euismod ipsum id urna porttitor congue. Praesent ex dui,
+              rutrum eu purus id, laoreet fringilla augue. Nam sapien ipsum,
+              aliquam ut euismod id, molestie in turpis.
+            </p>
+          </div>
+          <div role="tabpanel" id="tabpanel-b">
+            <p>
+              Praesent pretium malesuada feugiat. Donec risus est, vulputate sed
+              tempor nec, tincidunt sed leo. Duis accumsan sollicitudin dolor
+              vitae facilisis.
+            </p>
+          </div>
+          <div role="tabpanel" id="tabpanel-c">
+            <p>
+              Nam eu vestibulum mi. Praesent vulputate venenatis neque, id
+              dapibus elit euismod eget. Phasellus at elementum purus. Integer
+              vitae condimentum massa, vitae ultricies tortor.
+            </p>
+          </div>
+          <div role="tabpanel" id="tabpanel-d">
+            <p>
+              Proin fermentum tempor sollicitudin. Suspendisse porta, quam eu
+              tempor euismod, mauris metus viverra nunc, id sagittis nulla ipsum
+              nec purus. Mauris eleifend, neque sed faucibus varius, enim nisi
+              consectetur ex, nec varius risus erat quis odio. Vestibulum
+              bibendum dui augue, eu gravida nulla vulputate at.
+            </p>
+          </div>
+        </nav>
+
         <h2>Carousel tabs</h2>
 
         <p>
@@ -117,21 +166,6 @@
     &lt;em role="tab"&gt;Current tab&lt;/em&gt;
   &lt;/p&gt;
 &lt;/nav&gt;</code></pre>
-
-        <h3>Example</h3>
-        <nav>
-          <p role="tablist">
-            <a href="#" role="tab">Horizontal links</a>
-            <a href="#" role="tab">Which form tabs</a>
-            <em role="tab">Current slide</em>
-            <a href="#" role="tab">Fusce et tristique nulla</a>
-            <a href="#" role="tab">Ultrices nec nisl</a>
-            <a href="#" role="tab"
-              >Sed sollicitudin velit ac metus vestibulum mollis</a
-            >
-            <a href="#" role="tab">Fusce et tristique nulla</a>
-          </p>
-        </nav>
       </article>
     </main>
 
