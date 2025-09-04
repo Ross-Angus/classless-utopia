@@ -26,7 +26,7 @@ const handleBtnClick = (btn) => {
   }
 
   // Some clicks don't use the `data-js` pattern
-  if (btn.getAttribute("role") === "tab") {
+  else if (btn.getAttribute("role") === "tab") {
     const tabId = btn.getAttribute("id");
     const tabPanelId = btn.getAttribute("aria-controls");
     if (tabId && tabPanelId) {
