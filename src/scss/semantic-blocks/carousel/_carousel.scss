@@ -44,10 +44,11 @@
   }
 
   [aria-roledescription="carousel"] {
-    anchor-name: --carousel;
+    // anchor-name: --carousel;
     overflow: hidden;
     margin: 0 var(--btn-size) var(--gutter);
     padding: 0 var(--gutter);
+    position: relative;
     scroll-marker-group: after;
     scroll-snap-type: x mandatory;
 
@@ -83,8 +84,11 @@
 
     &::scroll-button(*) {
       aspect-ratio: 1;
-      position: fixed;
-      position-anchor: --carousel;
+      font-size: var(--largetext-size);
+      position: absolute;
+      top: 0;
+      // I have no idea why this is required
+      transform: translate(0, 100%);
 
       &:disabled {
         opacity: var(--disabled);
@@ -105,12 +109,14 @@
 
     &::scroll-button(left) {
       content: "⟪";
-      position-area: center left;
+      left: 0;
+      // position-area: center left;
     }
 
     &::scroll-button(right) {
       content: "⟫";
-      position-area: center right;
+      right: 0;
+      // position-area: center right;
     }
 
     &::scroll-marker-group {

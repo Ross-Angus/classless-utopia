@@ -1,38 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en-GB">
+  <module href="src/fragments/head.html">
+    <title>Classless Utopia - Carousel</title>
+  </module>
 
-<module href="src/fragments/head.html">
-  <title>Classless Utopia - Carousel</title>
-</module>
+  <body>
+    <module href="src/fragments/main-navigation.html"></module>
 
-<body>
-  <module href="src/fragments/main-navigation.html"></module>
-
-  <main>
-    <nav aria-label="Breadcrumb">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/semantic-blocks/">Semantic blocks</a></li>
-        <li><em title="You are here">Carousel</em></li>
-      </ol>
-    </nav>
-    <article>
-      <h1>Carousel</h1>
-      <div aria-roledescription="carousel">
-        <section role="group" aria-roledescription="slide" aria-label="Introduction">
-          <hgroup>
-            <h2>Introduction</h2>
-          </hgroup>
-          <p>Native CSS carousels are only supported in Chrome at the time of writing. The technique used here is heavily based on the <a href="https://css-tricks.com/css-carousels/">CSS Tricks article</a>.</p>
-          <p>If the technique is not supported, a warning message is displayed and the browser shows a simple scrolling box instead.</p>
-        </section>
-        <section role="group" aria-roledescription="slide" aria-label="Markup">
-          <hgroup>
-            <h2>Markup</h2>
-          </hgroup>
-          <p>This markup is based on the pattern demonstrated in the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/carousel/">ARIA Authoring Practices Guide (APG)</a>.</p>
-          <p>The <a href="/semantic-blocks/grid/">standard grid markup</a> is used which means that each slide could be any valid containing element such as <code>div</code>, <code>article</code>, <code>aside</code>, etc.</p>
-          <pre><code>&lt;div aria-roledescription="carousel"&gt;
+    <main>
+      <nav aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/semantic-blocks/">Semantic blocks</a></li>
+          <li><em title="You are here">Carousel</em></li>
+        </ol>
+      </nav>
+      <article>
+        <h1>Carousel</h1>
+        <div aria-roledescription="carousel">
+          <section
+            role="group"
+            aria-roledescription="slide"
+            aria-label="Introduction"
+          >
+            <hgroup>
+              <h2>Introduction</h2>
+            </hgroup>
+            <p>
+              Native CSS carousels are only supported in Chrome at the time of
+              writing. The technique used here is heavily based on the
+              <a href="https://css-tricks.com/css-carousels/"
+                >CSS Tricks article</a
+              >.
+            </p>
+            <p>
+              If the technique is not supported, a warning message is displayed
+              and the browser shows a simple scrolling box instead.
+            </p>
+          </section>
+          <section
+            role="group"
+            aria-roledescription="slide"
+            aria-label="Markup"
+          >
+            <hgroup>
+              <h2>Markup</h2>
+            </hgroup>
+            <p>
+              This markup is based on the pattern demonstrated in the
+              <a href="https://www.w3.org/WAI/ARIA/apg/patterns/carousel/"
+                >ARIA Authoring Practices Guide (APG)</a
+              >.
+            </p>
+            <p>
+              The <a href="/semantic-blocks/grid/">standard grid markup</a> is
+              used which means that each slide could be any valid containing
+              element such as <code>div</code>, <code>article</code>,
+              <code>aside</code>, etc.
+            </p>
+            <pre><code>&lt;div aria-roledescription="carousel"&gt;
   &lt;section role="group" aria-roledescription="slide"&gt;
     Slide content
   &lt;/section&gt;
@@ -41,33 +67,66 @@
   &lt;/section&gt;
   ...
 &lt;/div&gt;</code></pre>
-        </section>
-        <div role="group" aria-roledescription="slide">
-          <p>The individual slides do not need to be <code>section</code> tags - it's also possible for them to be <code>div</code> tags. Naturally, you can continue to use column layouts inside:</p>
-          <span>
-            <div>
-              <p>One column</p>
-              <p>Two column</p>
-              <p>Three columns</p>
-              <p>etc.</p>
-            </div>
-          </span>
-          <p>Duis ac justo non magna laoreet posuere eu et risus. Cras sit amet metus mi. Phasellus nisi orci, tincidunt eget urna in, semper sollicitudin erat. Praesent viverra pharetra felis, sit amet tempor libero scelerisque et. Nunc imperdiet leo et volutpat ultrices. Nam bibendum leo sed erat tempor vulputate. Aenean ante metus, blandit sit amet arcu a, rutrum placerat justo.</p>
+          </section>
+          <div role="group" aria-roledescription="slide">
+            <p>
+              The individual slides do not need to be <code>section</code> tags
+              - it's also possible for them to be <code>div</code> tags.
+              Naturally, you can continue to use column layouts inside:
+            </p>
+            <span>
+              <div>
+                <p>One column</p>
+                <p>Two column</p>
+                <p>Three columns</p>
+                <p>etc.</p>
+              </div>
+            </span>
+            <p>
+              Duis ac justo non magna laoreet posuere eu et risus. Cras sit amet
+              metus mi. Phasellus nisi orci, tincidunt eget urna in, semper
+              sollicitudin erat. Praesent viverra pharetra felis, sit amet
+              tempor libero scelerisque et. Nunc imperdiet leo et volutpat
+              ultrices. Nam bibendum leo sed erat tempor vulputate. Aenean ante
+              metus, blandit sit amet arcu a, rutrum placerat justo.
+            </p>
+          </div>
+          <div role="group" aria-roledescription="slide">
+            <p>
+              In nisi dolor, dictum imperdiet sollicitudin a, posuere eu purus.
+              Integer faucibus ante et mi fermentum, et semper lorem ornare.
+              Phasellus dapibus dolor ac ex venenatis, id porta eros commodo.
+              Etiam venenatis risus id sapien finibus accumsan. Vestibulum
+              ultrices justo sed dui varius, eget dignissim metus sollicitudin.
+              Donec lobortis neque id euismod laoreet.
+            </p>
+          </div>
+          <div role="group" aria-roledescription="slide">
+            <p>
+              Praesent quis pellentesque ex, vitae posuere ligula. In non sem
+              vitae est aliquam faucibus. Nam sit amet augue non eros commodo
+              consectetur non vitae orci. Nulla facilisi. In maximus nisl
+              maximus libero dictum finibus. Proin consectetur arcu felis, eget
+              viverra quam commodo in. Suspendisse tristique eget purus et
+              cursus. Sed vitae magna lacus. Suspendisse varius sagittis
+              sollicitudin. Donec a maximus nulla.
+            </p>
+          </div>
+          <div role="group" aria-roledescription="slide">
+            <p>
+              Phasellus sollicitudin, magna a cursus feugiat, massa libero
+              venenatis justo, sed iaculis lectus lacus fringilla neque. Fusce
+              ac iaculis mauris, eu volutpat lectus. Sed congue vel diam non
+              faucibus. Nunc malesuada ante augue, sed porttitor ex hendrerit
+              rhoncus. Integer sit amet iaculis arcu. Suspendisse potenti.
+              Suspendisse vitae malesuada elit. Proin eleifend libero vitae
+              facilisis vestibulum.
+            </p>
+          </div>
         </div>
-        <div role="group" aria-roledescription="slide">
-          <p>In nisi dolor, dictum imperdiet sollicitudin a, posuere eu purus. Integer faucibus ante et mi fermentum, et semper lorem ornare. Phasellus dapibus dolor ac ex venenatis, id porta eros commodo. Etiam venenatis risus id sapien finibus accumsan. Vestibulum ultrices justo sed dui varius, eget dignissim metus sollicitudin. Donec lobortis neque id euismod laoreet.</p>
-        </d>
-        <div role="group" aria-roledescription="slide">
-          <p>Praesent quis pellentesque ex, vitae posuere ligula. In non sem vitae est aliquam faucibus. Nam sit amet augue non eros commodo consectetur non vitae orci. Nulla facilisi. In maximus nisl maximus libero dictum finibus. Proin consectetur arcu felis, eget viverra quam commodo in. Suspendisse tristique eget purus et cursus. Sed vitae magna lacus. Suspendisse varius sagittis sollicitudin. Donec a maximus nulla.</p>
-        </d>
-        <div role="group" aria-roledescription="slide">
-          <p>Phasellus sollicitudin, magna a cursus feugiat, massa libero venenatis justo, sed iaculis lectus lacus fringilla neque. Fusce ac iaculis mauris, eu volutpat lectus. Sed congue vel diam non faucibus. Nunc malesuada ante augue, sed porttitor ex hendrerit rhoncus. Integer sit amet iaculis arcu. Suspendisse potenti. Suspendisse vitae malesuada elit. Proin eleifend libero vitae facilisis vestibulum.</p>
-        </div>
-      </div>
-    </article>
-  </main>
+      </article>
+    </main>
 
-  <module href="src/fragments/footer.html"></module>
-</body>
-
+    <module href="src/fragments/footer.html"></module>
+  </body>
 </html>
