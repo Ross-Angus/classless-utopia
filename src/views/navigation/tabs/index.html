@@ -59,6 +59,9 @@
           >.
         </p>
 
+        <h3>Markup</h3>
+        <h4>Using fragment links</h4>
+
         <pre><code>&lt;p role="tablist"&gt;
   &lt;a href="#tab1" role="tab"&gt;First tab&lt;/a&gt;
   &lt;a href="#tab2" role="tab"&gt;Second tab&lt;/a&gt;
@@ -75,7 +78,30 @@
   &lt;p&gt;This is tab 3&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 
-        <h3>Example</h3>
+        <h4>Using buttons</h4>
+
+        <pre><code>&lt;p role="tablist"&gt;
+  &lt;button type="button" aria-controls="tabpanel-a" role="tab"&gt;
+    First tab
+  &lt;/button&gt;
+  &lt;button type="button" aria-controls="tabpanel-b" role="tab"&gt;
+    Second tab
+  &lt;/button&gt;
+  &lt;button type="button" aria-controls="tabpanel-c" role="tab"&gt;
+    Third tab
+  &lt;/button&gt;
+&lt;/p&gt;
+&lt;div role="tabpanel" id="tabpanel-a"&gt;
+  &lt;p&gt;This is tab 1&lt;/p&gt;
+&lt;/div&gt;
+&lt;div role="tabpanel" id="tabpanel-b"&gt;
+  &lt;p&gt;This is tab 2&lt;/p&gt;
+&lt;/div&gt;
+&lt;div role="tabpanel" id="tabpanel-c"&gt;
+  &lt;p&gt;This is tab 3&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+        <h3>Examples</h3>
 
         <nav>
           <h4>Tabs using href fragment links</h4>
@@ -166,21 +192,6 @@
             </p>
           </div>
         </nav>
-
-        <h2>Carousel tabs</h2>
-
-        <p>
-          If a large number of tabs are required, carousel markup can ensure
-          they all fit in the viewport.
-        </p>
-
-        <pre><code>&lt;nav&gt;
-  &lt;p role="tablist"&gt;
-    &lt;a href="#" role="tab"&gt;Tab&lt;/a&gt;
-    &lt;a href="#" role="tab"&gt;Tab&lt;/a&gt;
-    &lt;em role="tab"&gt;Current tab&lt;/em&gt;
-  &lt;/p&gt;
-&lt;/nav&gt;</code></pre>
       </article>
     </main>
 
