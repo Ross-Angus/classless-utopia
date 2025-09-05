@@ -1,4 +1,5 @@
 @use "../../vars-sass" as v;
+@use "../../mixins/carousel-inputs.scss";
 
 [aria-roledescription="carousel"] {
   overflow: auto;
@@ -70,8 +71,7 @@
 
         &:hover,
         &:focus-visible {
-          outline: var(--keyline) solid var(--bodytext);
-          outline-offset: var(--keyline);
+          @extend %carousel-focus !optional;
         }
 
         // This pip represents the currently visible pane
@@ -90,6 +90,7 @@
         opacity: var(--disabled);
 
         &:hover {
+          background: var(--tint2);
           cursor: not-allowed;
           outline: none;
         }
@@ -98,8 +99,7 @@
       &:hover,
       &:focus-visible {
         cursor: pointer;
-        outline: var(--keyline) solid var(--bodytext);
-        outline-offset: var(--keyline);
+        @extend %carousel-focus !optional;
       }
     }
 

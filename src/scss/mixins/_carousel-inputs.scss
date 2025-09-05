@@ -1,0 +1,6 @@
+// Focus and hover styles for both tabs and carousel scroll buttons
+%carousel-focus {
+  background: var(--background);
+  outline: dotted var(--keyline) var(--bodytext);
+  outline-offset: calc(var(--gutter) / -2);
+}

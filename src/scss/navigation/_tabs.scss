@@ -1,12 +1,11 @@
 @use "../vars-sass" as v;
+@use "../mixins/carousel-inputs.scss";
 
 // Tabs
 [role="tablist"] {
   display: flex;
   flex-wrap: wrap;
   margin: 0 var(--gutter) calc(var(--keyline) * -0.5);
-  // overflow-y: hidden;
-  // overflow-x: auto;
 
   // Tab buttons
   [role="tab"] {
@@ -29,12 +28,11 @@
 
     &:hover,
     &:focus {
-      background: var(--background);
-      outline: dotted var(--keyline) var(--bodytext);
-      outline-offset: calc(var(--gutter) * -0.5);
+      @extend %carousel-focus !optional;
     }
 
-    &:after {
+    // Hiding the > chevron
+    &::after {
       display: none;
     }
   }
@@ -63,13 +61,14 @@
   [role="tablist"] {
     anchor-name: --tabs;
     flex-wrap: nowrap;
-    margin: 0 var(--btn-size) calc(var(--keyline) * -0.5);
+    margin: 0 var(--btn-size) calc(var(--keyline) / -2);
     overflow: hidden;
     padding: 0 var(--gutter);
     scroll-snap-type: x mandatory;
 
     [role="tab"] {
       scroll-snap-align: center;
+      white-space: nowrap;
     }
 
     &::scroll-button(*) {
@@ -81,6 +80,7 @@
         opacity: var(--disabled);
 
         &:hover {
+          background: var(--tint2);
           cursor: not-allowed;
           outline: none;
         }
@@ -89,9 +89,7 @@
       &:hover,
       &:focus-visible {
         cursor: pointer;
-        background: var(--background);
-        outline: dotted var(--keyline) var(--bodytext);
-        outline-offset: calc(var(--gutter) * -0.5);
+        @extend %carousel-focus !optional;
       }
     }
 
