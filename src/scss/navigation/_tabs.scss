@@ -5,7 +5,7 @@
 [role="tablist"] {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 var(--gutter) calc(var(--keyline) * -0.5);
+  margin: 0 var(--gutter) calc(var(--keyline) * -1);
   padding: 0 var(--keyline);
 
   // Tab buttons
@@ -17,7 +17,7 @@
     font-weight: var(--bodytext-weight);
     hyphens: manual;
     line-height: var(--bodytext-line-height);
-    margin: 0 calc(var(--keyline) / -4) calc(var(--keyline) * -0.5);
+    margin: 0 calc(var(--keyline) / -4);
     min-height: 0;
     overflow-wrap: normal;
     padding: calc(var(--gutter) / 2) var(--gutter);
