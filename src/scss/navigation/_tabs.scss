@@ -66,6 +66,8 @@
     padding: 0 var(--gutter);
     position: relative;
     scroll-snap-type: x mandatory;
+    /* Isolate this tablist's layout and styling */
+    contain: layout style;
 
     [role="tab"] {
       scroll-snap-align: center;
@@ -77,9 +79,9 @@
       font-size: var(--largetext-size);
       position: absolute;
       top: 0;
-      // position-anchor: --tabs;
-      // I have no idea why this is required
-      // transform: translate(0, 100%);
+      /* Force the button to be contained within this tablist */
+      contain: layout style;
+      z-index: 1;
 
       &:disabled {
         opacity: var(--disabled);
@@ -101,13 +103,15 @@
     &::scroll-button(left) {
       content: "⟪";
       left: 0;
-      // position-area: center left;
+      /* Explicitly bind to this container */
+      inset-inline-start: 0;
     }
 
     &::scroll-button(right) {
       content: "⟫";
-      // position-area: center right;
       right: 0;
+      /* Explicitly bind to this container */
+      inset-inline-end: 0;
     }
   }
 }

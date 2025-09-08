@@ -44,13 +44,15 @@
   }
 
   [aria-roledescription="carousel"] {
-    // anchor-name: --carousel;
+    // Revert to position-based approach - pseudo-elements seem buggy with multiple instances
     overflow: hidden;
     margin: 0 var(--btn-size) var(--gutter);
     padding: 0 var(--gutter);
     position: relative;
     scroll-marker-group: after;
     scroll-snap-type: x mandatory;
+    /* Isolate this carousel's layout and styling */
+    contain: layout style;
 
     [aria-roledescription="slide"] {
       scroll-snap-align: center;
@@ -88,6 +90,9 @@
       position: absolute;
       top: 50%;
       transform: translate(0, -100%);
+      /* Force the button to be contained within this carousel */
+      contain: layout style;
+      z-index: 1;
 
       &:disabled {
         opacity: var(--disabled);
@@ -109,13 +114,15 @@
     &::scroll-button(left) {
       content: "⟪";
       left: 0;
-      // position-area: center left;
+      /* Explicitly bind to this container */
+      inset-inline-start: 0;
     }
 
     &::scroll-button(right) {
       content: "⟫";
       right: 0;
-      // position-area: center right;
+      /* Explicitly bind to this container */
+      inset-inline-end: 0;
     }
 
     &::scroll-marker-group {
