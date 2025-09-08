@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 var(--gutter) calc(var(--keyline) * -1);
-  padding: 0 var(--keyline);
+  padding: var(--keyline) var(--keyline) 0;
 
   // Tab buttons
   [role="tab"] {
@@ -17,7 +17,7 @@
     font-weight: var(--bodytext-weight);
     hyphens: manual;
     line-height: var(--bodytext-line-height);
-    margin: 0 calc(var(--keyline) / -4);
+    margin: calc(var(--keyline) / -2) calc(var(--keyline) / -4) 0;
     min-height: 0;
     overflow-wrap: normal;
     padding: calc(var(--gutter) / 2) var(--gutter);
@@ -28,9 +28,12 @@
       border-bottom-color: var(--background);
     }
 
+    // For some reason, SASS won't load in the mixin %carousel-focus
     &:hover,
     &:focus {
-      @extend %carousel-focus !optional;
+      background: var(--background);
+      outline: dotted var(--keyline) var(--bodytext);
+      outline-offset: calc(var(--gutter) / -2);
     }
 
     // Hiding the > chevron
