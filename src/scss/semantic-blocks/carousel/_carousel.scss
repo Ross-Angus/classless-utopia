@@ -86,9 +86,8 @@
       aspect-ratio: 1;
       font-size: var(--largetext-size);
       position: absolute;
-      top: 0;
-      // I have no idea why this is required
-      transform: translate(0, 100%);
+      top: 50%;
+      transform: translate(0, -100%);
 
       &:disabled {
         opacity: var(--disabled);

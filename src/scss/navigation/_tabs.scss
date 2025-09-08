@@ -79,7 +79,7 @@
       top: 0;
       // position-anchor: --tabs;
       // I have no idea why this is required
-      transform: translate(0, 100%);
+      // transform: translate(0, 100%);
 
       &:disabled {
         opacity: var(--disabled);
@@ -101,12 +101,12 @@
     &::scroll-button(left) {
       content: "⟪";
       left: 0;
-      position-area: center left;
+      // position-area: center left;
     }
 
     &::scroll-button(right) {
       content: "⟫";
-      position-area: center right;
+      // position-area: center right;
       right: 0;
     }
   }

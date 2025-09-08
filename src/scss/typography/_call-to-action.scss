@@ -1,5 +1,5 @@
-@use '../mixins/cta-input.scss';
-@use '../mixins/cta-style.scss';
+@use "../mixins/cta-input.scss";
+@use "../mixins/cta-style.scss";
 
 // To make an anchor tag into a call-to-action, it needs a `rel` attribute.
 // This can take a lot of different values but the normal one is `rel="related"`
@@ -23,15 +23,18 @@
 // allow call-to-action buttons which sit in the root of the site (so they
 // can be full bleed) but are distinct from the main navigation (which also
 // sits inside a `header` element).
-main, header > *:not(nav) {
-  button, a[rel] {
+main,
+header > *:not(nav) {
+  button,
+  a[rel] {
     @extend %cta-input !optional;
     @extend %cta-style !optional;
     align-items: center;
     display: inline-flex;
     width: fit-content;
 
-    &::before, &::after {
+    &::before,
+    &::after {
       content: "";
       height: 1ch;
       // Required, to prevent chevron from collapsing if the text
@@ -42,9 +45,12 @@ main, header > *:not(nav) {
       width: 1ch;
     }
 
-    &::before { display: none; }
+    &::before {
+      display: none;
+    }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       @extend %cta-focus !optional;
 
       // > animates to the right slightly
@@ -71,7 +77,10 @@ main, header > *:not(nav) {
 
     // Back buttons have a left facing chevron
     // <
-    &[rel="prev"], &[rel="previous"], &[rel="first"], &[rel="start"] {
+    &[rel="prev"],
+    &[rel="previous"],
+    &[rel="first"],
+    &[rel="start"] {
       &::before {
         border-bottom: solid var(--keyline) var(--bodytext);
         border-left: solid var(--keyline) var(--bodytext);
@@ -81,9 +90,12 @@ main, header > *:not(nav) {
         margin: 0 calc(var(--gutter) / 2) 0 0;
       }
 
-      &::after { display: none; }
+      &::after {
+        display: none;
+      }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         &::before {
           transform: rotate(45deg) translate(-0.5ch, 0.5ch);
         }
@@ -95,7 +107,9 @@ main, header > *:not(nav) {
     // only has a chevron
     // --
     &[rel="previous"] {
-      &::before { order: -2; }
+      &::before {
+        order: -2;
+      }
 
       &::after {
         border-right: none;
@@ -107,7 +121,8 @@ main, header > *:not(nav) {
         width: var(--gutter);
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         &::after {
           // Because the < is a rotated square, this 0.707 figure is from trigonometry
           transform: translate(-0.707ch, 0);
@@ -139,13 +154,18 @@ main, header > *:not(nav) {
         background: rgb(var(--link-visited-text));
       }
 
-      &:hover, &:focus {
-        &::after { transform: scale(1.2); }
+      &:hover,
+      &:focus {
+        &::after {
+          transform: scale(1.2);
+        }
       }
     }
 
     // Combining rules to create |
-    &[rel="first"]::after, &[rel="start"]::after, &[rel="last"]::before {
+    &[rel="first"]::after,
+    &[rel="start"]::after,
+    &[rel="last"]::before {
       display: block;
       // This needs to roughly match the size of < and > which are
       // rotated squares so trigonometry would be required for
@@ -157,16 +177,20 @@ main, header > *:not(nav) {
     }
 
     // First or start links - good for pagination
-    &[rel="first"], &[rel="start"] {
+    &[rel="first"],
+    &[rel="start"] {
       // |
       &::after {
         border-top: none;
         order: -1;
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         // Because the < is a rotated square, this 0.707 figure is from trigonometry
-        &::after { transform: translate(-0.707ch, 0); }
+        &::after {
+          transform: translate(-0.707ch, 0);
+        }
       }
     }
 
@@ -179,8 +203,11 @@ main, header > *:not(nav) {
         order: 9;
       }
 
-      &:hover, &:focus {
-        &::before { transform: translate(0.707ch, 0); }
+      &:hover,
+      &:focus {
+        &::before {
+          transform: translate(0.707ch, 0);
+        }
       }
     }
 
@@ -195,8 +222,8 @@ main, header > *:not(nav) {
   ::scroll-button(*) {
     border-radius: var(--cta-radius);
     border: solid var(--keyline) var(--bodytext);
-    min-height: var(--btn-size);
-    padding: calc(var(--gutter) / 2) var(--gutter);
+    min-height: var(--small-btn-size);
+    padding: calc(var(--gutter) / 3) calc(var(--gutter) / 1.5);
     background: var(--tint2);
     font-weight: var(--heading-weight);
   }
@@ -208,7 +235,8 @@ main, header > *:not(nav) {
     text-decoration: none;
     transition: filter 0.5s;
 
-    &::before, &::after {
+    &::before,
+    &::after {
       border-color: rgb(var(--link-text));
     }
 
@@ -218,7 +246,8 @@ main, header > *:not(nav) {
       border-color: rgb(var(--link-visited-text));
       color: rgb(var(--link-visited-text));
 
-      &::before, &::after {
+      &::before,
+      &::after {
         border-color: rgb(var(--link-visited-text));
       }
     }
@@ -226,7 +255,8 @@ main, header > *:not(nav) {
 
   // Small buttons - font-size inherited from `small` tag
   small {
-    button, a[rel] {
+    button,
+    a[rel] {
       min-height: 0;
       padding: calc(var(--gutter) / 3) calc(var(--gutter) / 1.5);
     }
