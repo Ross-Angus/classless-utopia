@@ -42,6 +42,7 @@
 [role="tabpanel"] {
   border: var(--keyline) solid var(--bodytext);
   border-radius: calc(var(--cta-radius) / 2);
+  display: block;
   padding: var(--gutter);
 
   &[hidden] {
@@ -59,15 +60,11 @@
   }
 
   [role="tablist"] {
-    // anchor-name: --tabs;
     flex-wrap: nowrap;
-    margin: 0 var(--btn-size) calc(var(--keyline) / -2);
+    margin: 0 calc(var(--small-btn-size) + var(--gutter))
+      calc(var(--keyline) * -1);
     overflow: hidden;
-    padding: 0 var(--gutter);
-    position: relative;
     scroll-snap-type: x mandatory;
-    /* Isolate this tablist's layout and styling */
-    contain: layout style;
 
     [role="tab"] {
       scroll-snap-align: center;
@@ -77,11 +74,7 @@
     &::scroll-button(*) {
       aspect-ratio: 1;
       font-size: var(--largetext-size);
-      position: absolute;
-      top: 0;
-      /* Force the button to be contained within this tablist */
-      contain: layout style;
-      z-index: 1;
+      transform: translate(0, calc((100% + (var(--gutter) / 2)) * -1));
 
       &:disabled {
         opacity: var(--disabled);
@@ -102,16 +95,12 @@
 
     &::scroll-button(left) {
       content: "⟪";
-      left: 0;
-      /* Explicitly bind to this container */
-      inset-inline-start: 0;
+      float: left;
     }
 
     &::scroll-button(right) {
       content: "⟫";
-      right: 0;
-      /* Explicitly bind to this container */
-      inset-inline-end: 0;
+      float: right;
     }
   }
 }
