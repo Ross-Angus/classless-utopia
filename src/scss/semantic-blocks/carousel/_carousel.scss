@@ -103,6 +103,7 @@
 
     &::scroll-button(left) {
       content: "⟪";
+      float: left;
     }
 
     &::scroll-button(right) {
