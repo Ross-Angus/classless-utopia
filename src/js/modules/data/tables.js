@@ -10,12 +10,18 @@ const tableInit = () => {
         (cell) => cell.textContent
       );
 
+      if (headerStrings.length > 0) {
+        // Label the table as being valid for the mobile layout
+        table.setAttribute("data-mobile", "true");
+      }
+
       allRows.forEach((row, rowIndex) => {
         // Skip the first row
         if (rowIndex > 0) {
           const cells = row.querySelectorAll("td, th");
           cells.forEach((cell, cellIndex) => {
             // Skip this step if the cell has been manually labelled
+            // or if there is no header string for this cell
             if (!cell.hasAttribute("data-label") && headerStrings[cellIndex]) {
               cell.setAttribute("data-label", headerStrings[cellIndex]);
             }
