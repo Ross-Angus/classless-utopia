@@ -1,9 +1,14 @@
-@use 'vars-sass' as v;
+@use "vars-sass" as v;
 
 // Typography
 :root {
-  --fallback-font: "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --monospaced-font: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New", monospace;
+  --fallback-font: "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --monospaced-font: ui-monospace, Menlo, Monaco, "Cascadia Mono",
+    "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Mono",
+    "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Consolas", "Courier New",
+    monospace;
 
   // See _vars-sass.scss
   // the #{} syntax is required for CSS variables as they can have almost
@@ -14,6 +19,7 @@
   --bodytext-size: 1.125rem; // 18px
   --bodytext-weight: 420; // Not a drugs reference
   --bodytext-line-height: 1.5;
+  --h2-size: 2.5rem;
   --largetext-size: 1.4rem;
   --smalltext-size: 1rem;
   --line-height-tight: 1.2;

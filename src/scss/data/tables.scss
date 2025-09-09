@@ -1,0 +1,45 @@
+@use "../vars-sass" as v;
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-bottom: solid var(--keyline) var(--bodytext);
+  border-top: solid var(--keyline) var(--bodytext);
+  margin: var(--gutter) 0;
+
+  caption {
+    font-size: var(--h2-size);
+    font-weight: var(--heading-weight);
+    text-align: left;
+  }
+
+  th,
+  td {
+    border-top: solid var(--keyline) var(--bodytext);
+    padding: var(--gutter);
+    text-align: left;
+
+    // This technique might not work as well if background colours are used
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    // Multiple paragraphs etc. can sit inside a cell
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (width < v.$site-width) {
+  table {
+    th,
+    td {
+      padding: var(--gutter) calc(var(--gutter) / 2);
+    }
+  }
+}

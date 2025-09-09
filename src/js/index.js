@@ -6,6 +6,7 @@ import clickEvents from "./modules/events/click-events.js";
 import mainNavSetup from "./modules/navigation/main/main-nav-setup.js";
 import tabsSetup from "./modules/navigation/tabs/tabs.js";
 import typographyInit from "./modules/typography/typography-init.js";
+import tableInit from "./modules/data/tables.js";
 
 // For blocks of code and syntactic highlighting
 hljs.registerLanguage("javascript", javascript);
@@ -17,3 +18,4 @@ clickEvents();
 mainNavSetup();
 tabsSetup();
 typographyInit();
+tableInit();
