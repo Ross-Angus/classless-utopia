@@ -1,0 +1,5 @@
+hr {
+  border: none;
+  border-top: solid var(--keyline) var(--bodytext);
+  margin: calc(var(--gutter) * 2) 0;
+}

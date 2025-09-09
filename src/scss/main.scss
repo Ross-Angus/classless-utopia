@@ -12,5 +12,6 @@
 @use "semantic-blocks/hero/hero";
 @use "semantic-blocks/carousel/carousel";
 @use "semantic-blocks/dialog/dialog";
+@use "typography/hr";
 // It seems the elegant @ method only works in JS
 @use "../../node_modules/highlight.js/scss/default.scss";
