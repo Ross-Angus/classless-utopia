@@ -1,9 +1,11 @@
-@use '../mixins/shapes.scss';
+@use "../mixins/shapes.scss";
 
 details {
   border: solid var(--keyline) var(--bodytext);
   margin: 0 0 var(--gutter);
+  max-height: 9em;
   padding: var(--gutter);
+  transition: max-height 0.5s;
 
   // Adjacent `details` are flush with each other, if both have a `name`
   // attribute (the `name` doesn't have to have the same value)
@@ -17,17 +19,21 @@ details {
     padding: var(--gutter) calc(var(--gutter) * 2) var(--gutter) var(--gutter);
     position: relative;
 
-    &::marker { content: none; }
+    &::marker {
+      content: none;
+    }
 
     // ^ or v: vertical chevron button, reusing some declarations from
     // the navigation.
     // As the container is an unknown size, we need to have other
     // left and top values.
-    &::before, &::after {
+    &::before,
+    &::after {
       @extend %btn-chevron-closed-pseudo;
       content: "";
       position: absolute;
-      top: calc(var(--gutter) * 2);
+      // Magic numbers alarm
+      top: calc(var(--gutter) * 1.6);
     }
 
     // \
@@ -41,17 +47,22 @@ details {
       @extend %btn-chevron-ne;
       right: var(--gutter);
     }
-
   }
 
   &[open] {
+    max-height: 999em;
+
     summary {
-        border-bottom: solid var(--keyline) var(--tint2);
-        margin-bottom: var(--gutter);
+      border-bottom: solid var(--keyline) var(--tint2);
+      margin-bottom: var(--gutter);
       // /
-      &:before { @extend %btn-chevron-ne; }
+      &:before {
+        @extend %btn-chevron-ne;
+      }
       // \
-      &:after { @extend %btn-chevron-se; }
+      &:after {
+        @extend %btn-chevron-se;
+      }
     }
   }
 }
