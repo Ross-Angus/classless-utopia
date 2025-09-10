@@ -72,26 +72,28 @@
           </caption>
           <thead>
             <tr>
-              <th scope="col" abbr="1"><p>Header 1</p></th>
-              <th scope="col" abbr="2"><p>Header 2</p></th>
-              <th scope="col" abbr="3"><p>Header 3</p></th>
+              <th scope="col"><p>Header 1</p></th>
+              <th scope="col"><p>Header 2</p></th>
+              <th scope="col" abbr="Price"><p>Price</p></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row"><p>Cell 1</p></th>
               <td><p>Cell 2</p></td>
-              <td><p>£1.25</p></td>
+              <td abbr="Price">
+                <p>£1.25</p>
+              </td>
             </tr>
             <tr>
               <th scope="row"><p>Cell 1</p></th>
               <td><p>Cell 2</p></td>
-              <td><p>£1.50</p></td>
+              <td abbr="Price"><p>£1.50</p></td>
             </tr>
             <tr>
               <th scope="row"><p>Cell 1</p></th>
               <td><p>Cell 2</p></td>
-              <td><p>£2.00</p></td>
+              <td abbr="Price"><p>£2.00</p></td>
             </tr>
           </tbody>
           <tfoot>
@@ -153,7 +155,7 @@
               <td headers="th-explanation">
                 <p>
                   <strong
-                    >When a table has a complicated layout which inclides
+                    >When a table has a complicated layout which includes
                     <code>colspan</code> and <code>rowspan</code> attributes,
                     it's challenging for the JavaScript to work out which header
                     cell corresponds to which data cell.
@@ -224,9 +226,9 @@
                       >the <code>headers</code> attribute</a
                     >
                     can be used to explicitly associate the cell with the header
-                    cell. This will be checked first by the JavaScript and,
-                    assuming the associated <code>ID</code> corrisponds to a
-                    valid element, will be used in preference to the
+                    cell. This will be checked first by the JavaScript and
+                    (assuming the associated <code>ID</code> corrisponds to a
+                    valid element) will be used in preference to the
                     automatically generated label.</strong
                   >
                 </p>
@@ -303,13 +305,14 @@
               <td>
                 <p>
                   <strong>1</strong>
-                  Phasellus luctus et nibh vel vulputate.
+                  Because this cell appears before the <code>rowspan</code> cell
+                  above, the automatic header labelling will work as expected.
                 </p>
               </td>
               <td>
                 <p>
                   <strong>2</strong>
-                  Nam a mollis felis. Nulla tellus sem.
+                  Same with this cell.
                 </p>
               </td>
               <td headers="filler4">

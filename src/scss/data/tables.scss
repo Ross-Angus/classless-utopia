@@ -5,7 +5,7 @@ table {
   border-collapse: collapse;
   border-bottom: solid var(--keyline) var(--bodytext);
   border-top: solid var(--keyline) var(--bodytext);
-  margin: var(--gutter) 0;
+  margin: calc(var(--gutter) * 2) 0;
 
   caption {
     font-size: var(--h2-size);
@@ -31,6 +31,15 @@ table {
     // Multiple paragraphs etc. can sit inside a cell
     :last-child {
       margin-bottom: 0;
+    }
+
+    // This is a legitimate use of the `abbr` attribute but if the data in
+    // question is  not a currency, it might be worth adding a different
+    // attribute value to this selector list to achieve the same result.
+    // Note that some speech browser might read out the attribute value
+    // so might say "Price £150".
+    &[abbr="Price"] {
+      text-align: right;
     }
   }
 }
