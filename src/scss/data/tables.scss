@@ -15,7 +15,7 @@ table {
 
   th,
   td {
-    border-top: solid var(--keyline) var(--bodytext);
+    border-top: solid var(--keyline) var(--tint3);
     padding: var(--gutter);
     text-align: left;
 
@@ -37,7 +37,8 @@ table {
     // question is  not a currency, it might be worth adding a different
     // attribute value to this selector list to achieve the same result.
     // Note that some speech browser might read out the attribute value
-    // so might say "Price £150".
+    // for example "Price £150".
+    &[abbr="Percentage"],
     &[abbr="Price"] {
       text-align: right;
     }
@@ -45,7 +46,7 @@ table {
 }
 
 @media (width < v.$site-width) {
-  // Without the [data-mobile="true"] attribute, squeeze the padding
+  // Without the [data-mobile="true"] attribute, just squeeze the padding
   table {
     th,
     td {
@@ -70,17 +71,21 @@ table {
         display: none;
       }
 
+      // Using positioning rather than flexbox to account for cells which
+      // have multiple paragraphs inside.
       th,
       td {
-        display: flex;
-        gap: var(--gutter);
-        padding: var(--gutter) 0;
+        position: relative;
+        padding: var(--gutter) 0 var(--gutter) 50%;
 
         &:before {
-          content: attr(data-label) " ";
-          display: block;
+          content: attr(data-label);
           font-weight: var(--heading-weight);
-          flex: 0 0 50%;
+          left: 0;
+          // This shrink-wraps the element and effectively aligns it to the left
+          max-width: calc(50% - var(--gutter));
+          position: absolute;
+          top: var(--gutter);
         }
       }
     }
