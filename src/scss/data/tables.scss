@@ -56,9 +56,7 @@ table {
       }
 
       // Hide the header row
-      // This does not account for a header row which is in tbody. The JavaScript will, however.
-      & > tr:first-child,
-      & thead > tr:first-child {
+      [data-header="true"] {
         display: none;
       }
 

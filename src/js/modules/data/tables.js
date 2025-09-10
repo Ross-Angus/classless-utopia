@@ -4,7 +4,10 @@ const tableInit = () => {
   tables.forEach((table) => {
     const allRows = table.querySelectorAll("tr");
     if (allRows.length > 0) {
-      const headerCells = allRows[0].querySelectorAll("td, th");
+      const headerRow = allRows[0];
+      // Label the header row so it can be hidden on mobile
+      headerRow.setAttribute("data-header", "true");
+      const headerCells = headerRow.querySelectorAll("td, th");
       // Strip the HTML tags just once
       const headerStrings = Array.from(headerCells).map(
         (cell) => cell.textContent
