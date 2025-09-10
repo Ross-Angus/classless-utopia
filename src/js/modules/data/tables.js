@@ -23,10 +23,28 @@ const tableInit = () => {
         if (rowIndex > 0) {
           const cells = row.querySelectorAll("td, th");
           cells.forEach((cell, cellIndex) => {
-            // Skip this step if the cell has been manually labelled
-            // or if there is no header string for this cell
-            if (!cell.hasAttribute("data-label") && headerStrings[cellIndex]) {
-              cell.setAttribute("data-label", headerStrings[cellIndex]);
+            // Don't do anything if the cell has been manually labelled
+            if (!cell.hasAttribute("data-label")) {
+              // If the cell has a `headers` attribute, check to see if we can
+              // find the associated header cell string value
+              if (cell.hasAttribute("headers")) {
+                // The `headers` attribute can include multiple header cell IDs.
+                // Not sure why. Seems like a terrible idea.
+                const headers = cell.getAttribute("headers").split(" ");
+
+                // This has a distinct name to avoid mixing up with the header strings Array
+                let headerLabel = "";
+                headers.map((id) => {
+                  const header = document.getElementById(id);
+                  header && (headerLabel += ` ${header.textContent}`);
+                });
+                cell.setAttribute("data-label", headerLabel);
+              }
+
+              // If the cell has no `headers` attribute, try and use the header strings array
+              else if (headerStrings[cellIndex]) {
+                cell.setAttribute("data-label", headerStrings[cellIndex]);
+              }
             }
           });
         }

@@ -63,7 +63,7 @@ table {
       th,
       td {
         display: flex;
-        gap: 0 var(--gutter);
+        gap: var(--gutter);
         padding: var(--gutter) 0;
 
         &:before {

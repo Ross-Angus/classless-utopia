@@ -116,6 +116,219 @@
             </tr>
           </tfoot>
         </table>
+
+        <table>
+          <caption>
+            Table with complicated rowspan and colspan layout with
+            <code>headers</code>
+            attributes
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" id="filler1"><p>Filler text 1</p></th>
+              <th scope="col" id="filler2">
+                <p>Additional filler text 2</p>
+              </th>
+              <th scope="col" id="th-explanation"><p>Explanation</p></th>
+              <th scope="col" id="filler4"><p>More filler text 4</p></th>
+              <th scope="col" id="filler5">
+                <p>Final filler text column 5</p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p>
+                  <strong>1</strong> Aenean metus nisl, finibus non massa ut,
+                  aliquet commodo erat.
+                </p>
+              </td>
+              <td>
+                <p>
+                  <strong>2</strong> Quisque pellentesque arcu lacus, sed
+                  dignissim enim auctor non.
+                </p>
+              </td>
+              <td headers="th-explanation">
+                <p>
+                  <strong
+                    >When a table has a complicated layout which inclides
+                    <code>colspan</code> and <code>rowspan</code> attributes,
+                    it's challenging for the JavaScript to work out which header
+                    cell corresponds to which data cell.
+                  </strong>
+                </p>
+              </td>
+              <td>
+                <p>
+                  <strong>4</strong> Nullam vitae quam scelerisque, congue massa
+                  vitae, aliquam ipsum.
+                </p>
+              </td>
+              <td>
+                <p>
+                  <strong>5</strong> Nam quis nunc a ligula faucibus euismod a
+                  hendrerit velit.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <strong>1</strong>
+                  Aliquam erat volutpat. Pellentesque posuere accumsan viverra.
+                  Proin vulputate nisi lectus.
+                </p>
+              </td>
+              <td colspan="2" headers="th-explanation">
+                <p>
+                  <strong
+                    >In order to achieve this, the JavaScript would need to loop
+                    over the table cells and take a note of any
+                    <code>colspan</code> and <code>rowspan</code> attributes,
+                    then take them into account when mapping them to the header
+                    cells.</strong
+                  >
+                </p>
+              </td>
+              <td>
+                <p>
+                  <strong>4</strong>
+                  This cell will be mislabeled as <q>Explanation</q> because of
+                  the preceeding sibling's <code>colspan</code> attribute.
+                </p>
+              </td>
+              <td>
+                <p>
+                  <strong>5</strong>
+                  This cell will also be mislabeled.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <strong>1</strong> Mauris suscipit nibh id dignissim varius.
+                </p>
+              </td>
+              <td>
+                <p><strong>2</strong> Aliquam erat volutpat.</p>
+              </td>
+              <td colspan="2" rowspan="2" headers="th-explanation">
+                <p>
+                  <strong
+                    >Luckily,
+                    <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/td#headers"
+                      >the <code>headers</code> attribute</a
+                    >
+                    can be used to explicitly associate the cell with the header
+                    cell. This will be checked first by the JavaScript and,
+                    assuming the associated <code>ID</code> corrisponds to a
+                    valid element, will be used in preference to the
+                    automatically generated label.</strong
+                  >
+                </p>
+              </td>
+              <td headers="filler5">
+                <p>
+                  <strong>5</strong>
+                  This cell will be correctly labelled but only because of an
+                  explicit <code>headers</code> attribute.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <strong>1</strong>
+                  Duis dapibus ante urna, quis facilisis augue elementum ac.
+                </p>
+              </td>
+              <td>
+                <p>
+                  <strong>2</strong>
+                  Duis laoreet justo leo, sit amet bibendum est pretium sed.
+                </p>
+              </td>
+              <td headers="filler5">
+                <p>
+                  <strong>5</strong>
+                  This cell will be correctly labelled but only because of an
+                  explicit <code>headers</code> attribute.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <strong>1</strong> Aenean metus nisl, finibus non massa ut,
+                  aliquet commodo erat.
+                </p>
+              </td>
+              <td>
+                <p>
+                  <strong>2</strong> Quisque pellentesque arcu lacus, sed
+                  dignissim enim auctor non.
+                </p>
+              </td>
+              <td rowspan="2" headers="th-explanation">
+                <p>
+                  <strong
+                    >Because of the complexity of handling
+                    <code>rowspan</code> columns, the JavaScript will probably
+                    fail to associate the correct header cell with the data cell
+                    when cells span multiple rows. It's expected that when this
+                    type of cell is used, the surrounding cells will use the
+                    <code>headers</code> attribute to connect up the data.
+                  </strong>
+                </p>
+              </td>
+              <td>
+                <p>
+                  <strong>4</strong> Nullam vitae quam scelerisque, congue massa
+                  vitae, aliquam ipsum.
+                </p>
+              </td>
+              <td>
+                <p>
+                  <strong>5</strong>
+                  Nam quis nunc a ligula faucibus euismod a hendrerit velit.
+                  Aenean orci arcu.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  <strong>1</strong>
+                  Phasellus luctus et nibh vel vulputate.
+                </p>
+              </td>
+              <td>
+                <p>
+                  <strong>2</strong>
+                  Nam a mollis felis. Nulla tellus sem.
+                </p>
+              </td>
+              <td headers="filler4">
+                <p>
+                  <strong>4</strong>
+                  This cell will be correctly labelled but only because of an
+                  explicit <code>headers</code> attribute.
+                </p>
+              </td>
+              <td headers="filler5">
+                <p>
+                  <strong>5</strong>
+                  This cell will be correctly labelled but only because of an
+                  explicit <code>headers</code> attribute.
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </article>
     </main>
 
