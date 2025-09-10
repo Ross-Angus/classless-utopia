@@ -22,12 +22,6 @@ All caps headings require wider letter spacing.
 Use a serif typeface for blockquotes?
 Ratio of font size of quote to font size of citation should be 1.75:1
 
-## Pagination
-
-Using `rel` to mark `first`, `prev`, `next` and `last` in a series of ctas (`start`?)
-
-Pagination should be inside `nav` so the [1] [2] [3] buttons don't have chevrons
-
 ## Asides and figures
 
 Larger margin-bottom, to give breathing room from body text. If it has a `figcaption` the gap should be larger still

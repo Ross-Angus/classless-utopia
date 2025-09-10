@@ -1,9 +1,23 @@
 @use "../mixins/shapes.scss";
 
+// This is a problematic technique:
+// https://css-tricks.com/using-css-transitions-auto-dimensions/
+// Issues:
+// * Due to the markup structure of the `details` element, the `max-height`
+//   also includes the height of the `summary` element. This means that the
+//   small `max-height` value below need to take account of how much content
+//   might be inside that element and how many times it might wrap
+// * The hard-coded `max-height` value of the maximum might be too small for
+//   the content inside the `details` element
+// * Because the transition is between the larger and smaller values, the
+//   transition starts from 99em and ends at 6em, but only part of that
+//   is visible to the user. This means it appears to start late.
+// * It only seems to work in one direction
 details {
   border: solid var(--keyline) var(--bodytext);
   margin: 0 0 var(--gutter);
-  max-height: 9em;
+  max-height: 6em;
+  overflow: hidden;
   padding: var(--gutter);
   transition: max-height 0.5s;
 
@@ -50,7 +64,8 @@ details {
   }
 
   &[open] {
-    max-height: 999em;
+    max-height: 99em;
+    transition: max-height 0.5s;
 
     summary {
       border-bottom: solid var(--keyline) var(--tint2);
