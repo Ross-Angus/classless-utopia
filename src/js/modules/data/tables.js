@@ -9,8 +9,8 @@ const tableInit = () => {
       headerRow.setAttribute("data-header", "true");
       const headerCells = headerRow.querySelectorAll("td, th");
       // Strip the HTML tags just once
-      const headerStrings = Array.from(headerCells).map(
-        (cell) => cell.textContent
+      const headerStrings = Array.from(headerCells).map((cell) =>
+        cell.textContent.trim()
       );
 
       if (headerStrings.length > 0) {
@@ -38,7 +38,7 @@ const tableInit = () => {
                   const header = document.getElementById(id);
                   header && (headerLabel += ` ${header.textContent}`);
                 });
-                cell.setAttribute("data-label", headerLabel);
+                cell.setAttribute("data-label", headerLabel.trim());
               }
 
               // If the cell has no `headers` attribute, try and use the header strings array

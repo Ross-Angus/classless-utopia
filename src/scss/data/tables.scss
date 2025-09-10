@@ -46,6 +46,7 @@ table {
     &[data-mobile="true"] {
       display: block;
 
+      caption,
       thead,
       tbody,
       tfoot,
@@ -67,8 +68,9 @@ table {
         padding: var(--gutter) 0;
 
         &:before {
-          content: attr(data-label) ": ";
+          content: attr(data-label) " ";
           display: block;
+          font-weight: var(--heading-weight);
           flex: 0 0 50%;
         }
       }
