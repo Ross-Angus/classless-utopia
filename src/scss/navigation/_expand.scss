@@ -1,31 +1,13 @@
 @use "../mixins/shapes.scss";
 
-// This is a problematic technique:
-// https://css-tricks.com/using-css-transitions-auto-dimensions/
-// Issues:
-// * Due to the markup structure of the `details` element, the `max-height`
-//   also includes the height of the `summary` element. This means that the
-//   small `max-height` value below need to take account of how much content
-//   might be inside that element and how many times it might wrap
-// * The hard-coded `max-height` value of the maximum might be too small for
-//   the content inside the `details` element
-// * Because the transition is between the larger and smaller values, the
-//   transition starts from 99em and ends at 6em, but only part of that
-//   is visible to the user. This means it appears to start late.
-// * It only seems to work in one direction
+// Firefox doesn't support the selector `::details-content` *or* the method `calc-size()`
+// (at the time of writing). But this is the least problematic method of achieving the
+// desired effect. The animation only works in one direction. This was true for the
+// previous method too. Shame.
 details {
   border: solid var(--keyline) var(--bodytext);
   margin: 0 0 var(--gutter);
-  max-height: 6em;
-  overflow: hidden;
   padding: var(--gutter);
-  transition: max-height 0.5s;
-
-  // Adjacent `details` are flush with each other, if both have a `name`
-  // attribute (the `name` doesn't have to have the same value)
-  &[name] + details[name] {
-    margin-top: calc((var(--gutter) + var(--keyline)) * -1);
-  }
 
   summary {
     margin: calc(var(--gutter) * -1);
@@ -63,10 +45,19 @@ details {
     }
   }
 
-  &[open] {
-    max-height: 99em;
-    transition: max-height 0.5s;
+  &::details-content {
+    height: 0;
+    overflow-y: clip;
+    transition: height 0.5s ease-in;
+  }
 
+  // Adjacent `details` are flush with each other, if both have a `name`
+  // attribute (the `name` doesn't have to have the same value)
+  &[name] + details[name] {
+    margin-top: calc((var(--gutter) + var(--keyline)) * -1);
+  }
+
+  &[open] {
     summary {
       border-bottom: solid var(--keyline) var(--tint2);
       margin-bottom: var(--gutter);
@@ -78,6 +69,10 @@ details {
       &:after {
         @extend %btn-chevron-se;
       }
+    }
+
+    &::details-content {
+      height: calc-size(auto, size);
     }
   }
 }
