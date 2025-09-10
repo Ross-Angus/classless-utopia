@@ -22,10 +22,6 @@ All caps headings require wider letter spacing.
 Use a serif typeface for blockquotes?
 Ratio of font size of quote to font size of citation should be 1.75:1
 
-## Tables
-
-Vertical lines are implicit from the alignment of text. Use horizontal lines only
-
 ## Pagination
 
 Using `rel` to mark `first`, `prev`, `next` and `last` in a series of ctas (`start`?)
@@ -41,10 +37,10 @@ Is there a way to use `figure` for pull-quote style stats? "49% of users thought
 ## Card design:
 
 aside
- picture
- h2
- p content
- p a
+picture
+h2
+p content
+p a
 Aside is padded, picture is inside padding
 Last para is a cta
 Look at [`hgroup`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hgroup)
@@ -54,11 +50,13 @@ Look at [`hgroup`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/E
 Demo `data` and `datalist`
 
 ## Navigation
+
 Nav spacing for mobile needs to be larger for fat fingers
 
 Look into the disaster of desktop mega menus - `:scope > li` forms the columns instead of the `columns` property in CSS?
 
 ## Tags
+
 `address`
 `dfn` (tooltip?)
 `map` & `area`?
@@ -67,6 +65,7 @@ Look into the disaster of desktop mega menus - `:scope > li` forms the columns i
 `time`
 
 ## Other
+
 Is there anything to be done with width fit content?
 
 https://www.w3.org/TR/css-pseudo-4/#selectordef-target-text

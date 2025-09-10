@@ -18,6 +18,55 @@
     </nav>
     <article>
       <h1>Pagination</h1>
+      <p>Simple anchor and button tags are granted the status of a call-to-action button by their proximity to other specific types of inputs and anchors.</p>
+
+      <p>The CSS looks for elements which are associated with pagination, specifically:</p>
+
+      <pre><code>&lt;a href="/" rel="start"&gt;Start&lt;/a&gt;
+&lt;a href="/" rel="prev"&gt;Prev&lt;/a&gt;
+&lt;button type="button" rel="first"&gt;First&lt;/button&gt;
+&lt;button type="button" rel="previous"&gt;Previous&lt;/button&gt;</code></pre>
+
+      <p>Any following siblings (using either a <code>button</code> or <code>a</code> tag) will be styled to match the call-to-action button, but without the chevron.</p>
+
+      <h2>Using anchor tags</h2>
+      <nav>
+        <p>
+          <a href="/" rel="start">Start</a>
+          <a href="/" rel="prev">Prev</a>
+          <a href="/">2</a>
+          <a href="/">3</a>
+          <a href="/">4</a>
+          <a href="/">5</a>
+          <a href="/">6</a>
+          <a href="/">7</a>
+          <a href="/">8</a>
+          <a href="/">9</a>
+          <a href="/">10</a>
+          <a href="/" rel="next">Next</a>
+          <a href="/" rel="last">Last</a>
+        </p>
+      </nav>
+
+      <h2>Using button tags</h2>
+      <nav>
+        <p>
+          <button type="button" rel="first">First</button>
+          <button type="button" rel="previous">Previous</button>
+          <button type="button">2</button>
+          <button type="button">3</button>
+          <button type="button">4</button>
+          <button type="button">5</button>
+          <button type="button">6</button>
+          <button type="button">7</button>
+          <button type="button">8</button>
+          <button type="button">9</button>
+          <button type="button">10</button>
+          <button type="button" rel="next">Next</button>
+          <button type="button" rel="last">Last</button>
+        </p>
+      </nav>
+    </article>
 
   <module href="src/fragments/footer.html"></module>
 </body>

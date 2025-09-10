@@ -64,6 +64,30 @@ header > *:not(nav) {
       filter: hue-rotate(70deg) blur(0.05rem);
     }
 
+    // For pagination, we need the page numbers to match the size and design of the
+    // navigation buttons. There are no `rel` values which are appropriate for this
+    // task so I'm going to use a following sibling selector. Naturally, this approach
+    // could have knock on effects.
+    &[rel="start"],
+    &[rel="first"],
+    &[rel="prev"],
+    &[rel="previous"] {
+      ~ a,
+      ~ button {
+        @extend %cta-input !optional;
+
+        // If the following sibling is not a call-to-action, hide the chevron
+        &:not([rel])::after {
+          display: none;
+        }
+
+        &:focus,
+        &:hover {
+          @extend %cta-focus !optional;
+        }
+      }
+    }
+
     // Default call-to-action buttons have a right facing chevron
     // >
     &::after {
