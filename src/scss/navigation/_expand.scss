@@ -19,7 +19,6 @@ details {
 
     &:focus,
     &:hover {
-      letter-spacing: 1rem;
       @include carousel.carousel-focus;
     }
 
