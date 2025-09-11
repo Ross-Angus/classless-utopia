@@ -1,9 +1,11 @@
-@use '../mixins/cta-style';
+@use "../mixins/cta-style" as cta_style;
 
 main {
   input {
-    &[type="button"], &[type="submit"], &[type="reset"] {
-      @extend %cta-style;
+    &[type="button"],
+    &[type="submit"],
+    &[type="reset"] {
+      @include cta_style.cta-style;
     }
   }
 
@@ -34,7 +36,8 @@ main {
         width: 1ch;
       }
 
-      &:focus, &:hover {
+      &:focus,
+      &:hover {
         &::before {
           transform: rotate(0) translate(0.5ch, 0);
         }
@@ -63,7 +66,8 @@ main {
         margin: 0 0 0 var(--gutter);
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         &::before {
           transform: translate(0.5ch, 0);
         }

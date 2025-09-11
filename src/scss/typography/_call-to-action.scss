@@ -1,5 +1,5 @@
-@use "../mixins/cta-input.scss";
-@use "../mixins/cta-style.scss";
+@use "../mixins/cta-input" as cta_input;
+@use "../mixins/cta-style" as cta_style;
 
 // To make an anchor tag into a call-to-action, it needs a `rel` attribute.
 // This can take a lot of different values but the normal one is `rel="related"`
@@ -27,8 +27,8 @@ main,
 header > *:not(nav) {
   button,
   a[rel] {
-    @extend %cta-input !optional;
-    @extend %cta-style !optional;
+    @include cta_input.cta-input;
+    @include cta_style.cta-style;
     align-items: center;
     display: inline-flex;
     width: fit-content;
@@ -51,7 +51,7 @@ header > *:not(nav) {
 
     &:hover,
     &:focus {
-      @extend %cta-focus !optional;
+      @include cta_style.cta-focus;
 
       // > animates to the right slightly
       &::after {
@@ -74,7 +74,7 @@ header > *:not(nav) {
     &[rel="previous"] {
       ~ a,
       ~ button {
-        @extend %cta-input !optional;
+        @include cta_input.cta-input;
 
         // If the following sibling is not a call-to-action, hide the chevron
         &:not([rel])::after {
@@ -83,7 +83,7 @@ header > *:not(nav) {
 
         &:focus,
         &:hover {
-          @extend %cta-focus !optional;
+          @include cta_style.cta-focus;
         }
       }
     }

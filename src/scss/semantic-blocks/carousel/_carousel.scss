@@ -1,5 +1,5 @@
 @use "../../vars-sass" as v;
-@use "../../mixins/carousel-inputs.scss";
+@use "../../mixins/carousel-inputs" as carousel;
 
 [aria-roledescription="carousel"] {
   overflow: auto;
@@ -70,7 +70,7 @@
 
         &:hover,
         &:focus-visible {
-          @extend %carousel-focus !optional;
+          @include carousel.carousel-focus;
         }
 
         // This pip represents the currently visible pane
@@ -97,7 +97,7 @@
       &:hover,
       &:focus-visible {
         cursor: pointer;
-        @extend %carousel-focus !optional;
+        @include carousel.carousel-focus;
       }
     }
 

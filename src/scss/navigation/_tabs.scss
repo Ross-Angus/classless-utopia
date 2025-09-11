@@ -1,5 +1,5 @@
 @use "../vars-sass" as v;
-@use "../mixins/carousel-inputs.scss";
+@use "../mixins/carousel-inputs" as carousel;
 
 // Tabs
 [role="tablist"] {
@@ -28,12 +28,9 @@
       border-bottom-color: var(--background);
     }
 
-    // For some reason, SASS won't load in the mixin %carousel-focus
     &:hover,
     &:focus {
-      background: var(--background);
-      outline: dotted var(--keyline) var(--bodytext);
-      outline-offset: calc(var(--gutter) / -2);
+      @include carousel.carousel-focus;
     }
 
     // Hiding the > chevron
@@ -94,7 +91,7 @@
       &:hover,
       &:focus-visible {
         cursor: pointer;
-        @extend %carousel-focus !optional;
+        @include carousel.carousel-focus;
       }
     }
 

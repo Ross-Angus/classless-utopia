@@ -1,4 +1,5 @@
 @use "../mixins/shapes.scss";
+@use "../mixins/carousel-inputs" as carousel;
 
 // Firefox doesn't support the selector `::details-content` *or* the method `calc-size()`
 // (at the time of writing). But this is the least problematic method of achieving the
@@ -15,6 +16,12 @@ details {
     // To leave space for the vertical chevron
     padding: var(--gutter) calc(var(--gutter) * 2) var(--gutter) var(--gutter);
     position: relative;
+
+    &:focus,
+    &:hover {
+      letter-spacing: 1rem;
+      @include carousel.carousel-focus;
+    }
 
     &::marker {
       content: none;

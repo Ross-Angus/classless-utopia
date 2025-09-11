@@ -1,6 +1,6 @@
 // Declarations shared between the call-to-action buttons
 // and input elements
-%cta-input {
+@mixin cta-input {
   border-radius: var(--cta-radius);
   border: solid var(--keyline) var(--bodytext);
   line-height: 1.3;

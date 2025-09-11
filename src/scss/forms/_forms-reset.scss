@@ -1,17 +1,21 @@
-@use '../mixins/cta-input';
-@use '../mixins/cta-style';
-@use './horizontal';
-@use './search';
-@use './button';
-@use './radio';
-@use './checkbox';
-@use './file';
-@use './range';
-@use './select';
-@use './textarea';
-@use './fieldset';
+@use "../mixins/cta-input" as cta_input;
+@use "../mixins/cta-style" as cta_style;
+@use "./horizontal";
+@use "./search";
+@use "./button";
+@use "./radio";
+@use "./checkbox";
+@use "./file";
+@use "./range";
+@use "./select";
+@use "./textarea";
+@use "./fieldset";
 
-input, select, button, textarea, label {
+input,
+select,
+button,
+textarea,
+label {
   appearance: none;
   background: transparent;
   color: inherit;
@@ -26,7 +30,8 @@ input, select, button, textarea, label {
     cursor: not-allowed;
     opacity: var(--disabled);
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       outline: none;
     }
   }
@@ -34,22 +39,34 @@ input, select, button, textarea, label {
 
 main {
   // 49px high, to match call-to-action
-  input, button, select, textarea {
-    @extend %cta-input;
+  input,
+  button,
+  select,
+  textarea {
+    @include cta_input.cta-input;
 
-    &:focus, &:hover {
-      @extend %cta-focus;
+    &:focus,
+    &:hover {
+      @include cta_style.cta-focus;
     }
   }
 
-  select, textarea {
+  select,
+  textarea {
     display: block;
     overflow: auto;
     width: 100%;
   }
 
   input {
-    &:not([type="radio"], [type="checkbox"], [type="button"], [type="submit"], [type="reset"], [type="search"]) {
+    &:not(
+        [type="radio"],
+        [type="checkbox"],
+        [type="button"],
+        [type="submit"],
+        [type="reset"],
+        [type="search"]
+      ) {
       display: block;
       width: 100%;
     }

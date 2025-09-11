@@ -1,5 +1,5 @@
-@use '../mixins/cta-input';
-@use '../mixins/cta-style';
+@use "../mixins/cta-input" as cta_input;
+@use "../mixins/cta-style" as cta_style;
 
 main {
   input {
@@ -7,15 +7,15 @@ main {
       padding: 0;
 
       &::file-selector-button {
-        @extend %cta-input;
-        @extend %cta-style;
+        @include cta_input.cta-input;
+        @include cta_style.cta-style;
         border-radius: 0;
         font-family: inherit;
         margin: calc(var(--keyline) * -1);
         margin-right: var(--gutter);
 
         &:hover {
-          @extend %cta-focus;
+          @include cta_style.cta-focus;
         }
       }
     }
