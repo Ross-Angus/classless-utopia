@@ -72,6 +72,10 @@ details {
     }
 
     &::details-content {
+      // If the browser understands the selector `::details-content` but
+      // doesn't support the `calc-size()` function, then we need to use the
+      // `height: auto` fallback.
+      height: auto;
       height: calc-size(auto, size);
     }
   }
