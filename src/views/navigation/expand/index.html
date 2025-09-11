@@ -1,27 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en-GB">
+  <module href="src/fragments/head.html">
+    <title>Classless Utopia - Details navigation</title>
+  </module>
 
-<module href="src/fragments/head.html">
-  <title>Classless Utopia - Details navigation</title>
-</module>
+  <body>
+    <module href="src/fragments/main-navigation.html"></module>
 
-<body>
-  <module href="src/fragments/main-navigation.html"></module>
+    <main>
+      <nav aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/navigation/">Navigation</a></li>
+          <li><em title="You are here">Expanding navigation</em></li>
+        </ol>
+      </nav>
+      <article>
+        <h1>Expanding navigation</h1>
 
-  <main>
-    <nav aria-label="Breadcrumb">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/navigation/">Navigation</a></li>
-        <li><em title="You are here">Expanding navigation</em></li>
-      </ol>
-    </nav>
-    <article>
-      <h1>Expanding navigation</h1>
+        <p>
+          Use of a <code>details</code> tag allows for a collapsing vertical
+          style navigation. This might be useful for in-page navigation, for
+          example a table of contents.
+        </p>
 
-      <p>Use of a <code>details</code> tag allows for a collapsing vertical style navigation. This might be useful for in-page navigation, for example a table of contents.</p>
+        <h2>Unordered lists</h2>
+        <p>Using an unordered list</p>
 
-      <pre><code>&lt;nav&gt;
+        <pre><code>&lt;nav&gt;
   &lt;details open&gt;
     &lt;summary&gt;Jump to:&lt;/summary&gt;
     &lt;ul&gt;
@@ -34,34 +40,63 @@
   &lt;/details&gt;
 &lt;/nav&gt;</code></pre>
 
-      <h2>Example</h2>
+        <h2>Unordered list example</h2>
+        <p>
+          If the expanding navigation is used with an unordered list inside,
+          list items are marked with right-pointing triangles.
+        </p>
 
-      <nav>
-        <details open>
-          <summary>Jump to:</summary>
-          <ul>
-            <li><a href="#">Loose link inside of nav element</a>
-              <ul>
-                <li><a href="#">Aenean sed orci purus</a></li>
-                <li><a href="#">Donec et volutpat magna</a></li>
-                <li><a href="#">Quisque nulla justo, convallis eget posuere tempor, ultrices nec nisl</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Another loose link</a></li>
-            <li><a href="#">A third example</a></li>
-            <li><a href="#">Aenean sed orci purus</a></li>
-            <li><a href="#">Donec et volutpat magna</a></li>
-            <li><a href="#">Quisque nulla justo, convallis eget posuere tempor, ultrices nec nisl</a></li>
-            <li><a href="#">Sed sollicitudin velit ac metus vestibulum mollis</a></li>
-            <li><a href="#">Fusce et tristique nulla</a></li>
-          </ul>
-        </details>
-      </nav>
-    </article>
-  </main>
+        <nav>
+          <details open>
+            <summary>Jump to:</summary>
+            <ul>
+              <li>
+                <a href="#">Link inside an unordered list</a>
+                <ul>
+                  <li><a href="#">Aenean sed orci purus</a></li>
+                  <li><a href="#">Donec et volutpat magna</a></li>
+                  <li>
+                    <a href="#"
+                      >Quisque nulla justo, convallis eget posuere tempor,
+                      ultrices nec nisl</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Another link</a></li>
+              <li><a href="#">A third example</a></li>
+              <li>
+                <a href="#">Aenean sed orci purus</a>
+                <ul>
+                  <li>
+                    <a href="#"
+                      >A link which wraps: aenean vel consectetur nisl. In eros
+                      turpis, lobortis ac iaculis nec, feugiat eu nibh. Etiam at
+                      elementum nisl. Quisque blandit egestas tellus, nec
+                      sagittis mi condimentum ac.</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Donec et volutpat magna</a></li>
+              <li>
+                <a href="#"
+                  >Quisque nulla justo, convallis eget posuere tempor, ultrices
+                  nec nisl</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Sed sollicitudin velit ac metus vestibulum mollis</a
+                >
+              </li>
+              <li><a href="#">Fusce et tristique nulla</a></li>
+            </ul>
+          </details>
+        </nav>
+      </article>
+    </main>
 
-
-  <module href="src/fragments/footer.html"></module>
-</body>
-
+    <module href="src/fragments/footer.html"></module>
+  </body>
 </html>

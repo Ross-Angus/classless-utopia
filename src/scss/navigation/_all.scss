@@ -1,9 +1,15 @@
+// This list reset is useful for the multi level navigation and
+// the crumbtrails
 nav {
   li {
     position: static;
 
-    &::before { display: none; }
+    &::before {
+      display: none;
+    }
   }
 
-  a { text-decoration: none; }
+  a {
+    text-decoration: none;
+  }
 }

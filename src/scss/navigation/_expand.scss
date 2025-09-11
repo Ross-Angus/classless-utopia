@@ -10,6 +10,7 @@ details {
   padding: var(--gutter);
 
   summary {
+    font-weight: var(--heading-weight);
     margin: calc(var(--gutter) * -1);
     // To leave space for the vertical chevron
     padding: var(--gutter) calc(var(--gutter) * 2) var(--gutter) var(--gutter);
@@ -77,6 +78,36 @@ details {
       // `height: auto` fallback.
       height: auto;
       height: calc-size(auto, size);
+    }
+  }
+}
+
+// Where `details` is used inside of a `nav` tag, it can be added to a page
+// like a table of contents.
+// https://www.nngroup.com/articles/table-of-contents/
+nav {
+  details {
+    ul {
+      li {
+        padding-left: calc(var(--gutter) * 1.5);
+        position: relative;
+
+        // ▶
+        // Many of these styles are inherited from the unordered list styles
+        &::before {
+          border-radius: 0;
+          border: solid calc(var(--gutter) / 3) transparent;
+          border-left: solid calc(var(--gutter) / 2) var(--bodytext);
+          border-right-width: 0;
+          display: block;
+          left: 0;
+          top: calc(var(--gutter) / 2);
+        }
+
+        a {
+          display: block;
+        }
+      }
     }
   }
 }
