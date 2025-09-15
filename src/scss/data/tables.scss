@@ -75,17 +75,26 @@ table {
       // have multiple paragraphs inside.
       th,
       td {
-        position: relative;
-        padding: var(--gutter) 0 var(--gutter) 50%;
+        padding: var(--gutter) 0;
 
         &:before {
           content: attr(data-label);
+          float: left;
           font-weight: var(--heading-weight);
-          left: 0;
-          // This shrink-wraps the element and effectively aligns it to the left
-          max-width: calc(50% - var(--gutter));
-          position: absolute;
-          top: var(--gutter);
+          width: calc(50% - (var(--gutter) / 2));
+        }
+
+        &:after {
+          content: "";
+          display: block;
+          float: none;
+          clear: both;
+        }
+
+        & > * {
+          clear: right;
+          float: right;
+          width: calc(50% - (var(--gutter) / 2));
         }
       }
     }
