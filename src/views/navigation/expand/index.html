@@ -31,9 +31,9 @@
   &lt;details open&gt;
     &lt;summary&gt;Jump to:&lt;/summary&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href="#"&gt;Loose link inside of nav element&lt;/a&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;
         &lt;ul&gt;
-          &lt;li&gt;&lt;a href="#"&gt;Aenean sed orci purus&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Nested link&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -92,6 +92,92 @@
               </li>
               <li><a href="#">Fusce et tristique nulla</a></li>
             </ul>
+          </details>
+        </nav>
+
+        <h2>Ordered list example</h2>
+        <p>
+          In order to create a table of contents with a numeric hierarchy, use
+          the following markup pattern:
+        </p>
+
+        <pre><code>&lt;nav&gt;
+  &lt;details open&gt;
+    &lt;summary&gt;Jump to:&lt;/summary&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;
+        &lt;ol&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Nested link&lt;/a&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/details&gt;
+&lt;/nav&gt;</code></pre>
+
+        <p>This will render as follows:</p>
+
+        <nav>
+          <details open>
+            <summary>Jump to:</summary>
+            <ol>
+              <li>
+                <a href="#">Link inside an unordered list</a>
+                <ol>
+                  <li>
+                    <a href="#">Aenean sed orci purus</a>
+                    <ol>
+                      <li>
+                        <a href="#"
+                          >Integer pulvinar efficitur enim at ullamcorper</a
+                        >
+                        <ol>
+                          <li>
+                            <a href="#"
+                              >Sed quis ipsum nec magna feugiat viverra</a
+                            >
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li><a href="#">Donec et volutpat magna</a></li>
+                  <li>
+                    <a href="#"
+                      >Quisque nulla justo, convallis eget posuere tempor,
+                      ultrices nec nisl</a
+                    >
+                  </li>
+                </ol>
+              </li>
+              <li><a href="#">Another link</a></li>
+              <li><a href="#">A third example</a></li>
+              <li>
+                <a href="#">Aenean sed orci purus</a>
+                <ol>
+                  <li>
+                    <a href="#"
+                      >A link which wraps: aenean vel consectetur nisl. In eros
+                      turpis, lobortis ac iaculis nec, feugiat eu nibh. Etiam at
+                      elementum nisl. Quisque blandit egestas tellus, nec
+                      sagittis mi condimentum ac.</a
+                    >
+                  </li>
+                </ol>
+              </li>
+              <li><a href="#">Donec et volutpat magna</a></li>
+              <li>
+                <a href="#"
+                  >Quisque nulla justo, convallis eget posuere tempor, ultrices
+                  nec nisl</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  >Sed sollicitudin velit ac metus vestibulum mollis</a
+                >
+              </li>
+              <li><a href="#">Fusce et tristique nulla</a></li>
+            </ol>
           </details>
         </nav>
       </article>

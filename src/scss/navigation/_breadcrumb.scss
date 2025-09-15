@@ -1,5 +1,11 @@
 nav {
   ol {
+    ol,
+    ul,
+    dl {
+      display: inline;
+    }
+
     li {
       display: inline;
 

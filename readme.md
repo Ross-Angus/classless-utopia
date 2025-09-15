@@ -43,6 +43,10 @@ Look at [`hgroup`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/E
 
 Demo `data` and `datalist`
 
+### Search tag
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/search
+
 ## Navigation
 
 Nav spacing for mobile needs to be larger for fat fingers
