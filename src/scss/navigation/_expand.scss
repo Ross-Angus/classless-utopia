@@ -130,6 +130,8 @@ nav {
       counter-reset: item;
       // Breadcrumb makes this inline
       display: block !important;
+      // Magic number warning
+      padding-bottom: calc(var(--gutter) / 2);
 
       & > li {
         display: table;
@@ -155,6 +157,7 @@ nav {
       li {
         ol {
           margin-bottom: 0;
+          padding-bottom: 0;
 
           & > li {
             &::before {
