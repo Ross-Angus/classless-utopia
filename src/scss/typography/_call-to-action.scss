@@ -72,8 +72,8 @@ header > *:not(nav) {
     &[rel="first"],
     &[rel="prev"],
     &[rel="previous"] {
-      ~ a,
-      ~ button {
+      ~ a:not([rel]),
+      ~ button:not([rel]) {
         @include cta_input.cta-input;
 
         // If the following sibling is not a call-to-action, hide the chevron
@@ -283,6 +283,24 @@ header > *:not(nav) {
     a[rel] {
       min-height: 0;
       padding: calc(var(--gutter) / 3) calc(var(--gutter) / 1.5);
+
+      &[rel="help"] {
+        &::after {
+          height: 2.5ch;
+          line-height: 2.5ch;
+          width: 2.5ch;
+        }
+      }
+
+      &[rel="start"],
+      &[rel="first"],
+      &[rel="prev"],
+      &[rel="previous"] {
+        ~ a:not([rel]),
+        ~ button:not([rel]) {
+          min-height: 0;
+        }
+      }
     }
   }
 }
