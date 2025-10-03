@@ -299,6 +299,7 @@ header > *:not(nav) {
         ~ a:not([rel]),
         ~ button:not([rel]) {
           min-height: 0;
+          padding: calc(var(--gutter) / 3) calc(var(--gutter) / 1.5);
         }
       }
     }
