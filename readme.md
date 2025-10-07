@@ -19,14 +19,11 @@ All caps headings require wider letter spacing.
 
 ## Blockquotes
 
-Use a serif typeface for blockquotes?
 Ratio of font size of quote to font size of citation should be 1.75:1
 
 ## Asides and figures
 
 Larger margin-bottom, to give breathing room from body text. If it has a `figcaption` the gap should be larger still
-
-Is there a way to use `figure` for pull-quote style stats? "49% of users thought this was a good idea". Use monospaced type?
 
 ## Card design:
 
@@ -41,7 +38,7 @@ Look at [`hgroup`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/E
 
 ## Forms
 
-Demo `data` and `datalist`
+Invalid form demo
 
 ### Search tag
 
