@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-GB">
+  <module href="src/fragments/head.html">
+    <title>Classless Utopia - Figures</title>
+  </module>
+
+  <body>
+    <module href="src/fragments/main-navigation.html"></module>
+
+    <main>
+      <nav aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><em title="You are here">Figures</em></li>
+        </ol>
+      </nav>
+
+      <article>
+        <h1>Figures</h1>
+        <p>
+          Figures can be highlighted using the <code>figure</code> and
+          <code>data</code> tags.
+        </p>
+
+        <div>
+          <figure>
+            <p><data value="39%">39%</data></p>
+            <figcaption>
+              Of users were persuaded this was an accurate statistic
+            </figcaption>
+          </figure>
+
+          <figure>
+            <p><data value="£4500000">£4.5m</data></p>
+            <figcaption>Estimated value of this website (estimated)</figcaption>
+          </figure>
+
+          <figure>
+            <p><data value="0.25">0.25</data></p>
+            <figcaption>
+              Less than 1 value with no unit, for some reason
+            </figcaption>
+          </figure>
+        </div>
+      </article>
+    </main>
+
+    <module href="src/fragments/footer.html"></module>
+  </body>
+</html>

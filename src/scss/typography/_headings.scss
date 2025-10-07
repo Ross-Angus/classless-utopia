@@ -35,7 +35,7 @@ h2 {
 // these methods are not intuitive to change at a later
 // date
 h1 {
-  font-size: 2.9rem;
+  font-size: var(--h1-size);
   line-height: 1;
 }
 
