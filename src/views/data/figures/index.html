@@ -25,6 +25,14 @@
 
         <div>
           <figure>
+            <p><data value="1000">1,000</data></p>
+            <figcaption>
+              A big number with no unit - this takes the default colour
+              background
+            </figcaption>
+          </figure>
+
+          <figure>
             <p><data value="39%">39%</data></p>
             <figcaption>
               Of users were persuaded this was an accurate statistic
@@ -43,6 +51,21 @@
             </figcaption>
           </figure>
         </div>
+
+        <h2>Markup</h2>
+        <pre><code>&lt;figure&gt;
+  &lt;p&gt;&lt;data value="1000"&gt;1,000&lt;/data&gt;&lt;/p&gt;
+  &lt;figcaption&gt;A big number with no unit&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+        <h2>Tints</h2>
+        <p>
+          The tints against the background are determined by three values which
+          appear in the <code>value</code> attribute of the
+          <code>data</code> tag: <code>.</code>, <code>%</code>, and
+          <code>£</code>. The presence of each applies a different tint to the
+          background.
+        </p>
       </article>
     </main>
 
